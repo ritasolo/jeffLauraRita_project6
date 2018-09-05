@@ -1,42 +1,39 @@
-export default App; import React, { Component } from 'react';
-import axios from 'axios';
-import './App.css';
+import React, { Component } from "react";
+import axios from "axios";
+import "./App.css";
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      wine: [],
-    }
+      wine: []
+    };
   }
   componentDidMount() {
     axios({
-      method: 'GET',
-      url: 'http://proxy.hackeryou.com',
+      method: "GET",
+      url: "http://proxy.hackeryou.com",
       //OR url: 'https://proxy.hackeryou.com',
-      dataResponse: 'json',
+      dataResponse: "json",
       params: {
-        reqUrl: 'http://www.lcboapi.com/products',
+        reqUrl: "http://www.lcboapi.com/products",
         proxyHeaders: {
-          'header_params': 'value'
+          header_params: "value"
         },
-        access_key: 'MDoxZDg1NjI2Yy1iMDgwLTExZTgtYjJlNy1iZmRhMjM4ZmYyZGQ6THZzQ2lSa2FkYm50eVVCYWlTV2IzQ0dDdDQ3SFc3TVlBTjJE',
+        access_key:
+          "MDoxZDg1NjI2Yy1iMDgwLTExZTgtYjJlNy1iZmRhMjM4ZmYyZGQ6THZzQ2lSa2FkYm50eVVCYWlTV2IzQ0dDdDQ3SFc3TVlBTjJE",
         xmlToJSON: false
       }
-    }).then((res) => {
+    }).then(res => {
       console.log(res.data.result);
       this.setState({
         wine: res.data.result
-      })
+      });
     });
   }
 
   render() {
-    return (
-      <div className="App">
-
-      </div>
-    );
+    return <div className="App" />;
   }
 }
 
