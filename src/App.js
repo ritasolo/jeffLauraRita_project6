@@ -1,118 +1,163 @@
 import React, { Component } from "react";
 import axios from "axios";
 import "./App.css";
+import Qs from "qs";
 
-const wineArray = [];
+const apiUrl = "http://www.lcboapi.com/products";
+const apiKey =
+  "MDoxM2NjMDdlNC1iMDgwLTExZTgtYTc1NS0wYjUyYWEyN2NiMzM6TGVSYzFIVmJaMVEySE5rem1RdURPTFdGYnFKYTdZeHpkTVRi";
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      wine: [],
-      wineArray: []
+      wineArray: [],
+      colour: "all",
+      price: "$"
     };
   }
+
   componentDidMount() {
     axios({
       method: "GET",
       url: "http://proxy.hackeryou.com",
       dataResponse: "json",
+      paramsSerializer: function(params) {
+        return Qs.stringify(params, { arrayFormat: "brackets" });
+      },
       params: {
-        reqUrl:
-          "http://www.lcboapi.com/products?page=1&q=wine&?order=price_in_cents.desc&per_page=41",
-        proxyHeaders: {
-          header_params: "value"
+        reqUrl: apiUrl,
+        params: {
+          q: "wine",
+          page: 1,
+          per_page: 40,
+          where_not: "is_dead, is_discontinued"
         },
-        access_key:
-          "MDoxZDg1NjI2Yy1iMDgwLTExZTgtYjJlNy1iZmRhMjM4ZmYyZGQ6THZzQ2lSa2FkYm50eVVCYWlTV2IzQ0dDdDQ3SFc3TVlBTjJE",
+        proxyHeaders: {
+          Authorization: `Token ${apiKey}`
+        },
         xmlToJSON: false
       }
     }).then(res => {
-      wineArray.push(...res.data.result);
+      this.state.wineArray.push(...res.data.result);
     });
 
     axios({
       method: "GET",
       url: "http://proxy.hackeryou.com",
       dataResponse: "json",
+      paramsSerializer: function(params) {
+        return Qs.stringify(params, { arrayFormat: "brackets" });
+      },
       params: {
-        reqUrl:
-          "http://www.lcboapi.com/products?page=2&q=wine&?order=price_in_cents.desc&per_page=41",
-        proxyHeaders: {
-          header_params: "value"
+        reqUrl: apiUrl,
+        params: {
+          q: "wine",
+          page: 2,
+          per_page: 40,
+          where_not: "is_dead, is_discontinued"
         },
-        access_key:
-          "MDoxZDg1NjI2Yy1iMDgwLTExZTgtYjJlNy1iZmRhMjM4ZmYyZGQ6THZzQ2lSa2FkYm50eVVCYWlTV2IzQ0dDdDQ3SFc3TVlBTjJE",
+        proxyHeaders: {
+          Authorization: `Token ${apiKey}`
+        },
         xmlToJSON: false
       }
     }).then(res => {
-      wineArray.push(...res.data.result);
+      this.state.wineArray.push(...res.data.result);
+    });
+    axios({
+      method: "GET",
+      url: "http://proxy.hackeryou.com",
+      dataResponse: "json",
+      paramsSerializer: function(params) {
+        return Qs.stringify(params, { arrayFormat: "brackets" });
+      },
+      params: {
+        reqUrl: apiUrl,
+        params: {
+          q: "wine",
+          page: 3,
+          per_page: 40,
+          where_not: "is_dead, is_discontinued"
+        },
+        proxyHeaders: {
+          Authorization: `Token ${apiKey}`
+        },
+        xmlToJSON: false
+      }
+    }).then(res => {
+      this.state.wineArray.push(...res.data.result);
     });
 
     axios({
       method: "GET",
       url: "http://proxy.hackeryou.com",
       dataResponse: "json",
+      paramsSerializer: function(params) {
+        return Qs.stringify(params, { arrayFormat: "brackets" });
+      },
       params: {
-        reqUrl:
-          "http://www.lcboapi.com/products?page=3&q=wine&?order=price_in_cents.desc&per_page=41",
-        proxyHeaders: {
-          header_params: "value"
+        reqUrl: apiUrl,
+        params: {
+          q: "wine",
+          page: 4,
+          per_page: 40,
+          where_not: "is_dead, is_discontinued"
         },
-        access_key:
-          "MDoxZDg1NjI2Yy1iMDgwLTExZTgtYjJlNy1iZmRhMjM4ZmYyZGQ6THZzQ2lSa2FkYm50eVVCYWlTV2IzQ0dDdDQ3SFc3TVlBTjJE",
+        proxyHeaders: {
+          Authorization: `Token ${apiKey}`
+        },
         xmlToJSON: false
       }
     }).then(res => {
-      wineArray.push(...res.data.result);
+      this.state.wineArray.push(...res.data.result);
     });
 
     axios({
       method: "GET",
       url: "http://proxy.hackeryou.com",
       dataResponse: "json",
+      paramsSerializer: function(params) {
+        return Qs.stringify(params, { arrayFormat: "brackets" });
+      },
       params: {
-        reqUrl:
-          "http://www.lcboapi.com/products?page=4&q=wine&?order=price_in_cents.desc&per_page=41",
-        proxyHeaders: {
-          header_params: "value"
+        reqUrl: apiUrl,
+        params: {
+          q: "wine",
+          page: 5,
+          per_page: 40,
+          where_not: "is_dead, is_discontinued"
         },
-        access_key:
-          "MDoxZDg1NjI2Yy1iMDgwLTExZTgtYjJlNy1iZmRhMjM4ZmYyZGQ6THZzQ2lSa2FkYm50eVVCYWlTV2IzQ0dDdDQ3SFc3TVlBTjJE",
+        proxyHeaders: {
+          Authorization: `Token ${apiKey}`
+        },
         xmlToJSON: false
       }
     }).then(res => {
-      wineArray.push(...res.data.result);
-    });
-
-    axios({
-      method: "GET",
-      url: "http://proxy.hackeryou.com",
-      dataResponse: "json",
-      params: {
-        reqUrl:
-          "http://www.lcboapi.com/products?page=6&q=wine&?order=price_in_cents.desc&per_page=41",
-        proxyHeaders: {
-          header_params: "value"
-        },
-        access_key:
-          "MDoxZDg1NjI2Yy1iMDgwLTExZTgtYjJlNy1iZmRhMjM4ZmYyZGQ6THZzQ2lSa2FkYm50eVVCYWlTV2IzQ0dDdDQ3SFc3TVlBTjJE",
-        xmlToJSON: false
-      }
-    }).then(res => {
-      wineArray.push(...res.data.result);
-    });
-    this.setState({
-      wineArray: wineArray
+      this.state.wineArray.push(...res.data.result);
+      const cheapWines = this.state.wineArray.filter(item => {
+        return (
+          item.price_in_cents < 2200 &&
+          item.package_unit_volume_in_milliliters === 750 &&
+          item.package_unit_type === "bottle"
+        );
+      });
+      this.setState({
+        wineArray: cheapWines
+      });
     });
   }
 
+  filterByPrice = userPriceChoice => {
+    {
+      this.state.price === "$" ? console.log("cheap wine") : null;
+    }
+  };
+
   render() {
     console.log(this.state.wineArray);
-    const filteredArray = this.state.wineArray.map(
-      ({ name, price_in_cents }) => ({ name, price_in_cents })
-    );
-    console.log(filteredArray);
+    this.filterByPrice(this.state.price);
+
     return <div className="App" />;
   }
 }
