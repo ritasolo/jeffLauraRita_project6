@@ -150,13 +150,18 @@ class App extends Component {
 
   filterByPrice = userPriceChoice => {
     {
-      this.state.price === "$" ? console.log("cheap wine") : null;
+      this.state.price === "$"
+        ? this.state.wineArray.filter(item => {
+            return item.price_in_cents <= 1000;
+          })
+        : null;
     }
   };
 
   render() {
-    console.log(this.state.wineArray);
+    // console.log(this.state.wineArray);
     this.filterByPrice(this.state.price);
+    console.log(this.state.wineArray);
 
     return <div className="App" />;
   }
