@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import axios from "axios";
 import "./App.css";
 import Qs from "qs";
+import Form from "./Form";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 const apiUrl = "http://www.lcboapi.com/products";
 const apiKey =
@@ -13,157 +15,93 @@ class App extends Component {
     this.state = {
       wineArray: [],
       colour: "all",
-      price: "$"
+      price: "$",
+      cheapestWines: []
     };
   }
 
+  getWine = pageNumber => {
+    return axios({
+      method: "GET",
+      url: "http://proxy.hackeryou.com",
+      dataResponse: "json",
+      paramsSerializer: function(params) {
+        return Qs.stringify(params, { arrayFormat: "brackets" });
+      },
+      params: {
+        reqUrl: apiUrl,
+        params: {
+          q: "wine",
+          page: pageNumber,
+          per_page: 40,
+          where_not: "is_dead, is_discontinued"
+        },
+        proxyHeaders: {
+          Authorization: `Token ${apiKey}`
+        },
+        xmlToJSON: false
+      }
+    });
+  };
+
   componentDidMount() {
-    axios({
-      method: "GET",
-      url: "http://proxy.hackeryou.com",
-      dataResponse: "json",
-      paramsSerializer: function(params) {
-        return Qs.stringify(params, { arrayFormat: "brackets" });
-      },
-      params: {
-        reqUrl: apiUrl,
-        params: {
-          q: "wine",
-          page: 1,
-          per_page: 40,
-          where_not: "is_dead, is_discontinued"
-        },
-        proxyHeaders: {
-          Authorization: `Token ${apiKey}`
-        },
-        xmlToJSON: false
-      }
-    }).then(res => {
-      this.state.wineArray.push(...res.data.result);
-    });
-
-    axios({
-      method: "GET",
-      url: "http://proxy.hackeryou.com",
-      dataResponse: "json",
-      paramsSerializer: function(params) {
-        return Qs.stringify(params, { arrayFormat: "brackets" });
-      },
-      params: {
-        reqUrl: apiUrl,
-        params: {
-          q: "wine",
-          page: 2,
-          per_page: 40,
-          where_not: "is_dead, is_discontinued"
-        },
-        proxyHeaders: {
-          Authorization: `Token ${apiKey}`
-        },
-        xmlToJSON: false
-      }
-    }).then(res => {
-      this.state.wineArray.push(...res.data.result);
-    });
-    axios({
-      method: "GET",
-      url: "http://proxy.hackeryou.com",
-      dataResponse: "json",
-      paramsSerializer: function(params) {
-        return Qs.stringify(params, { arrayFormat: "brackets" });
-      },
-      params: {
-        reqUrl: apiUrl,
-        params: {
-          q: "wine",
-          page: 3,
-          per_page: 40,
-          where_not: "is_dead, is_discontinued"
-        },
-        proxyHeaders: {
-          Authorization: `Token ${apiKey}`
-        },
-        xmlToJSON: false
-      }
-    }).then(res => {
-      this.state.wineArray.push(...res.data.result);
-    });
-
-    axios({
-      method: "GET",
-      url: "http://proxy.hackeryou.com",
-      dataResponse: "json",
-      paramsSerializer: function(params) {
-        return Qs.stringify(params, { arrayFormat: "brackets" });
-      },
-      params: {
-        reqUrl: apiUrl,
-        params: {
-          q: "wine",
-          page: 4,
-          per_page: 40,
-          where_not: "is_dead, is_discontinued"
-        },
-        proxyHeaders: {
-          Authorization: `Token ${apiKey}`
-        },
-        xmlToJSON: false
-      }
-    }).then(res => {
-      this.state.wineArray.push(...res.data.result);
-    });
-
-    axios({
-      method: "GET",
-      url: "http://proxy.hackeryou.com",
-      dataResponse: "json",
-      paramsSerializer: function(params) {
-        return Qs.stringify(params, { arrayFormat: "brackets" });
-      },
-      params: {
-        reqUrl: apiUrl,
-        params: {
-          q: "wine",
-          page: 5,
-          per_page: 40,
-          where_not: "is_dead, is_discontinued"
-        },
-        proxyHeaders: {
-          Authorization: `Token ${apiKey}`
-        },
-        xmlToJSON: false
-      }
-    }).then(res => {
-      this.state.wineArray.push(...res.data.result);
-      const cheapWines = this.state.wineArray.filter(item => {
-        return (
-          item.price_in_cents < 2200 &&
-          item.package_unit_volume_in_milliliters === 750 &&
-          item.package_unit_type === "bottle"
-        );
-      });
+    const wineRequests = [1, 2, 3, 4, 5, 6, 7].map(this.getWine);
+    Promise.all(wineRequests).then(responses => {
+      responses = responses
+        .map(response => {
+          return response.data.result;
+        })
+        .reduce((acc, curr) => {
+          return [...acc, ...curr];
+        })
+        .filter(item => {
+          return (
+            item.price_in_cents < 2200 &&
+            item.package_unit_volume_in_milliliters === 750 &&
+            item.package_unit_type === "bottle"
+          );
+        });
+      console.log(responses);
       this.setState({
-        wineArray: cheapWines
+        wineArray: responses
       });
     });
   }
 
-  filterByPrice = userPriceChoice => {
-    {
-      this.state.price === "$"
-        ? this.state.wineArray.filter(item => {
-            return item.price_in_cents <= 1000;
-          })
-        : null;
-    }
-  };
+  // filterArray = array => {
+  //   array.filter(item => {
+  //     return (
+  //       item.price_in_cents < 2200 &&
+  //       item.package_unit_volume_in_milliliters === 750 &&
+  //       item.package_unit_type === "bottle"
+  //     );
+  //   });
+  // };
+
+  // filterByPrice = userPriceChoice => {
+  //   {
+  //     this.state.price === "$" ? this.state.wineArray.filter(item => {
+  //       return (
+  //         item.price_in_cents < 1000 )} : null;
+  //   }
+  // };
 
   render() {
-    // console.log(this.state.wineArray);
-    this.filterByPrice(this.state.price);
-    console.log(this.state.wineArray);
-
-    return <div className="App" />;
+    // this.filterArray(this.wineArray);
+    // console.log(this.wineArray);
+    return (
+      <Router>
+        <div className="App">
+          <header>
+            <h1>Plonk</h1>
+          </header>
+          <section>
+            <Form />
+            <div className="choices" />
+          </section>
+        </div>
+      </Router>
+    );
   }
 }
 
