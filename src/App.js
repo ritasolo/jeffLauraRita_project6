@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import axios from "axios";
 import "./App.css";
 import Qs from "qs";
+import Form from "./Form";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 const apiUrl = "http://www.lcboapi.com/products";
 const apiKey =
@@ -44,7 +46,6 @@ class App extends Component {
 
   componentDidMount() {
     const wineRequests = [1, 2, 3, 4, 5, 6, 7].map(this.getWine);
-    console.log(wineRequests);
     Promise.all(wineRequests).then(responses => {
       responses = responses
         .map(response => {
@@ -88,7 +89,19 @@ class App extends Component {
   render() {
     // this.filterArray(this.wineArray);
     // console.log(this.wineArray);
-    return <div className="App" />;
+    return (
+      <Router>
+        <div className="App">
+          <header>
+            <h1>Plonk</h1>
+          </header>
+          <section>
+            <Form />
+            <div className="choices" />
+          </section>
+        </div>
+      </Router>
+    );
   }
 }
 
