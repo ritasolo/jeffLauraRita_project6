@@ -1,22 +1,51 @@
+.headerSection {
+}
+
 .hero {
   background-image: url(./assets/heroGirl.jpg);
-
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
 }
 
+.heroScreen{
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
 header h1 {
   float:left;
-  margin: 20px 40px;
+  margin: 10px 50px;
+  color: $purple;
 }
 
 .heroContent {
   float:right;
   width:40%;
   position: relative;
-  margin-right: 50px;
+  margin-right: 30px;
   top: 50%;
   transform: translateY(-50%);
 }
+
+  h2.heroHeading {
+    color: $white;
+    margin: 15px 0;
+  }
+
+  p.heroCopy {
+    color: $white;
+  }
+
+  .btn{
+    margin-top:10px;
+    padding: 15px 50px;
+    background-color: $teal;
+    border: 2px solid $teal;
+    color: $white;
+    font-weight: 700;
+    &:hover {
+     background-color: transparent;
+    }
+  }
