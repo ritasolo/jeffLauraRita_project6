@@ -69,18 +69,23 @@ class App extends Component {
   //   })
   // }
 
-  handleChangeColour = (e) => {
-    console.log(e.target.id)
-    this.setState({
-      colour: e.target.id
-    })
-  }
+  displayWines = () => {
+    const userChoice = `${this.state.price}${this.state.colour}`;
+    console.log(userChoice);
+  };
 
-  handleChangePrice = (e) => {
-    console.log(e.target.id)
+  handleChangePrice = e => {
+    console.log(e.target.id);
     this.setState({
       price: e.target.id
-    })
+    });
+  };
+
+  handleChangeColour = e => {
+    console.log(e.target.id);
+    this.setState({
+      colour: e.target.id
+    });
   };
 
   componentDidMount() {
@@ -257,7 +262,11 @@ class App extends Component {
             <h1>Plonk</h1>
           </header>
           <section>
-            <Form addToList={this.addToList} handleChangeColour={this.handleChangeColour} handleChangePrice={this.handleChangePrice} />
+            <Form
+              addToList={this.addToList}
+              handleChangeColour={this.handleChangeColour}
+              handleChangePrice={this.handleChangePrice}
+            />
             <div className="choices" />
           </section>
         </div>
