@@ -1,32 +1,40 @@
 // google fonts //
-@import url("https://fonts.googleapis.com/css?family=Lora:700|Oxygen");
+@import url("https://fonts.googleapis.com/css?family=Lora:700|Oxygen:400,700");
 
 // font mixins //
-@mixin headingFont($fontSize, $fontColour) {
-  color: $fontColour;
+@mixin headingFont($fontSize) {
   font-size: $fontSize;
   font-family: "Lora", monospace;
 }
 
-@mixin bodyFont($fontSize, $fontColour) {
+@mixin bodyFont($fontSize) {
   font-size: $fontSize;
-  color: $fontColour;
   font-family: "Oxygen", monospace;
+}
+
+@mixin lineHeight($lineHeight){
+  line-height: $lineHeight;
 }
 
 // headings //
 h1 {
-  @include bodyFont(4rem, #fff);
+  @include bodyFont(4rem);
 }
 
 h2 {
-  @include headingFont(6rem, #000);
+  @include headingFont(6rem);
+  @include lineHeight(1);
 }
 
 h3 {
-  @include headingFont(2rem, #000);
+  @include headingFont(2rem);
 }
 
 p {
-  @include bodyFont(1.8rem, #000);
+  @include bodyFont(1.8rem);
+}
+
+.btn {
+  @include bodyFont(1.4rem);
+  text-transform: uppercase;
 }
