@@ -1,0 +1,22 @@
+.hero {
+  background-image: url(./assets/heroGirl.jpg);
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+header h1 {
+  float:left;
+  margin: 20px 40px;
+}
+
+.heroContent {
+  float:right;
+  width:40%;
+  position: relative;
+  margin-right: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+}

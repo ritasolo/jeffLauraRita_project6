@@ -163,25 +163,44 @@ input::-moz-focus-inner {
 html {
   font-size: 62.5%; }
 
-body {
-  background: #dd9afc;
-  text-align: center; }
-
 h1 {
+  font-size: 4rem;
+  color: #fff;
+  font-family: "Oxygen", monospace; }
+
+h2 {
+  color: #000;
   font-size: 6rem;
   font-family: "Lora", monospace; }
 
-h2 {
-  font-size: 4rem;
-  font-family: "Lora", monospace; }
-
 h3 {
+  color: #000;
   font-size: 2rem;
   font-family: "Lora", monospace; }
 
 p {
   font-size: 1.8rem;
+  color: #000;
   font-family: "Oxygen", monospace; }
+
+.hero {
+  background-image: url(./assets/heroGirl.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh; }
+
+header h1 {
+  float: left;
+  margin: 20px 40px; }
+
+.heroContent {
+  float: right;
+  width: 40%;
+  position: relative;
+  margin-right: 50px;
+  top: 50%;
+  transform: translateY(-50%); }
 
 .formWrapper {
   width: 50%; }

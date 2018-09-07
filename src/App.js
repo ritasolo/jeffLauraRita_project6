@@ -3,6 +3,7 @@ import axios from "axios";
 import "./App.css";
 import Qs from "qs";
 import Form from "./Form";
+import Header from "./Header"
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 const apiUrl = "http://www.lcboapi.com/products";
@@ -248,12 +249,13 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <header>
+          {/* <header>
             <h1>Plonk</h1>
             {this.state.price === "$" && this.state.colour === "red"
               ? console.log(this.state.$red)
               : null}
-          </header>
+          </header> */}
+          <Header />
           <section>
             <Form addToList={this.addToList} handleChangeColour={this.handleChangeColour} handleChangePrice={this.handleChangePrice} />
             <div className="choices" />

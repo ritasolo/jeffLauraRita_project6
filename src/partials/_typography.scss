@@ -2,29 +2,31 @@
 @import url("https://fonts.googleapis.com/css?family=Lora:700|Oxygen");
 
 // font mixins //
-@mixin headingFont($fontSize) {
+@mixin headingFont($fontSize, $fontColour) {
+  color: $fontColour;
   font-size: $fontSize;
   font-family: "Lora", monospace;
 }
 
-@mixin bodyFont($fontSize) {
+@mixin bodyFont($fontSize, $fontColour) {
   font-size: $fontSize;
+  color: $fontColour;
   font-family: "Oxygen", monospace;
 }
 
 // headings //
 h1 {
-  @include headingFont(6rem);
+  @include bodyFont(4rem, #fff);
 }
 
 h2 {
-  @include headingFont(4rem);
+  @include headingFont(6rem, #000);
 }
 
 h3 {
-  @include headingFont(2rem);
+  @include headingFont(2rem, #000);
 }
 
 p {
-  @include bodyFont(1.8rem);
+  @include bodyFont(1.8rem, #000);
 }
