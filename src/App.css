@@ -205,7 +205,7 @@ header h1 {
   float: right;
   width: 40%;
   position: relative;
-  margin-right: 30px;
+  margin-right: 50px;
   top: 50%;
   transform: translateY(-50%); }
 
@@ -224,7 +224,8 @@ p.heroCopy {
   color: #ffffff;
   font-weight: 700; }
   .btn:hover {
-    background-color: transparent; }
+    background-color: transparent;
+    color: #ffffff; }
 
 .formWrapper {
   width: 50%; }

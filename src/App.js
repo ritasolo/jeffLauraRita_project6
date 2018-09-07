@@ -3,9 +3,10 @@ import axios from "axios";
 import "./App.css";
 import Qs from "qs";
 import Form from "./Form";
+import Header from "./Header"
+import Footer from "./Footer"
 import _ from "lodash";
 import sampleSize from "lodash/sampleSize";
-import Header from "./Header";
 
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
@@ -311,6 +312,7 @@ class App extends Component {
             />
             <div className="choices" />
           </section>
+          <Footer />
         </div>
       </Router>
     );
