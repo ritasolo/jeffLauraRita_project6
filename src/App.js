@@ -4,6 +4,7 @@ import "./App.css";
 import Qs from "qs";
 import Form from "./Form";
 import Header from "./Header"
+import Footer from "./Footer"
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 const apiUrl = "http://www.lcboapi.com/products";
@@ -260,6 +261,7 @@ class App extends Component {
             <Form addToList={this.addToList} handleChangeColour={this.handleChangeColour} handleChangePrice={this.handleChangePrice} />
             <div className="choices" />
           </section>
+          <Footer />
         </div>
       </Router>
     );
