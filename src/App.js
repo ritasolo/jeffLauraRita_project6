@@ -3,6 +3,9 @@ import axios from "axios";
 import "./App.css";
 import Qs from "qs";
 import Form from "./Form";
+import _ from "lodash";
+import sampleSize from "lodash/sampleSize";
+
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 const apiUrl = "http://www.lcboapi.com/products";
@@ -209,14 +212,13 @@ class App extends Component {
   }
 
   render() {
+    // const random = _.sampleSize(this.state.wineArray, 6);
+    // console.log(random);
     return (
       <Router>
         <div className="App">
           <header>
             <h1>Plonk</h1>
-            {this.state.price === "$" && this.state.colour === "red"
-              ? console.log(this.state.$red)
-              : null}
           </header>
           <section>
             <Form />
