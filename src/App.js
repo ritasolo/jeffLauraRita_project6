@@ -5,6 +5,9 @@ import Qs from "qs";
 import Form from "./Form";
 import Header from "./Header"
 import Footer from "./Footer"
+import _ from "lodash";
+import sampleSize from "lodash/sampleSize";
+
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 const apiUrl = "http://www.lcboapi.com/products";
@@ -18,10 +21,10 @@ class App extends Component {
       wineArray: [],
       colour: "",
       price: "",
-      $: [],
-      $$: [],
-      $$$: [],
-      $$$$: [],
+      $all: [],
+      $$all: [],
+      $$$all: [],
+      $$$$all: [],
       $white: [],
       $red: [],
       $$white: [],
@@ -57,29 +60,28 @@ class App extends Component {
     });
   };
 
-  // addToList = (colour) => {
-  //   this.setState({
-  //     colour: colour,
-  //   })
-  // }
-  // addToList2 = (price) => {
-  //   this.setState({
-  //     price: price,
-  //   })
-  // }
-
-  handleChangeColour = (e) => {
-    console.log(e.target.id)
-    this.setState({
-      colour: e.target.id
-    })
-  }
-
-  handleChangePrice = (e) => {
-    console.log(e.target.id)
+  handleChangePrice = e => {
+    console.log(e.target.id);
     this.setState({
       price: e.target.id
-    })
+    });
+  };
+
+  handleChangeColour = e => {
+    console.log(e.target.id);
+    this.setState({
+      colour: e.target.id
+    });
+  };
+
+  displayWines = () => {
+    const userChoice = `${this.state.price}${this.state.colour}`;
+    console.log(userChoice);
+    // console.log(this.wineArray);
+    const random = _.sampleSize(this.state[`${userChoice}`], 6);
+    console.log(random);
+    // console.log("clicked");
+    console.log("clicked");
   };
 
   componentDidMount() {
@@ -107,131 +109,176 @@ class App extends Component {
         },
         () => {
           const fullArray = this.state.wineArray;
-          const $ = fullArray.filter(item => {
-            return item.price_in_cents > 600 && item.price_in_cents < 1000;
-          });
-          const $$ = fullArray.filter(item => {
-            return item.price_in_cents > 1000 && item.price_in_cents < 1400;
-          });
-          const $$$ = fullArray.filter(item => {
-            return item.price_in_cents > 1400 && item.price_in_cents < 1800;
-          });
-          const $$$$ = fullArray.filter(item => {
-            return item.price_in_cents > 1800 && item.price_in_cents < 2200;
-          });
 
-          const $white = $.filter(item => {
-            return item.secondary_category === "White Wine";
-          }).map(response => {
-            return {
-              id: response.id,
-              name: response.name,
-              price: `$${response.price_in_cents / 100}`,
-              imgURL: response.image_url,
-              onSale: response.has_clearance_sale
-            };
-          });
+          const $all = fullArray
+            .filter(item => {
+              return item.price_in_cents > 600 && item.price_in_cents < 1000;
+            })
+            .map(response => {
+              return {
+                id: response.id,
+                name: response.name,
+                price: `$${response.price_in_cents / 100}`,
+                imgURL: response.image_url,
+                onSale: response.has_clearance_sale
+              };
+            });
+          const $$all = fullArray
+            .filter(item => {
+              return item.price_in_cents > 1000 && item.price_in_cents < 1400;
+            })
+            .map(response => {
+              return {
+                id: response.id,
+                name: response.name,
+                price: `$${response.price_in_cents / 100}`,
+                imgURL: response.image_url,
+                onSale: response.has_clearance_sale
+              };
+            });
+          const $$$all = fullArray
+            .filter(item => {
+              return item.price_in_cents > 1400 && item.price_in_cents < 1800;
+            })
+            .map(response => {
+              return {
+                id: response.id,
+                name: response.name,
+                price: `$${response.price_in_cents / 100}`,
+                imgURL: response.image_url,
+                onSale: response.has_clearance_sale
+              };
+            });
+          const $$$$all = fullArray
+            .filter(item => {
+              return item.price_in_cents > 1800 && item.price_in_cents < 2200;
+            })
+            .map(response => {
+              return {
+                id: response.id,
+                name: response.name,
+                price: `$${response.price_in_cents / 100}`,
+                imgURL: response.image_url,
+                onSale: response.has_clearance_sale
+              };
+            });
 
-          const $red = $.filter(item => {
-            return item.secondary_category === "Red Wine";
-          }).map(response => {
-            return {
-              id: response.id,
-              name: response.name,
-              price: `$${response.price_in_cents / 100}`,
-              imgURL: response.image_url,
-              onSale: response.has_clearance_sale
-            };
-          });
+          const $white = $all
+            .filter(item => {
+              return item.secondary_category === "White Wine";
+            })
+            .map(response => {
+              return {
+                id: response.id,
+                name: response.name,
+                price: `$${response.price_in_cents / 100}`,
+                imgURL: response.image_url,
+                onSale: response.has_clearance_sale
+              };
+            });
 
-          const $$red = $$.filter(item => {
-            return item.secondary_category === "Red Wine";
-          }).map(response => {
-            return {
-              id: response.id,
-              name: response.name,
-              price: `$${response.price_in_cents / 100}`,
-              imgURL: response.image_url,
-              onSale: response.has_clearance_sale
-            };
-          });
+          const $red = $all
+            .filter(item => {
+              return item.secondary_category === "Red Wine";
+            })
+            .map(response => {
+              return {
+                id: response.id,
+                name: response.name,
+                price: `$${response.price_in_cents / 100}`,
+                imgURL: response.image_url,
+                onSale: response.has_clearance_sale
+              };
+            });
 
-          const $$white = $$.filter(item => {
-            return item.secondary_category === "Red Wine";
-          }).map(response => {
-            return {
-              id: response.id,
-              name: response.name,
-              price: `$${response.price_in_cents / 100}`,
-              imgURL: response.image_url,
-              onSale: response.has_clearance_sale
-            };
-          });
+          const $$red = $$all
+            .filter(item => {
+              return item.secondary_category === "Red Wine";
+            })
+            .map(response => {
+              return {
+                id: response.id,
+                name: response.name,
+                price: `$${response.price_in_cents / 100}`,
+                imgURL: response.image_url,
+                onSale: response.has_clearance_sale
+              };
+            });
 
-          const $$$white = $$$.filter(item => {
-            return item.secondary_category === "White Wine";
-          }).map(response => {
-            return {
-              id: response.id,
-              name: response.name,
-              price: `$${response.price_in_cents / 100}`,
-              imgURL: response.image_url,
-              onSale: response.has_clearance_sale
-            };
-          });
+          const $$white = $$all
+            .filter(item => {
+              return item.secondary_category === "Red Wine";
+            })
+            .map(response => {
+              return {
+                id: response.id,
+                name: response.name,
+                price: `$${response.price_in_cents / 100}`,
+                imgURL: response.image_url,
+                onSale: response.has_clearance_sale
+              };
+            });
 
-          const $$$red = $$$.filter(item => {
-            return item.secondary_category === "Red Wine";
-          }).map(response => {
-            return {
-              id: response.id,
-              name: response.name,
-              price: `$${response.price_in_cents / 100}`,
-              imgURL: response.image_url,
-              onSale: response.has_clearance_sale
-            };
-          });
+          const $$$white = $$$all
+            .filter(item => {
+              return item.secondary_category === "White Wine";
+            })
+            .map(response => {
+              return {
+                id: response.id,
+                name: response.name,
+                price: `$${response.price_in_cents / 100}`,
+                imgURL: response.image_url,
+                onSale: response.has_clearance_sale
+              };
+            });
 
-          const $$$$white = $$$$.filter(item => {
-            return item.secondary_category === "White Wine";
-          }).map(response => {
-            return {
-              id: response.id,
-              name: response.name,
-              price: `$${response.price_in_cents / 100}`,
-              imgURL: response.image_url,
-              onSale: response.has_clearance_sale
-            };
-          });
+          const $$$red = $$$all
+            .filter(item => {
+              return item.secondary_category === "Red Wine";
+            })
+            .map(response => {
+              return {
+                id: response.id,
+                name: response.name,
+                price: `$${response.price_in_cents / 100}`,
+                imgURL: response.image_url,
+                onSale: response.has_clearance_sale
+              };
+            });
 
-          const $$$$red = $$$$.filter(item => {
-            return item.secondary_category === "Red Wine";
-          }).map(response => {
-            return {
-              id: response.id,
-              name: response.name,
-              price: `$${response.price_in_cents / 100}`,
-              imgURL: response.image_url,
-              onSale: response.has_clearance_sale
-            };
-          });
+          const $$$$white = $$$$all
+            .filter(item => {
+              return item.secondary_category === "White Wine";
+            })
+            .map(response => {
+              return {
+                id: response.id,
+                name: response.name,
+                price: `$${response.price_in_cents / 100}`,
+                imgURL: response.image_url,
+                onSale: response.has_clearance_sale
+              };
+            });
 
-          // handleChangePrice = value => {
-          //   this.setState({
-          //     priceRange: value
-          //   })
-          // };
-
-          // handleChangeColor = (e) => {
-          //   this.setState({
-          //     [e.target.name]: e.target.value
-          //   })
-          // }
+          const $$$$red = $$$$all
+            .filter(item => {
+              return item.secondary_category === "Red Wine";
+            })
+            .map(response => {
+              return {
+                id: response.id,
+                name: response.name,
+                price: `$${response.price_in_cents / 100}`,
+                imgURL: response.image_url,
+                onSale: response.has_clearance_sale
+              };
+            });
           this.setState({
-            $,
-            $$,
-            $$$,
-            $$$$,
+            $all,
+            $$all,
+            $$$all,
+            $$$$all,
             $white,
             $red,
             $$white,
@@ -247,18 +294,22 @@ class App extends Component {
   }
 
   render() {
+    // console.log(random);
     return (
       <Router>
         <div className="App">
           {/* <header>
             <h1>Plonk</h1>
-            {this.state.price === "$" && this.state.colour === "red"
-              ? console.log(this.state.$red)
-              : null}
+           
           </header> */}
           <Header />
           <section>
-            <Form addToList={this.addToList} handleChangeColour={this.handleChangeColour} handleChangePrice={this.handleChangePrice} />
+            <Form
+              addToList={this.addToList}
+              handleChangeColour={this.handleChangeColour}
+              handleChangePrice={this.handleChangePrice}
+              displayWines={this.displayWines}
+            />
             <div className="choices" />
           </section>
           <Footer />

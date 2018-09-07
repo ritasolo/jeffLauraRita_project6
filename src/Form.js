@@ -2,13 +2,12 @@ import React, { Component } from "react";
 // import Slider from "react-rangeslider";
 // import 'react-rangeslider/lib/index.css';
 
-
 class Form extends Component {
   constructor() {
     super();
     this.state = {
       colour: "",
-      price: "",
+      price: ""
     };
   }
 
@@ -17,11 +16,12 @@ class Form extends Component {
     return (
       <section className="form">
         <div className="formWrapper">
-          <form>
+          <form onSubmit={this.props.displayWines}>
             <div className="priceRangeSelect">
               {/* <input
                 type="range"
-                min="1" max="4"
+                min="1"
+                max="4"
                 value={this.state.value}
                 className="slider"
                 onChange={this.handleChangePrice}
@@ -37,7 +37,7 @@ class Form extends Component {
       onChange={this.handleChangePrice}
       step="1"/> */}
 
-        {/* <div className='slider'>
+              {/* <div className='slider'>
         <Slider
           min={1}
           max={4}
@@ -83,7 +83,7 @@ class Form extends Component {
                   </li>
                   <li>
                     <input
-                      onClick={this.propsChangePrice}
+                      onClick={this.props.handleChangePrice}
                       name="price"
                       id="$$$$"
                       type="radio"
@@ -92,44 +92,45 @@ class Form extends Component {
                     <label htmlFor="$$$$">$$$$</label>
                   </li>
                 </ul>
-            </fieldset>
+              </fieldset>
 
               <fieldset className="colourSelect">
-              <ul>
-                <li>
-                  <input
-                    onChange={this.props.handleChangeColour}
-                    name="colour"
-                    id="red"
-                    type="radio"
-                    value={this.state.colour}
-                  />
-                  <label htmlFor="red">Red</label>
-                </li>
-                <li>
-                  <input
-                    onChange={this.props.handleChangeColour}
-                    name="colour"
-                    id="white"
-                    type="radio"
-                    value={this.state.colour}
-                  />
-                  <label htmlFor="white">White</label>
-                </li>
-                <li>
-                  <input
-                    onChange={this.props.handleChangeColour}
-                    name="colour"
-                    id="all"
-                    type="radio"
-                    value={this.state.colour}
-                  />
-                  <label htmlFor="all">All</label>
-                </li>
-              </ul>
-            </fieldset>
+                <ul>
+                  <li>
+                    <input
+                      onChange={this.props.handleChangeColour}
+                      name="colour"
+                      id="red"
+                      type="radio"
+                      value={this.state.colour}
+                    />
+                    <label htmlFor="red">Red</label>
+                  </li>
+                  <li>
+                    <input
+                      onChange={this.props.handleChangeColour}
+                      name="colour"
+                      id="white"
+                      type="radio"
+                      value={this.state.colour}
+                    />
+                    <label htmlFor="white">White</label>
+                  </li>
+                  <li>
+                    <input
+                      onChange={this.props.handleChangeColour}
+                      name="colour"
+                      id="all"
+                      type="radio"
+                      value={this.state.colour}
+                    />
+                    <label htmlFor="all">All</label>
+                  </li>
+                </ul>
+              </fieldset>
             </div>
           </form>
+          <button onClick={this.props.displayWines}>Pick</button>
         </div>
       </section>
     );
