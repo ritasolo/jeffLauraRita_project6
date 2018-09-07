@@ -16,7 +16,7 @@ class Form extends Component {
     return (
       <section className="form">
         <div className="formWrapper">
-          <form>
+          <form onSubmit={this.props.displayWines}>
             <div className="priceRangeSelect">
               {/* <input
                 type="range"
@@ -83,7 +83,7 @@ class Form extends Component {
                   </li>
                   <li>
                     <input
-                      onClick={this.propsChangePrice}
+                      onClick={this.props.handleChangePrice}
                       name="price"
                       id="$$$$"
                       type="radio"
@@ -130,6 +130,7 @@ class Form extends Component {
               </fieldset>
             </div>
           </form>
+          <button onClick={this.props.displayWines}>Pick</button>
         </div>
       </section>
     );
