@@ -9,9 +9,12 @@ render(){
       <h1>PLONK</h1>
     </header>
     <section className="hero">
+    <div className="heroScreen">
     <div className="heroContent">
     <h2 className="heroHeading">Lorem ipsum dolor sit amet, consectetur adipiscing.</h2>
-    <button className="btn">Bottoms Up</button>
+    <p className="heroCopy">Fusce vitae interdum metus iaculis ligula. Quisque eu feugiat dolor.</p>
+    <button className="btn">Find Plonk</button>
+    </div>
     </div>
     </section>
     </div>
