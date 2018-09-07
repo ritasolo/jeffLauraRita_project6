@@ -224,7 +224,8 @@ p.heroCopy {
   color: #ffffff;
   font-weight: 700; }
   .btn:hover {
-    background-color: transparent; }
+    background-color: transparent;
+    color: #ffffff; }
 
 .formWrapper {
   width: 50%; }
