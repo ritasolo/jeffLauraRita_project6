@@ -14,8 +14,8 @@ class App extends Component {
     super();
     this.state = {
       wineArray: [],
-      colour: "red",
-      price: "$",
+      colour: "",
+      price: "",
       $: [],
       $$: [],
       $$$: [],
@@ -53,6 +53,31 @@ class App extends Component {
         xmlToJSON: false
       }
     });
+  };
+
+  // addToList = (colour) => {
+  //   this.setState({
+  //     colour: colour,
+  //   })
+  // }
+  // addToList2 = (price) => {
+  //   this.setState({
+  //     price: price,
+  //   })
+  // }
+
+  handleChangeColour = (e) => {
+    console.log(e.target.id)
+    this.setState({
+      colour: e.target.id
+    })
+  }
+
+  handleChangePrice = (e) => {
+    console.log(e.target.id)
+    this.setState({
+      price: e.target.id
+    })
   };
 
   componentDidMount() {
@@ -189,6 +214,17 @@ class App extends Component {
             };
           });
 
+          // handleChangePrice = value => {
+          //   this.setState({
+          //     priceRange: value
+          //   })
+          // };
+
+          // handleChangeColor = (e) => {
+          //   this.setState({
+          //     [e.target.name]: e.target.value
+          //   })
+          // }
           this.setState({
             $,
             $$,
@@ -219,7 +255,7 @@ class App extends Component {
               : null}
           </header>
           <section>
-            <Form />
+            <Form addToList={this.addToList} handleChangeColour={this.handleChangeColour} handleChangePrice={this.handleChangePrice} />
             <div className="choices" />
           </section>
         </div>
