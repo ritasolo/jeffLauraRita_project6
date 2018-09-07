@@ -6,6 +6,7 @@ class Form extends Component {
   constructor() {
     super();
     this.state = {
+<<<<<<< HEAD
       colour: " ",
       priceRange: 0,
       value: ""
@@ -37,22 +38,32 @@ class Form extends Component {
   };
 
   render() {
+=======
+      colour: "",
+      price: "",
+    };
+  }
+
+  render() {
+    // const { value } = this.state
+>>>>>>> a70d5be2535d19596fe2d42b3a913c6009ac7b10
     return (
       <section className="form">
         <div className="formWrapper">
           <form>
             <div className="priceRangeSelect">
-              <input
+              {/* <input
                 type="range"
                 min="1"
                 max="4"
                 value={this.state.value}
                 className="slider"
-                onClick={this.handleChange}
+                onChange={this.handleChangePrice}
                 id="priceRange"
                 step="1"
               />
             </div>
+<<<<<<< HEAD
             <input
               id="typeinp"
               type="range"
@@ -62,6 +73,15 @@ class Form extends Component {
               onChange={this.handleChange}
               step="1"
             />
+=======
+  <input 
+      id="typeinp" 
+      type="range" 
+      min="0" max="5" 
+      value={this.state.value} 
+      onChange={this.handleChangePrice}
+      step="1"/> */}
+>>>>>>> a70d5be2535d19596fe2d42b3a913c6009ac7b10
 
             {/* <div className='slider'>
         <Slider
@@ -75,41 +95,86 @@ class Form extends Component {
         <div className='value'>{value}</div>
       </div> */}
 
-            <fieldset className="colourSelect">
+              <fieldset className="priceSelect">
+                <ul>
+                  <li>
+                    <input
+                      onClick={this.props.handleChangePrice}
+                      name="price"
+                      id="$"
+                      type="radio"
+                      value={this.state.price}
+                    />
+                    <label htmlFor="$">$</label>
+                  </li>
+                  <li>
+                    <input
+                      onClick={this.props.handleChangePrice}
+                      name="price"
+                      id="$$"
+                      type="radio"
+                      value={this.state.price}
+                    />
+                    <label htmlFor="$$">$$</label>
+                  </li>
+                  <li>
+                    <input
+                      onClick={this.props.handleChangePrice}
+                      name="price"
+                      id="$$$"
+                      type="radio"
+                      value={this.state.price}
+                    />
+                    <label htmlFor="$$$">$$$</label>
+                  </li>
+                  <li>
+                    <input
+                      onClick={this.propsChangePrice}
+                      name="price"
+                      id="$$$$"
+                      type="radio"
+                      value={this.state.price}
+                    />
+                    <label htmlFor="$$$$">$$$$</label>
+                  </li>
+                </ul>
+            </fieldset>
+
+              <fieldset className="colourSelect">
               <ul>
                 <li>
                   <input
-                    onClick={this.handleChange}
+                    onChange={this.props.handleChangeColour}
                     name="colour"
                     id="red"
                     type="radio"
-                    value="red"
+                    value={this.state.colour}
                   />
                   <label htmlFor="red">Red</label>
                 </li>
                 <li>
                   <input
-                    onClick={this.handleChange}
+                    onChange={this.props.handleChangeColour}
                     name="colour"
                     id="white"
                     type="radio"
-                    value="white"
+                    value={this.state.colour}
                   />
                   <label htmlFor="white">White</label>
                 </li>
                 <li>
                   <input
-                    onClick={this.handleChange}
+                    onChange={this.props.handleChangeColour}
                     name="colour"
                     id="all"
                     type="radio"
-                    value="all"
+                    value={this.state.colour}
                   />
                   <label htmlFor="all">All</label>
                 </li>
               </ul>
             </fieldset>
-            <button type="submit">Submit</button>
+            </div>
           </form>
         </div>
       </section>
