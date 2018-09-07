@@ -161,132 +161,132 @@ class App extends Component {
                 onSale: response.has_clearance_sale
               };
             });
+          this.setState(
+            {
+              $all,
+              $$all,
+              $$$all,
+              $$$$all
+            },
+            () => {
+              const $ = this.state.$all;
+              const $$ = this.state.$$all;
+              const $$$ = this.state.$$$all;
+              const $$$$ = this.state.$$$$all;
+              console.log($);
+              console.log($$);
+              console.log($$$);
+              console.log($$$$);
 
-          const $white = $all
-            .filter(item => {
-              return item.secondary_category === "White Wine";
-            })
-            .map(response => {
-              return {
-                id: response.id,
-                name: response.name,
-                price: `$${response.price_in_cents / 100}`,
-                imgURL: response.image_url,
-                onSale: response.has_clearance_sale
-              };
-            });
+              const $white = $.filter(item => {
+                return item.secondary_category === "White Wine";
+              }).map(response => {
+                return {
+                  id: response.id,
+                  name: response.name,
+                  price: `$${response.price_in_cents / 100}`,
+                  imgURL: response.image_url,
+                  onSale: response.has_clearance_sale
+                };
+              });
 
-          const $red = $all
-            .filter(item => {
-              return item.secondary_category === "Red Wine";
-            })
-            .map(response => {
-              return {
-                id: response.id,
-                name: response.name,
-                price: `$${response.price_in_cents / 100}`,
-                imgURL: response.image_url,
-                onSale: response.has_clearance_sale
-              };
-            });
+              console.log($white);
 
-          const $$red = $$all
-            .filter(item => {
-              return item.secondary_category === "Red Wine";
-            })
-            .map(response => {
-              return {
-                id: response.id,
-                name: response.name,
-                price: `$${response.price_in_cents / 100}`,
-                imgURL: response.image_url,
-                onSale: response.has_clearance_sale
-              };
-            });
+              const $red = $.filter(item => {
+                return item.secondary_category === "Red Wine";
+              }).map(response => {
+                return {
+                  id: response.id,
+                  name: response.name,
+                  price: `$${response.price_in_cents / 100}`,
+                  imgURL: response.image_url,
+                  onSale: response.has_clearance_sale
+                };
+              });
 
-          const $$white = $$all
-            .filter(item => {
-              return item.secondary_category === "Red Wine";
-            })
-            .map(response => {
-              return {
-                id: response.id,
-                name: response.name,
-                price: `$${response.price_in_cents / 100}`,
-                imgURL: response.image_url,
-                onSale: response.has_clearance_sale
-              };
-            });
+              const $$red = $$.filter(item => {
+                return item.secondary_category === "Red Wine";
+              }).map(response => {
+                return {
+                  id: response.id,
+                  name: response.name,
+                  price: `$${response.price_in_cents / 100}`,
+                  imgURL: response.image_url,
+                  onSale: response.has_clearance_sale
+                };
+              });
 
-          const $$$white = $$$all
-            .filter(item => {
-              return item.secondary_category === "White Wine";
-            })
-            .map(response => {
-              return {
-                id: response.id,
-                name: response.name,
-                price: `$${response.price_in_cents / 100}`,
-                imgURL: response.image_url,
-                onSale: response.has_clearance_sale
-              };
-            });
+              const $$white = $$.filter(item => {
+                return item.secondary_category === "Red Wine";
+              }).map(response => {
+                return {
+                  id: response.id,
+                  name: response.name,
+                  price: `$${response.price_in_cents / 100}`,
+                  imgURL: response.image_url,
+                  onSale: response.has_clearance_sale
+                };
+              });
 
-          const $$$red = $$$all
-            .filter(item => {
-              return item.secondary_category === "Red Wine";
-            })
-            .map(response => {
-              return {
-                id: response.id,
-                name: response.name,
-                price: `$${response.price_in_cents / 100}`,
-                imgURL: response.image_url,
-                onSale: response.has_clearance_sale
-              };
-            });
+              const $$$white = $$$.filter(item => {
+                return item.secondary_category === "White Wine";
+              }).map(response => {
+                return {
+                  id: response.id,
+                  name: response.name,
+                  price: `$${response.price_in_cents / 100}`,
+                  imgURL: response.image_url,
+                  onSale: response.has_clearance_sale
+                };
+              });
 
-          const $$$$white = $$$$all
-            .filter(item => {
-              return item.secondary_category === "White Wine";
-            })
-            .map(response => {
-              return {
-                id: response.id,
-                name: response.name,
-                price: `$${response.price_in_cents / 100}`,
-                imgURL: response.image_url,
-                onSale: response.has_clearance_sale
-              };
-            });
+              const $$$red = $$$.filter(item => {
+                return item.secondary_category === "Red Wine";
+              }).map(response => {
+                return {
+                  id: response.id,
+                  name: response.name,
+                  price: `$${response.price_in_cents / 100}`,
+                  imgURL: response.image_url,
+                  onSale: response.has_clearance_sale
+                };
+              });
 
-          const $$$$red = $$$$all
-            .filter(item => {
-              return item.secondary_category === "Red Wine";
-            })
-            .map(response => {
-              return {
-                id: response.id,
-                name: response.name,
-                price: `$${response.price_in_cents / 100}`,
-                imgURL: response.image_url,
-                onSale: response.has_clearance_sale
-              };
-            });
-          this.setState({
-            $all,
-            $$all,
-            $$$all,
-            $$$$all,
-            $white,
-            $red,
-            $$white,
-            $$red,
-            $$$white,
-            $$$red,
-            $$$$white,
-            $$$$red
-          });
+              const $$$$white = $$$$.filter(item => {
+                return item.secondary_category === "White Wine";
+              }).map(response => {
+                return {
+                  id: response.id,
+                  name: response.name,
+                  price: `$${response.price_in_cents / 100}`,
+                  imgURL: response.image_url,
+                  onSale: response.has_clearance_sale
+                };
+              });
+
+              const $$$$red = $$$$.filter(item => {
+                return item.secondary_category === "Red Wine";
+              }).map(response => {
+                return {
+                  id: response.id,
+                  name: response.name,
+                  price: `$${response.price_in_cents / 100}`,
+                  imgURL: response.image_url,
+                  onSale: response.has_clearance_sale
+                };
+              });
+              this.setState({
+                $white,
+                $red,
+                $$white,
+                $$red,
+                $$$white,
+                $$$red,
+                $$$$white,
+                $$$$red
+              });
+            }
+          );
         }
       );
     });
