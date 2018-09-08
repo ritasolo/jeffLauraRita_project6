@@ -3,8 +3,9 @@ import axios from "axios";
 import "./App.css";
 import Qs from "qs";
 import Form from "./Form";
-import Header from "./Header"
-import Footer from "./Footer"
+import Header from "./Header";
+import Footer from "./Footer";
+import WineList from "./WineList";
 import _ from "lodash";
 import sampleSize from "lodash/sampleSize";
 
@@ -19,8 +20,8 @@ class App extends Component {
     super();
     this.state = {
       wineArray: [],
-      colour: "",
-      price: "",
+      colour: "all",
+      price: "$",
       $all: [],
       $$all: [],
       $$$all: [],
@@ -32,7 +33,8 @@ class App extends Component {
       $$$white: [],
       $$$red: [],
       $$$$white: [],
-      $$$$red: []
+      $$$$red: [],
+      random: ""
     };
   }
 
@@ -61,14 +63,12 @@ class App extends Component {
   };
 
   handleChangePrice = e => {
-    console.log(e.target.id);
     this.setState({
       price: e.target.id
     });
   };
 
   handleChangeColour = e => {
-    console.log(e.target.id);
     this.setState({
       colour: e.target.id
     });
@@ -76,12 +76,12 @@ class App extends Component {
 
   displayWines = () => {
     const userChoice = `${this.state.price}${this.state.colour}`;
-    console.log(userChoice);
-    // console.log(this.wineArray);
     const random = _.sampleSize(this.state[`${userChoice}`], 6);
     console.log(random);
-    // console.log("clicked");
     console.log("clicked");
+    this.setState({
+      random
+    });
   };
 
   componentDidMount() {
@@ -178,10 +178,6 @@ class App extends Component {
               const $$ = this.state.$$all;
               const $$$ = this.state.$$$all;
               const $$$$ = this.state.$$$$all;
-              console.log($);
-              console.log($$);
-              console.log($$$);
-              console.log($$$$);
 
               const $white = $.filter(item => {
                 return item.colour === "White Wine";
@@ -195,8 +191,6 @@ class App extends Component {
                   onSale: response.onSale
                 };
               });
-
-              console.log($white);
 
               const $red = $.filter(item => {
                 return item.colour === "Red Wine";
@@ -289,6 +283,8 @@ class App extends Component {
                 };
               });
 
+              const randomSample = _.sampleSize(this.state.wineArray, 6);
+
               this.setState({
                 $white,
                 $red,
@@ -297,7 +293,8 @@ class App extends Component {
                 $$$white,
                 $$$red,
                 $$$$white,
-                $$$$red
+                $$$$red,
+                random: randomSample
               });
             }
           );
@@ -307,7 +304,6 @@ class App extends Component {
   }
 
   render() {
-    // console.log(random);
     return (
       <Router>
         <div className="App">
@@ -323,7 +319,14 @@ class App extends Component {
               handleChangePrice={this.handleChangePrice}
               displayWines={this.displayWines}
             />
-            <div className="choices" />
+          </section>
+
+          <section>
+            <WineList
+              colour={this.state.colour}
+              price={this.state.price}
+              random={this.state.random}
+            />
           </section>
           <Footer />
         </div>
