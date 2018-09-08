@@ -43,7 +43,7 @@ class Wineinfo extends Component {
                 <div className="movie-single__description">
                     <header>
                         <h1>{this.state.wine.name}</h1>
-                        <h2>hey</h2>
+                        <h2>hi</h2>
                         <Link to="/">Back to Main Page</Link>
                     </header>
                 </div>
