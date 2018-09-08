@@ -6,8 +6,8 @@ import Form from "./Form";
 import Header from "./Header";
 import Footer from "./Footer";
 import WineList from "./WineList";
+import Wineinfo from "./Wineinfo";
 import _ from "lodash";
-import sampleSize from "lodash/sampleSize";
 
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
@@ -34,7 +34,7 @@ class App extends Component {
       $$$red: [],
       $$$$white: [],
       $$$$red: [],
-      random: ""
+      random: []
     };
   }
 
@@ -121,7 +121,9 @@ class App extends Component {
                 name: response.name,
                 price: `$${response.price_in_cents / 100}`,
                 imgURL: response.image_url,
-                onSale: response.has_clearance_sale
+                thumb: response.image_thumb_url,
+                onSale: response.has_clearance_sale,
+                sale: `$${response.regular_price_in_cents / 100}`
               };
             });
           const $$all = fullArray
@@ -135,7 +137,9 @@ class App extends Component {
                 name: response.name,
                 price: `$${response.price_in_cents / 100}`,
                 imgURL: response.image_url,
-                onSale: response.has_clearance_sale
+                thumb: response.image_thumb_url,
+                onSale: response.has_clearance_sale,
+                sale: `$${response.regular_price_in_cents / 100}`
               };
             });
           const $$$all = fullArray
@@ -149,7 +153,9 @@ class App extends Component {
                 name: response.name,
                 price: `$${response.price_in_cents / 100}`,
                 imgURL: response.image_url,
-                onSale: response.has_clearance_sale
+                thumb: response.image_thumb_url,
+                onSale: response.has_clearance_sale,
+                sale: `$${response.regular_price_in_cents / 100}`
               };
             });
           const $$$$all = fullArray
@@ -163,7 +169,9 @@ class App extends Component {
                 name: response.name,
                 price: `$${response.price_in_cents / 100}`,
                 imgURL: response.image_url,
-                onSale: response.has_clearance_sale
+                thumb: response.image_thumb_url,
+                onSale: response.has_clearance_sale,
+                sale: `$${response.regular_price_in_cents / 100}`
               };
             });
           this.setState(
@@ -188,7 +196,9 @@ class App extends Component {
                   name: response.name,
                   price: response.price,
                   imgURL: response.imgURL,
-                  onSale: response.onSale
+                  thumb: response.thumb,
+                  sale: response.sale,
+                  onSale: response.onSale,
                 };
               });
 
@@ -201,6 +211,8 @@ class App extends Component {
                   name: response.name,
                   price: response.price,
                   imgURL: response.imgURL,
+                  thumb: response.thumb,
+                  sale: response.sale,
                   onSale: response.onSale
                 };
               });
@@ -214,6 +226,8 @@ class App extends Component {
                   name: response.name,
                   price: response.price,
                   imgURL: response.imgURL,
+                  thumb: response.thumb,
+                  sale: response.sale,
                   onSale: response.onSale
                 };
               });
@@ -227,6 +241,8 @@ class App extends Component {
                   name: response.name,
                   price: response.price,
                   imgURL: response.imgURL,
+                  thumb: response.thumb,
+                  sale: response.sale,
                   onSale: response.onSale
                 };
               });
@@ -240,6 +256,8 @@ class App extends Component {
                   name: response.name,
                   price: response.price,
                   imgURL: response.imgURL,
+                  thumb: response.thumb,
+                  sale: response.sale,
                   onSale: response.onSale
                 };
               });
@@ -253,6 +271,8 @@ class App extends Component {
                   name: response.name,
                   price: response.price,
                   imgURL: response.imgURL,
+                  thumb: response.thumb,
+                  sale: response.sale,
                   onSale: response.onSale
                 };
               });
@@ -266,6 +286,8 @@ class App extends Component {
                   name: response.name,
                   price: response.price,
                   imgURL: response.imgURL,
+                  thumb: response.thumb,
+                  sale: response.sale,
                   onSale: response.onSale
                 };
               });
@@ -279,11 +301,13 @@ class App extends Component {
                   name: response.name,
                   price: response.price,
                   imgURL: response.imgURL,
+                  thumb: response.thumb,
+                  sale: response.sale,
                   onSale: response.onSale
                 };
               });
 
-              const randomSample = _.sampleSize(this.state.wineArray, 6);
+              // const randomSample = _.sampleSize(this.state.wineArray, 6);
 
               this.setState({
                 $white,
@@ -294,8 +318,9 @@ class App extends Component {
                 $$$red,
                 $$$$white,
                 $$$$red,
-                random: randomSample
+                random: _.sampleSize($all, 6)
               });
+              console.log(this.state.random)
             }
           );
         }
@@ -307,10 +332,6 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          {/* <header>
-            <h1>Plonk</h1>
-           
-          </header> */}
           <Header />
           <section>
             <Form
@@ -320,13 +341,13 @@ class App extends Component {
               displayWines={this.displayWines}
             />
           </section>
-
           <section>
-            <WineList
+            <WineList 
               colour={this.state.colour}
               price={this.state.price}
               random={this.state.random}
             />
+            <Route exact path="/products/:product_id" component={Wineinfo} />
           </section>
           <Footer />
         </div>

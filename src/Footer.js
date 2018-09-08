@@ -6,9 +6,9 @@ render(){
   return(
     <footer className="footerSection">
     <div className="socialIcons">
-    <i class="fab fa-facebook-square"></i>
-    <i class="fab fa-instagram"></i>
-    <i class="fab fa-twitter-square"></i>
+    <i className="fab fa-facebook-square"></i>
+    <i className="fab fa-instagram"></i>
+    <i className="fab fa-twitter-square"></i>
     </div>
     </footer>
   )
