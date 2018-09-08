@@ -5,7 +5,7 @@ class WineList extends Component {
   constructor() {
     super();
     this.state = {
-      name: ""
+      wine: ""
     };
   }
 
@@ -15,8 +15,8 @@ class WineList extends Component {
         {this.props.random.map((item, i) => {
           console.log(this.props.random)
           return (
-            // <Link to {`/products/${item.id}`>
-              <div key={item.id} className="wineChoice">
+            <Link to={`/products/${item.id}`}>
+            <div key={item.id} className="wineChoice">
                 <img src={item.thumb} alt="Different Kinds of Wine"/>
                 <h2>{item.name}</h2>
                 <div>
@@ -26,7 +26,7 @@ class WineList extends Component {
                   }
                 </div>
               </div>
-            // </Link>
+            </Link>
           )
         })
         }

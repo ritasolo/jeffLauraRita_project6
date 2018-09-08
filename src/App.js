@@ -332,22 +332,22 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <Header />
+          <Route exact path="/" component={Header} />
           <section>
-            <Form
+            <Route exact path="/" render={(props) => <Form {...props} addToList={this.addToList}
+              handleChangeColour={this.handleChangeColour}
+              handleChangePrice={this.handleChangePrice}
+              displayWines={this.displayWines} />} />
+            {/* <Form
               addToList={this.addToList}
               handleChangeColour={this.handleChangeColour}
               handleChangePrice={this.handleChangePrice}
               displayWines={this.displayWines}
-            />
+            /> */}
           </section>
           <section>
-            <WineList 
-              colour={this.state.colour}
-              price={this.state.price}
-              random={this.state.random}
-            />
-            <Route exact path="/products/:product_id" component={Wineinfo} />
+            <Route exact path="/" render={(props) => <WineList {...props} random={this.state.random} />} />
+            <Route exact path="/products/:wine_id" component={Wineinfo} />
           </section>
           <Footer />
         </div>
