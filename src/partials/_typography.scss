@@ -12,7 +12,7 @@
   font-family: "Oxygen", monospace;
 }
 
-@mixin lineHeight($lineHeight){
+@mixin lineHeight($lineHeight) {
   line-height: $lineHeight;
 }
 
