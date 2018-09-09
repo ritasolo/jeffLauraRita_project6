@@ -14,6 +14,7 @@ class Form extends Component {
   render() {
     // const { value } = this.state
     return (
+      <div className="formContainer clearfix">
       <section className="form">
         <div className="formWrapper">
           <form onSubmit={this.props.displayWines}>
@@ -133,6 +134,10 @@ class Form extends Component {
           <button onClick={this.props.displayWines}>Pick</button>
         </div>
       </section>
+      <figure className="imageWrapper">
+      <img src="https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt=""/>
+      </figure>
+      </div>
     );
   }
 }
