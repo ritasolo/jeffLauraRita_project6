@@ -122,7 +122,7 @@ class App extends Component {
                 price: `$${response.price_in_cents / 100}`,
                 imgURL: response.image_url,
                 thumb: response.image_thumb_url,
-                onSale: response.has_limited_time_offer,
+                onSale: response.has_limited_time_offer
                 // sale: `$${response.regular_price_in_cents / 100}`
               };
             });
@@ -138,7 +138,7 @@ class App extends Component {
                 price: `$${response.price_in_cents / 100}`,
                 imgURL: response.image_url,
                 thumb: response.image_thumb_url,
-                onSale: response.has_limited_time_offer,
+                onSale: response.has_limited_time_offer
                 // sale: `$${response.regular_price_in_cents / 100}`
               };
             });
@@ -154,7 +154,7 @@ class App extends Component {
                 price: `$${response.price_in_cents / 100}`,
                 imgURL: response.image_url,
                 thumb: response.image_thumb_url,
-                onSale: response.has_limited_time_offer,
+                onSale: response.has_limited_time_offer
                 // sale: `$${response.regular_price_in_cents / 100}`
               };
             });
@@ -163,7 +163,7 @@ class App extends Component {
               return item.price_in_cents > 1800 && item.price_in_cents < 2200;
             })
             .map(response => {
-              console.log(response)
+              // console.log(response)
               return {
                 id: response.id,
                 colour: response.secondary_category,
@@ -171,7 +171,7 @@ class App extends Component {
                 price: `$${response.price_in_cents / 100}`,
                 imgURL: response.image_url,
                 thumb: response.image_thumb_url,
-                onSale: response.has_limited_time_offer,
+                onSale: response.has_limited_time_offer
                 // sale: `$${response.regular_price_in_cents / 100}`
               };
             });
@@ -199,7 +199,7 @@ class App extends Component {
                   imgURL: response.imgURL,
                   thumb: response.thumb,
                   // sale: response.sale,
-                  onSale: response.onSale,
+                  onSale: response.onSale
                 };
               });
 
@@ -321,7 +321,7 @@ class App extends Component {
                 $$$$red,
                 random: _.sampleSize($all, 6)
               });
-              console.log(this.state.random)
+              console.log(this.state.random);
             }
           );
         }
@@ -333,18 +333,31 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-
           <Route exact path="/" component={Header} />
 
           <section>
-            <Route exact path="/" render={(props) => <Form {...props} addToList={this.addToList}
-              handleChangeColour={this.handleChangeColour}
-              handleChangePrice={this.handleChangePrice}
-              displayWines={this.displayWines} />} />
-
+            <Route
+              exact
+              path="/"
+              render={props => (
+                <Form
+                  {...props}
+                  addToList={this.addToList}
+                  handleChangeColour={this.handleChangeColour}
+                  handleChangePrice={this.handleChangePrice}
+                  displayWines={this.displayWines}
+                />
+              )}
+            />
           </section>
           <section className="results clearfix">
-            <Route exact path="/" render={(props) => <WineList {...props} random={this.state.random} />} />
+            <Route
+              exact
+              path="/"
+              render={props => (
+                <WineList {...props} random={this.state.random} />
+              )}
+            />
             <Route exact path="/products/:wine_id" component={Wineinfo} />
           </section>
           <Footer />
