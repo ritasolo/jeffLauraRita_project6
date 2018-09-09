@@ -54,7 +54,7 @@ render(){
                   <button onClick={this.logout}>Logout</button>
                 </Link>
                 <Link to={`/user/${this.state.user.uid}`}>
-                  <a href="#">Favourites</a>
+                  <button>Favourites</button>
                 </Link>
               </div>
               : <button onClick={this.login}>Login</button>
