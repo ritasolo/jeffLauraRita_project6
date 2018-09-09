@@ -5,9 +5,9 @@ class Header extends Component {
 render(){
   return(
     <div className="headerSection clearfix">
-    <header>
-      <h1>PLONK</h1>
-    </header>
+            <header>
+              <h1>PLONK</h1>
+            </header>
     <section className="hero">
     <div className="heroScreen">
     <div className="heroContent">

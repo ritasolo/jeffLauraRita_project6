@@ -16,6 +16,12 @@
   line-height: $lineHeight;
 }
 
+@mixin cardTitle($minPxFontSize, $maxPxFontSize, $minVpPx, $maxVpPx) {
+  // font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+  // font-size: calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width])));
+  // font-size: calc($minPxFontSize + ($maxPxFontSize - $minPxFontSize) * ((100vw - $minVpPx) / (2080px - $minVpPx)));
+}
+
 // headings //
 h1 {
   @include bodyFont(4rem);
@@ -28,6 +34,7 @@ h2 {
 
 h3 {
   @include headingFont(2rem);
+  @include lineHeight(1.2);
 }
 
 p {
