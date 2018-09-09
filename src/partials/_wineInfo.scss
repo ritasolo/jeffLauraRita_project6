@@ -9,24 +9,25 @@
 
     .imageWrapper {
       float: left;
-      width: 40%;
+      width: 45%;
 
       img {
         display: block;
-        width: 100%
+        width: 98%
       }
     }
 
     .content {
       float: left;
-      width: 60%;
+      width: 55%;
 
       .contentWrapper {
         margin-top: 50px;
 
         h1 {
           font-family: "Lora", monospace;
-          margin: 0;
+          color: $grey;
+          margin: 15px 0;
         }
 
         .priceWrapper {
@@ -48,19 +49,33 @@
           text-transform: uppercase;
         }
 
-        .wineservingSuggestBox{
+        .wineServingSuggestBox{
           border: $teal 2px solid;
           border-radius: 2px;
-          .wineservingSuggestTitle{
+          position:relative;
+          width: 450px;
+          .wineServingSuggestTitle {
             font-size:1rem;
+            text-transform: uppercase;
             background-color: #fff;
+            color: $teal;
+            position: absolute;
+            top:-22px;
+            left: 10px;
+            padding:5px;
+          }
+          .wineServingSuggest{
+            padding:16px;
+            // font-size: 1.8rem;
+            margin:0;
           }
         }
 
         ul {
           padding: 0;
           list-style-type: none;
-
+          color: $grey;
+          margin: 15px 0;
           li {
             font-size: 1.4rem;
             span{
@@ -77,11 +92,11 @@
         .btnAlt {
         background-color:transparent;
         padding: 15px 50px;
-        border: 2px solid $purple;
-        color: $purple;
+        border: 2px solid $grey;
+        color: $grey;
         font-weight: 700;
         &:hover{
-          background-color: $purple;
+          background-color: $grey;
           color: $white;
 
         }

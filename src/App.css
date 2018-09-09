@@ -183,8 +183,9 @@ h3 {
   line-height: 1.2; }
 
 p {
-  font-size: 1.8rem;
-  font-family: "Oxygen", monospace; }
+  font-size: 1.6rem;
+  font-family: "Oxygen", monospace;
+  color: #4a4a4a; }
 
 .btn {
   font-size: 1.4rem;
@@ -204,7 +205,6 @@ p {
 
 header h1 {
   float: left;
-  margin: 10px 50px;
   color: #dd9afc; }
 
 .heroContent {
@@ -328,18 +328,19 @@ p.heroCopy {
     clear: both; }
     .wineInfo .wrapper .imageWrapper {
       float: left;
-      width: 40%; }
+      width: 45%; }
       .wineInfo .wrapper .imageWrapper img {
         display: block;
-        width: 100%; }
+        width: 98%; }
     .wineInfo .wrapper .content {
       float: left;
-      width: 60%; }
+      width: 55%; }
       .wineInfo .wrapper .content .contentWrapper {
         margin-top: 50px; }
         .wineInfo .wrapper .content .contentWrapper h1 {
           font-family: "Lora", monospace;
-          margin: 0; }
+          color: #4a4a4a;
+          margin: 15px 0; }
         .wineInfo .wrapper .content .contentWrapper .priceWrapper p {
           font-size: 3rem;
           margin: 0; }
@@ -347,15 +348,28 @@ p.heroCopy {
             font-size: 1.8rem; }
         .wineInfo .wrapper .content .contentWrapper p::first-letter {
           text-transform: uppercase; }
-        .wineInfo .wrapper .content .contentWrapper .wineservingSuggestBox {
+        .wineInfo .wrapper .content .contentWrapper .wineServingSuggestBox {
           border: #a1d1ce 2px solid;
-          border-radius: 2px; }
-          .wineInfo .wrapper .content .contentWrapper .wineservingSuggestBox .wineservingSuggestTitle {
+          border-radius: 2px;
+          position: relative;
+          width: 450px; }
+          .wineInfo .wrapper .content .contentWrapper .wineServingSuggestBox .wineServingSuggestTitle {
             font-size: 1rem;
-            background-color: #fff; }
+            text-transform: uppercase;
+            background-color: #fff;
+            color: #a1d1ce;
+            position: absolute;
+            top: -22px;
+            left: 10px;
+            padding: 5px; }
+          .wineInfo .wrapper .content .contentWrapper .wineServingSuggestBox .wineServingSuggest {
+            padding: 16px;
+            margin: 0; }
         .wineInfo .wrapper .content .contentWrapper ul {
           padding: 0;
-          list-style-type: none; }
+          list-style-type: none;
+          color: #4a4a4a;
+          margin: 15px 0; }
           .wineInfo .wrapper .content .contentWrapper ul li {
             font-size: 1.4rem; }
             .wineInfo .wrapper .content .contentWrapper ul li span {
@@ -367,11 +381,11 @@ p.heroCopy {
         .wineInfo .wrapper .content .contentWrapper .btnAlt {
           background-color: transparent;
           padding: 15px 50px;
-          border: 2px solid #dd9afc;
-          color: #dd9afc;
+          border: 2px solid #4a4a4a;
+          color: #4a4a4a;
           font-weight: 700; }
           .wineInfo .wrapper .content .contentWrapper .btnAlt:hover {
-            background-color: #dd9afc;
+            background-color: #4a4a4a;
             color: #ffffff; }
 
 footer {
