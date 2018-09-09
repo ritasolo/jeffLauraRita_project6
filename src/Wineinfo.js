@@ -142,11 +142,14 @@ class Wineinfo extends Component {
         return(
             <div className="wineInfo clearfix">
                 <header>
-                    <h1>PLONK</h1>
+                    <div className="wrapper">
+                        <h1>PLONK</h1>
+                    </div>
                 </header>
                 <div className="wrapper">
 
                     <figure className="imageWrapper">
+                        <Link to="/">Back to Main Page</Link>
                         <img src={this.state.wine.image_url} alt={this.state.wine.name}/>
                     </figure>
 
@@ -158,7 +161,7 @@ class Wineinfo extends Component {
                             </div>
                             <p className="wineDescription">{`${this.state.wine.tasting_note}`}</p>
                             <div className="wineServingSuggestBox">
-                            <p className="wineServingSuggestTitle">Serving Suggestion</p>
+                                <p className="wineServingSuggestTitle">Serving Suggestion</p>
                                 <p className="wineServingSuggest">{`${this.state.wine.serving_suggestion}`}</p>
                             </div>
                             <ul>
@@ -166,8 +169,8 @@ class Wineinfo extends Component {
                                 <li><span>Price Per Litre: </span>{`${this.state.wine.price_per_liter_in_cents / 100}`}</li>
                                 <li><span>Alcohol/Vol: </span>{`${(this.state.wine.alcohol_content / 100)}%`}</li>
                             </ul>
-                            <button className="btn">Find near me</button>
-                            <button className="btn btnAlt">Add to Cellar</button>
+                            <button className="btn"><i class="fas fa-map-marker-alt"></i> Find near me</button>
+                            <button className="btn btnAlt"><i class="fas fa-plus"></i> Add to Cellar</button>
                         </div> {/* closes content wrapper */}
                     </div> {/* closes content */}
 
