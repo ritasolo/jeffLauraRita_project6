@@ -31,7 +31,7 @@ class Wineinfo extends Component {
             },
             xmlToJSON: false
         }).then(res => {
-            console.log(res.data);
+            console.log(res.data.result);
             this.setState({
                 wine: res.data.result
             })
@@ -42,9 +42,14 @@ class Wineinfo extends Component {
             <div className=".movie-single__poster">
                 <div className="movie-single__description">
                     <header>
-                        <h1>{this.state.wine.name}</h1>
-                        <h2>hi</h2>
-                        <Link to="/">Back to Main Page</Link>
+                        <img src={this.state.wine.image_url} alt="Wine you chose"/>
+                        <div className="info"></div>
+                            <h1>{this.state.wine.name}</h1>
+                            <p>Description:{this.state.wine.tasting_note}</p>
+                            <p>Price Per Litre: ${this.state.wine.price_per_liter_in_cents / 100}</p>
+                            <p>Alcohol/Volume: {(this.state.wine.alcohol_content / 100)}%</p>
+                            <p>Size:{this.state.wine.package_unit_volume_in_milliliters}mL </p>
+                            <Link to="/">Back to Main Page</Link>
                     </header>
                 </div>
             </div>
