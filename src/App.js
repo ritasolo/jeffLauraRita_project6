@@ -7,6 +7,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import WineList from "./WineList";
 import Wineinfo from "./Wineinfo";
+import SavedList from "./SavedList";
 import _ from "lodash";
 
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
@@ -73,6 +74,12 @@ class App extends Component {
       colour: e.target.id
     });
   };
+
+  appstate = (user) => {
+    this.setState({
+      user: user
+    })
+  }
 
   displayWines = () => {
     const userChoice = `${this.state.price}${this.state.colour}`;
@@ -333,7 +340,7 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <Route exact path="/" component={Header} />
+          <Route exact path="/" render={(props) => <Header {...props} appstate={this.appstate} />} />
 
           <section>
             <Route
@@ -351,14 +358,12 @@ class App extends Component {
             />
           </section>
           <section className="results clearfix">
-            <Route
-              exact
-              path="/"
-              render={props => (
-                <WineList {...props} random={this.state.random} />
-              )}
-            />
+            <Route exact path="/" render={(props) => <WineList {...props} random={this.state.random} />} />
             <Route exact path="/products/:wine_id" component={Wineinfo} />
+            {this.state.user != null ?
+              <Route exact path={`/user/${this.state.user.uid}`} component={SavedList} />
+              : null
+            }
           </section>
           <Footer />
         </div>
