@@ -35,7 +35,8 @@ class App extends Component {
       $$$red: [],
       $$$$white: [],
       $$$$red: [],
-      random: []
+      random: [],
+      user: null
     };
   }
 
