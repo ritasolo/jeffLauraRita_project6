@@ -323,7 +323,7 @@ p.heroCopy {
 .wineInfo {
   float: left;
   width: 100%;
-  height: 100%; }
+  height: 90vh; }
   .wineInfo .wrapper {
     clear: both; }
     .wineInfo .wrapper .imageWrapper {
@@ -332,14 +332,52 @@ p.heroCopy {
       .wineInfo .wrapper .imageWrapper img {
         display: block;
         width: 100%; }
-    .wineInfo .wrapper .contentWrapper {
-      float: left; }
-      .wineInfo .wrapper .contentWrapper h1 {
-        font-family: "Lora", monospace; }
+    .wineInfo .wrapper .content {
+      float: left;
+      width: 60%; }
+      .wineInfo .wrapper .content .contentWrapper {
+        margin-top: 50px; }
+        .wineInfo .wrapper .content .contentWrapper h1 {
+          font-family: "Lora", monospace;
+          margin: 0; }
+        .wineInfo .wrapper .content .contentWrapper .priceWrapper p {
+          font-size: 3rem;
+          margin: 0; }
+          .wineInfo .wrapper .content .contentWrapper .priceWrapper p span {
+            font-size: 1.8rem; }
+        .wineInfo .wrapper .content .contentWrapper p::first-letter {
+          text-transform: uppercase; }
+        .wineInfo .wrapper .content .contentWrapper .wineservingSuggestBox {
+          border: #a1d1ce 2px solid;
+          border-radius: 2px; }
+          .wineInfo .wrapper .content .contentWrapper .wineservingSuggestBox .wineservingSuggestTitle {
+            font-size: 1rem;
+            background-color: #fff; }
+        .wineInfo .wrapper .content .contentWrapper ul {
+          padding: 0;
+          list-style-type: none; }
+          .wineInfo .wrapper .content .contentWrapper ul li {
+            font-size: 1.4rem; }
+            .wineInfo .wrapper .content .contentWrapper ul li span {
+              font-weight: bold; }
+        .wineInfo .wrapper .content .contentWrapper .btn {
+          margin-right: 20px; }
+          .wineInfo .wrapper .content .contentWrapper .btn:hover {
+            color: #a1d1ce; }
+        .wineInfo .wrapper .content .contentWrapper .btnAlt {
+          background-color: transparent;
+          padding: 15px 50px;
+          border: 2px solid #dd9afc;
+          color: #dd9afc;
+          font-weight: 700; }
+          .wineInfo .wrapper .content .contentWrapper .btnAlt:hover {
+            background-color: #dd9afc;
+            color: #ffffff; }
 
 footer {
-  background-color: #dd9afc;
-  clear: both; }
+  background-color: #4a4a4a;
+  clear: both;
+  height: 10vh; }
 
 .socialIcons {
   font-size: 3rem;
@@ -347,7 +385,7 @@ footer {
   margin: 0 auto; }
   .socialIcons i {
     padding: 10px 20px;
-    color: #ffffff;
+    color: #dd9afc;
     transition: transform 1s; }
     .socialIcons i:hover {
       transform: scale(1.2); }

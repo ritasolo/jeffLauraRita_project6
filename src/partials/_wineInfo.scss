@@ -1,24 +1,92 @@
+.wineInfo {
+  //  height: 95vh;
+  float: left;
+  width: 100%;
+  height: 90vh;
 
-.wineInfo{
-//  height: 95vh;
-  float:left;
-  width:100%;
-  height:100%;
   .wrapper {
-  clear: both;
+    clear: both;
+
     .imageWrapper {
-    float: left;
-    width: 40%;
+      float: left;
+      width: 40%;
+
       img {
-      display: block;
-      width: 100%
+        display: block;
+        width: 100%
+      }
     }
-  }
-  .contentWrapper {
-    float: left;
-    h1{
-      font-family: "Lora", monospace;
-    }
+
+    .content {
+      float: left;
+      width: 60%;
+
+      .contentWrapper {
+        margin-top: 50px;
+
+        h1 {
+          font-family: "Lora", monospace;
+          margin: 0;
+        }
+
+        .priceWrapper {
+          p {
+            font-size: 3rem;
+            margin: 0;
+
+            span {
+              font-size: 1.8rem;
+            }
+          }
+        }
+
+        .wineDescription {
+
+        }
+
+        p::first-letter {
+          text-transform: uppercase;
+        }
+
+        .wineservingSuggestBox{
+          border: $teal 2px solid;
+          border-radius: 2px;
+          .wineservingSuggestTitle{
+            font-size:1rem;
+            background-color: #fff;
+          }
+        }
+
+        ul {
+          padding: 0;
+          list-style-type: none;
+
+          li {
+            font-size: 1.4rem;
+            span{
+              font-weight: bold;
+            }
+          }
+        }
+        .btn {
+          margin-right: 20px;
+          &:hover{
+            color: $teal;
+          }
+        }
+        .btnAlt {
+        background-color:transparent;
+        padding: 15px 50px;
+        border: 2px solid $purple;
+        color: $purple;
+        font-weight: 700;
+        &:hover{
+          background-color: $purple;
+          color: $white;
+
+        }
+        }
+      }
     }
   }
 }
