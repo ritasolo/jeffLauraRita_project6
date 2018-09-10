@@ -17,10 +17,7 @@ class Wineinfo extends Component {
       latitude: "",
       longitude: "",
       nearbyStoreInfo: [],
-      stockSearch: [],
-      stockInformation: [],
-      storeInfo: [],
-      stockResults: []
+      arrayOfStock: []
     };
   }
 
@@ -103,7 +100,18 @@ class Wineinfo extends Component {
             return store.data.result.length > 0;
           })
           .map(store => store.data);
-        console.log(filteredData);
+        const arrayOfStock = filteredData.map(storeInfo => {
+          return {
+            storeName: storeInfo.store.name,
+            storeId: storeInfo.store.id,
+            stockAmount: storeInfo.result[0].quantity
+          };
+        });
+        console.log(arrayOfStock);
+        this.setState({
+          arrayOfStock
+        });
+        console.log(arrayOfStock);
       });
     });
 
@@ -197,7 +205,7 @@ class Wineinfo extends Component {
               <button onClick={this.addToFavs} className="btn btnAlt">
                 <i class="fas fa-plus" /> Add to Cellar
               </button>
-              <DisplayStock />
+              <DisplayStock arrayOfStock={this.state.arrayOfStock} />
             </div>{" "}
             {/* closes content wrapper */}
           </div>{" "}
