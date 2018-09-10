@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 // import Slider from "react-rangeslider";
 // import 'react-rangeslider/lib/index.css';
+import drinkingForest from "./assets/drinkingForest.jpg";
 
 class Form extends Component {
   constructor() {
@@ -135,7 +136,7 @@ class Form extends Component {
         </div>
       </section>
       <figure className="imageWrapper">
-      <img src="https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt=""/>
+          <img src={drinkingForest} alt=""/>
       </figure>
       </div>
     );

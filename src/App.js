@@ -45,7 +45,7 @@ class App extends Component {
       method: "GET",
       url: "http://proxy.hackeryou.com",
       dataResponse: "json",
-      paramsSerializer: function(params) {
+      paramsSerializer: function (params) {
         return Qs.stringify(params, { arrayFormat: "brackets" });
       },
       params: {
