@@ -2,17 +2,23 @@ import React, { Component } from "react";
 import Qs from "qs";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import firebase from "firebase";
+import swal from 'sweetalert';
+
+const auth = firebase.auth();
 
 class Wineinfo extends Component {
   constructor() {
     super();
     this.state = {
-      wine: {},
+      wine: {
+
+      },
       locations: {},
       latitude: "",
       longitude: "",
       inStockStoreInfo: [],
-      nearbyStoreInfo: []
+      nearbyStoreInfo: [],
     };
   }
 
@@ -26,6 +32,28 @@ class Wineinfo extends Component {
       this.stores();
     });
   };
+  
+  addToFavs = (wine) => {
+    swal("Added To Your Favourites!","Please check your favourites for your list." , "success");
+    this.dbref.push(this.state.wine)
+  }
+
+  componentDidMount() {
+    auth.onAuthStateChanged((user) => {
+      if (user) {
+        this.setState({
+          user
+        }, () => {
+          this.dbref = firebase.database().ref(this.state.wine.uid)
+          this.dbref.on('value', (snapshot) => {
+            if (snapshot.val()) {
+            }
+            console.log(snapshot.val())
+          })
+        })
+      }
+    });
+  }
 
   stores = () =>
     axios({
@@ -58,6 +86,7 @@ class Wineinfo extends Component {
     });
 
   componentDidMount() {
+    this.dbref = firebase.database().ref(`${this.props.uid}`)
     axios({
       method: "GET",
       url: "http://proxy.hackeryou.com",
@@ -156,7 +185,7 @@ class Wineinfo extends Component {
               <button onClick={this.geolocation} className="btn">
                 <i class="fas fa-map-marker-alt" /> Find near me
               </button>
-              <button className="btn btnAlt">
+              <button onClick={this.addToFavs} className="btn btnAlt">
                 <i class="fas fa-plus" /> Add to Cellar
               </button>
             </div>{" "}
