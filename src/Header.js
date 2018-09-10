@@ -14,6 +14,17 @@ class Header extends Component {
       user: null,
     }
   }
+  componentDidMount() {
+    auth.onAuthStateChanged((user) => {
+      if (user) {
+        this.setState({
+          user
+        }, () => {
+          this.dbref = firebase.database().ref(this.state.user.uid)
+        })
+      }
+    });
+  }
   login = () => {
     auth.signInWithPopup(provider).then((res) => {
       console.log(res)
@@ -28,41 +39,30 @@ class Header extends Component {
       this.setState({
         user: null
       })
+      this.props.appstate(this.state.user)
     })
-  }
-  componentDidMount() {
-    auth.onAuthStateChanged((user) => {
-      if (user) {
-        this.setState({
-          user
-        }, () => {
-          this.dbref = firebase.database().ref(this.state.user.uid)
-        })
-      }
-    });
   }
 render(){
   return(
-    <Router>
     <div className="headerSection clearfix">
     <div className="wrapper">
             <header>
               <h1>PLONK</h1>
-              {/* authentication starts */}
-              <nav>
-            {this.state.user
-              ?
-              <div>
-               <li> <Link to="/">
-                  <button onClick={this.logout}>Logout</button>
-                </Link> </li>
-                <li><Link to={`/user/${this.state.user.uid}`}>
-                  <button>Favourites</button>
-                </Link> </li>
-              </div>
-              : <li> <button onClick={this.login}>Login</button> </li>
-            } {/* authentication ends */}
-            </nav>
+              {this.state.user
+                ?
+                <div>
+                  <Link to="/">
+                    <button onClick={this.logout}>Logout</button>
+                  </Link>
+                  <Link to={`/user/${this.state.user.uid}`}>
+                    <button>Favourites</button>
+                  </Link>
+                </div>
+                : 
+                <div>
+                  <button onClick={this.login}>Login</button>
+                </div>
+              }
             </header>
         </div>
     <section className="hero">
@@ -77,7 +77,6 @@ render(){
     </div>
     </section>
     </div>
-    </Router>
   )
 }
 
