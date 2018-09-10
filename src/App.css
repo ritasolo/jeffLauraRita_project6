@@ -242,44 +242,50 @@ p.heroCopy {
 .formContainer {
   width: 100%; }
   .formContainer .form {
-    width: 40%;
+    width: 50%;
     height: 300px;
     float: left;
     background-color: #a1d1ce; }
-    .formContainer .form .formWrapper form .filters fieldset {
-      border: none; }
-      .formContainer .form .formWrapper form .filters fieldset h3 {
-        color: #4a4a4a; }
-      .formContainer .form .formWrapper form .filters fieldset ul {
-        list-style-type: none;
-        padding: 0; }
-        .formContainer .form .formWrapper form .filters fieldset ul li {
-          display: inline;
-          margin: 20px; }
-          .formContainer .form .formWrapper form .filters fieldset ul li .radio {
-            color: #999;
-            position: relative; }
-            .formContainer .form .formWrapper form .filters fieldset ul li .radio span {
-              position: relative;
-              padding-left: 20px; }
-            .formContainer .form .formWrapper form .filters fieldset ul li .radio span:after {
-              content: '';
-              width: 15px;
-              height: 15px;
-              border: 3px solid;
-              position: absolute;
-              left: 0;
-              top: 1px;
-              border-radius: 100%; }
-            .formContainer .form .formWrapper form .filters fieldset ul li .radio input[type="radio"] {
-              cursor: pointer;
-              position: absolute;
-              width: 100%;
-              height: 100%;
-              z-index: 1;
-              opacity: 0; }
+    .formContainer .form .formWrapper {
+      height: 300px;
+      float: right; }
+      .formContainer .form .formWrapper form .filters {
+        width: 540px; }
+        .formContainer .form .formWrapper form .filters fieldset {
+          border: none;
+          padding: 0; }
+          .formContainer .form .formWrapper form .filters fieldset h3 {
+            color: #4a4a4a; }
+          .formContainer .form .formWrapper form .filters fieldset ul {
+            list-style-type: none;
+            padding: 0; }
+            .formContainer .form .formWrapper form .filters fieldset ul li {
+              display: inline;
+              margin: 20px; }
+              .formContainer .form .formWrapper form .filters fieldset ul li .radio {
+                color: rgba(74, 74, 74, 0.75);
+                position: relative; }
+                .formContainer .form .formWrapper form .filters fieldset ul li .radio span {
+                  position: relative;
+                  padding: 5px 0 0 30px; }
+                .formContainer .form .formWrapper form .filters fieldset ul li .radio span:after {
+                  content: '';
+                  width: 20px;
+                  height: 20px;
+                  border: 3px solid;
+                  position: absolute;
+                  left: 0;
+                  top: 1px;
+                  border-radius: 100%; }
+                .formContainer .form .formWrapper form .filters fieldset ul li .radio input[type="radio"] {
+                  cursor: pointer;
+                  position: absolute;
+                  width: 100%;
+                  height: 100%;
+                  z-index: 1;
+                  opacity: 0; }
   .formContainer .formQuote {
-    width: 60%;
+    width: 50%;
     float: right;
     height: 300px;
     background-color: #4a4a4a; }
@@ -294,6 +300,19 @@ p.heroCopy {
         font-size: 2.8rem;
         padding: 100px;
         color: #dd9afc; }
+
+.radio input[type="radio"]:checked + span {
+  color: #4a4a4a; }
+
+.radio input[type="radio"]:checked + span:before {
+  content: '';
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  background: #4a4a4a;
+  left: 7px;
+  top: 8px;
+  border-radius: 100%; }
 
 .results {
   margin: 0px auto;
