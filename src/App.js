@@ -18,6 +18,7 @@ const apiKey =
   "MDoxM2NjMDdlNC1iMDgwLTExZTgtYTc1NS0wYjUyYWEyN2NiMzM6TGVSYzFIVmJaMVEySE5rem1RdURPTFdGYnFKYTdZeHpkTVRi";
 const provider = new firebase.auth.GoogleAuthProvider();
 const auth = firebase.auth();
+// const dbRef = firebase.database().ref(/User/`${this.state.user.uid}`);
 
 class App extends Component {
   constructor() {
@@ -85,6 +86,12 @@ class App extends Component {
     });
   };
 
+  favourites = (wine) => {
+    this.dbref.push({
+      Wines: wine
+    })
+  }
+
   displayWines = () => {
     const userChoice = `${this.state.price}${this.state.colour}`;
     const random = _.sampleSize(this.state[`${userChoice}`], 6);
@@ -98,6 +105,7 @@ class App extends Component {
   componentDidMount() {
     auth.onAuthStateChanged(user => {
       if (user) {
+<<<<<<< HEAD
         this.setState(
           {
             user
@@ -111,6 +119,21 @@ class App extends Component {
             });
           }
         );
+=======
+        this.setState({
+          user
+        }, () => {
+          this.dbref = firebase.database().ref(this.state.user.uid)
+          this.dbref.on('value', (snapshot) => {
+        if (snapshot.val()) {
+          this.setState({
+            counter: snapshot.val().count
+          })
+        }
+        console.log(snapshot.val())
+      })
+        })
+>>>>>>> a0716424f7c7e16d41646a705f874cddcd9655c3
       }
     });
     const wineRequests = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(
@@ -382,6 +405,7 @@ class App extends Component {
             />
           </section>
           <section className="results clearfix">
+<<<<<<< HEAD
             <Route
               exact
               path="/"
@@ -401,6 +425,14 @@ class App extends Component {
                 component={SavedList}
               />
             ) : null}
+=======
+            <Route exact path="/" render={(props) => <WineList {...props} random={this.state.random} />} />
+            <Route exact path="/products/:wine_id" render={(props) => <Wineinfo {...props} user={this.state.user} favourites={this.favourites} />} />
+            {this.state.user ?
+              <Route exact path={`/user/${this.state.user.uid}`} component={SavedList} />
+              : null
+            }
+>>>>>>> a0716424f7c7e16d41646a705f874cddcd9655c3
           </section>
           <Footer />
         </div>
