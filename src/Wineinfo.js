@@ -11,9 +11,7 @@ class Wineinfo extends Component {
   constructor() {
     super();
     this.state = {
-      wine: {
-
-      },
+      wine: {},
       locations: {},
       latitude: "",
       longitude: "",
@@ -21,7 +19,7 @@ class Wineinfo extends Component {
       nearbyStoreInfo: [],
     };
   }
-
+  
   geolocation = () => {
     navigator.geolocation.getCurrentPosition(position => {
       this.setState({
@@ -35,25 +33,9 @@ class Wineinfo extends Component {
   
   addToFavs = (wine) => {
     swal("Added To Your Favourites!","Please check your favourites for your list." , "success");
-    this.dbref.push(this.state.wine)
+    this.props.favourites(this.state.wine)
   }
 
-  componentDidMount() {
-    auth.onAuthStateChanged((user) => {
-      if (user) {
-        this.setState({
-          user
-        }, () => {
-          this.dbref = firebase.database().ref(this.state.wine.uid)
-          this.dbref.on('value', (snapshot) => {
-            if (snapshot.val()) {
-            }
-            console.log(snapshot.val())
-          })
-        })
-      }
-    });
-  }
 
   stores = () =>
     axios({
@@ -86,7 +68,6 @@ class Wineinfo extends Component {
     });
 
   componentDidMount() {
-    this.dbref = firebase.database().ref(`${this.props.uid}`)
     axios({
       method: "GET",
       url: "http://proxy.hackeryou.com",
