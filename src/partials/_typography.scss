@@ -22,8 +22,8 @@ h1 {
 }
 
 h2 {
-  @include headingFont(6rem);
-  @include lineHeight(1);
+  @include headingFont(5rem);
+  @include lineHeight(1.2);
 }
 
 h3 {

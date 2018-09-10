@@ -1,16 +1,16 @@
 
-.hero {
-  background-image: url(./assets/heroGirl.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100vh;
-}
+// .hero {
+//   background-image: url(./assets/heroGirl.jpg);
+//   background-position: center;
+//   background-repeat: no-repeat;
+//   background-size: cover;
+//   height: 100vh;
+// }
 
-.heroScreen{
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.3);
-}
+// .heroScreen{
+//   height: 100vh;
+//   background-color: rgba(0, 0, 0, 0.3);
+// }
 
 header h1 {
   float:left;
@@ -18,12 +18,31 @@ header h1 {
   color: $purple;
 }
 
+.hero{
+  // background-image: url(./assets/heroGirl.jpg);
+    background-image: url(./assets/heroGirl.jpg);
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  .heroScreen{
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    .wrapper{
+      height:100vh;
+    }
+  }
+}
+
 .heroContent {
   float:right;
-  width:40%;
+  width:50%;
   position: relative;
-  margin-right: 30px;
+  margin-right: 0;
   top: 50%;
+  right: - 100px;
+  // right:100px;
   transform: translateY(-50%);
 }
 
