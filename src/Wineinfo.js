@@ -23,7 +23,7 @@ class Wineinfo extends Component {
       stockResults: []
     };
   }
-  
+
   geolocation = () => {
     navigator.geolocation.getCurrentPosition(position => {
       this.setState({
@@ -34,12 +34,15 @@ class Wineinfo extends Component {
       this.stores();
     });
   };
-  
-  addToFavs = (wine) => {
-    swal("Added To Your Favourites!","Please check your favourites for your list." , "success");
-    this.props.favourites(this.state.wine)
-  }
 
+  addToFavs = wine => {
+    swal(
+      "Added To Your Favourites!",
+      "Please check your favourites for your list.",
+      "success"
+    );
+    this.props.favourites(this.state.wine);
+  };
 
   stores = () =>
     axios({
@@ -105,10 +108,6 @@ class Wineinfo extends Component {
     });
 
   componentDidMount() {
-<<<<<<< HEAD
-    this.dbref = firebase.database().ref(`${this.props.uid}`);
-=======
->>>>>>> a0716424f7c7e16d41646a705f874cddcd9655c3
     axios({
       method: "GET",
       url: "http://proxy.hackeryou.com",
