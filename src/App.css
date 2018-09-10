@@ -192,6 +192,10 @@ p {
   font-family: "Oxygen", monospace;
   text-transform: uppercase; }
 
+.filters li {
+  font-size: 1.6rem;
+  font-family: "Oxygen", monospace; }
+
 header h1 {
   float: left;
   color: #dd9afc; }
@@ -237,27 +241,63 @@ p.heroCopy {
 
 .formContainer {
   width: 100%; }
-
-.form {
-  width: 40%;
-  float: left;
-  background-color: purple; }
-
-.formContainer .imageWrapper {
-  width: 60%;
-  float: left;
-  border: yellow solid 3px;
-  background-color: yellow; }
-  .formContainer .imageWrapper img {
-    object-fit: cover; }
-
-.priceRangeSelect,
-.slidecontainer {
-  width: 100%;
-  /* Width of the outside container */ }
+  .formContainer .form {
+    width: 40%;
+    height: 300px;
+    float: left;
+    background-color: #a1d1ce; }
+    .formContainer .form .formWrapper form .filters fieldset {
+      border: none; }
+      .formContainer .form .formWrapper form .filters fieldset h3 {
+        color: #4a4a4a; }
+      .formContainer .form .formWrapper form .filters fieldset ul {
+        list-style-type: none;
+        padding: 0; }
+        .formContainer .form .formWrapper form .filters fieldset ul li {
+          display: inline;
+          margin: 20px; }
+          .formContainer .form .formWrapper form .filters fieldset ul li .radio {
+            color: #999;
+            position: relative; }
+            .formContainer .form .formWrapper form .filters fieldset ul li .radio span {
+              position: relative;
+              padding-left: 20px; }
+            .formContainer .form .formWrapper form .filters fieldset ul li .radio span:after {
+              content: '';
+              width: 15px;
+              height: 15px;
+              border: 3px solid;
+              position: absolute;
+              left: 0;
+              top: 1px;
+              border-radius: 100%; }
+            .formContainer .form .formWrapper form .filters fieldset ul li .radio input[type="radio"] {
+              cursor: pointer;
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              z-index: 1;
+              opacity: 0; }
+  .formContainer .formQuote {
+    width: 60%;
+    float: right;
+    height: 300px;
+    background-color: #4a4a4a; }
+    .formContainer .formQuote .formQuoteScreen {
+      height: 300px; }
+      .formContainer .formQuote .formQuoteScreen .quote {
+        margin: 0 auto;
+        text-align: center;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 2.8rem;
+        padding: 100px;
+        color: #dd9afc; }
 
 .results {
-  margin: 0px auto; }
+  margin: 0px auto;
+  clear: both; }
 
 .wrapper {
   width: 90%;
