@@ -45,34 +45,30 @@ class Header extends Component {
 render(){
   return(
     <div className="headerSection clearfix">
-    <div className="wrapper">
             <header>
               <h1>PLONK</h1>
-              {/* authentication starts */}
-              <nav>
             {this.state.user
               ?
               <div>
-               <li> <Link to="/">
+                <Link to="/">
                   <button onClick={this.logout}>Logout</button>
-                </Link> </li>
-                <li><Link to={`/user/${this.state.user.uid}`}>
+                </Link>
+                <Link to={`/user/${this.state.user.uid}`}>
                   <button>Favourites</button>
-                </Link> </li>
+                </Link>
               </div>
-              : <li> <button onClick={this.login}>Login</button> </li>
-            } {/* authentication ends */}
-            </nav>
+              : 
+              <div>
+                <button onClick={this.login}>Login</button>
+              </div>
+            }
             </header>
-        </div>
     <section className="hero">
     <div className="heroScreen">
-    <div className="wrapper">
     <div className="heroContent">
-    < h2 className = "heroHeading" >Lorem ipsum dolor sit amet, lorem noluisse vel ex sed audire. </h2>
-    <p className="heroCopy">Find your next bottle for under $22</p>
+    <h2 className="heroHeading">Lorem ipsum dolor sit amet, consectetur adipiscing.</h2>
+    <p className="heroCopy">Fusce vitae interdum metus iaculis ligula. Quisque eu feugiat dolor.</p>
     <button className="btn">Find Plonk</button>
-    </div>
     </div>
     </div>
     </section>
