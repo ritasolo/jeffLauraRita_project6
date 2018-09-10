@@ -40,3 +40,7 @@ p {
   @include bodyFont(1.4rem);
   text-transform: uppercase;
 }
+
+.filters li {
+  @include bodyFont(1.6rem);
+}
