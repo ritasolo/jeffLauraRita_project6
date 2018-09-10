@@ -18,6 +18,7 @@ const apiKey =
   "MDoxM2NjMDdlNC1iMDgwLTExZTgtYTc1NS0wYjUyYWEyN2NiMzM6TGVSYzFIVmJaMVEySE5rem1RdURPTFdGYnFKYTdZeHpkTVRi";
 const provider = new firebase.auth.GoogleAuthProvider();
 const auth = firebase.auth();
+// const dbRef = firebase.database().ref(/User/`${this.state.user.uid}`);
 
 class App extends Component {
   constructor() {
@@ -85,6 +86,12 @@ class App extends Component {
     })
   }
 
+  favourites = (wine) => {
+    this.dbref.push({
+      Wines: wine
+    })
+  }
+
   displayWines = () => {
     const userChoice = `${this.state.price}${this.state.colour}`;
     const random = _.sampleSize(this.state[`${userChoice}`], 6);
@@ -104,6 +111,9 @@ class App extends Component {
           this.dbref = firebase.database().ref(this.state.user.uid)
           this.dbref.on('value', (snapshot) => {
         if (snapshot.val()) {
+          this.setState({
+            counter: snapshot.val().count
+          })
         }
         console.log(snapshot.val())
       })
@@ -376,7 +386,7 @@ class App extends Component {
           </section>
           <section className="results clearfix">
             <Route exact path="/" render={(props) => <WineList {...props} random={this.state.random} />} />
-            <Route exact path="/products/:wine_id" render={(props) => <Wineinfo {...props} user={this.state.user} />} />
+            <Route exact path="/products/:wine_id" render={(props) => <Wineinfo {...props} user={this.state.user} favourites={this.favourites} />} />
             {this.state.user ?
               <Route exact path={`/user/${this.state.user.uid}`} component={SavedList} />
               : null

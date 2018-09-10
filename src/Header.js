@@ -47,21 +47,21 @@ render(){
     <div className="headerSection clearfix">
             <header>
               <h1>PLONK</h1>
-              {this.state.user
-                ?
-                <div>
-                  <Link to="/">
-                    <button onClick={this.logout}>Logout</button>
-                  </Link>
-                  <Link to={`/user/${this.state.user.uid}`}>
-                    <button>Favourites</button>
-                  </Link>
-                </div>
-                : 
-                <div>
-                  <button onClick={this.login}>Login</button>
-                </div>
-              }
+            {this.state.user
+              ?
+              <div>
+                <Link to="/">
+                  <button onClick={this.logout}>Logout</button>
+                </Link>
+                <Link to={`/user/${this.state.user.uid}`}>
+                  <button>Favourites</button>
+                </Link>
+              </div>
+              : 
+              <div>
+                <button onClick={this.login}>Login</button>
+              </div>
+            }
             </header>
     <section className="hero">
     <div className="heroScreen">

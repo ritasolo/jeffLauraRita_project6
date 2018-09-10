@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 // import Slider from "react-rangeslider";
 // import 'react-rangeslider/lib/index.css';
+import drinkingForest from "./assets/drinkingForest.jpg";
 
 class Form extends Component {
   constructor() {
@@ -14,10 +15,11 @@ class Form extends Component {
   render() {
     // const { value } = this.state
     return (
-      <section className="form">
+      <section className="formContainer clearfix">
+      <div className="form">
         <div className="formWrapper">
           <form onSubmit={this.props.displayWines}>
-            <div className="priceRangeSelect">
+            <div className="filters">
               {/* <input
                 type="range"
                 min="1"
@@ -50,8 +52,10 @@ class Form extends Component {
       </div> */}
 
               <fieldset className="priceSelect">
+              <h3>Set your budget:</h3>
                 <ul>
                   <li>
+                    <label className="radio inline" htmlFor="$">
                     <input
                       onClick={this.props.handleChangePrice}
                       name="price"
@@ -59,9 +63,11 @@ class Form extends Component {
                       type="radio"
                       value={this.state.price}
                     />
-                    <label htmlFor="$">$</label>
+                     <span> $</span>
+                     </label>
                   </li>
                   <li>
+                    <label className="radio inline" htmlFor="$$"> 
                     <input
                       onClick={this.props.handleChangePrice}
                       name="price"
@@ -69,9 +75,11 @@ class Form extends Component {
                       type="radio"
                       value={this.state.price}
                     />
-                    <label htmlFor="$$">$$</label>
+                    <span> $$</span>
+                    </label>
                   </li>
                   <li>
+                    <label className="radio inline" htmlFor="$$$">
                     <input
                       onClick={this.props.handleChangePrice}
                       name="price"
@@ -79,9 +87,11 @@ class Form extends Component {
                       type="radio"
                       value={this.state.price}
                     />
-                    <label htmlFor="$$$">$$$</label>
+                    <span> $$$</span>
+                    </label>
                   </li>
                   <li>
+                    <label className="radio inline" htmlFor="$$$$"> 
                     <input
                       onClick={this.props.handleChangePrice}
                       name="price"
@@ -89,14 +99,17 @@ class Form extends Component {
                       type="radio"
                       value={this.state.price}
                     />
-                    <label htmlFor="$$$$">$$$$</label>
+                    <span> $$$$</span>
+                    </label>
                   </li>
                 </ul>
               </fieldset>
 
               <fieldset className="colourSelect">
+                <h3>Pick your plonk:</h3>
                 <ul>
                   <li>
+                    <label className="radio inline" htmlFor="red"> 
                     <input
                       onChange={this.props.handleChangeColour}
                       name="colour"
@@ -104,9 +117,11 @@ class Form extends Component {
                       type="radio"
                       value={this.state.colour}
                     />
-                    <label htmlFor="red">Red</label>
+                    <span> Red</span>
+                    </label>
                   </li>
                   <li>
+                    <label className="radio inline" htmlFor="white"> 
                     <input
                       onChange={this.props.handleChangeColour}
                       name="colour"
@@ -114,9 +129,11 @@ class Form extends Component {
                       type="radio"
                       value={this.state.colour}
                     />
-                    <label htmlFor="white">White</label>
+                    <span> White</span>
+                    </label>
                   </li>
                   <li>
+                    <label className="radio inline" htmlFor="all">
                     <input
                       onChange={this.props.handleChangeColour}
                       name="colour"
@@ -124,7 +141,8 @@ class Form extends Component {
                       type="radio"
                       value={this.state.colour}
                     />
-                    <label htmlFor="all">All</label>
+                    <span> All</span>
+                    </label>
                   </li>
                 </ul>
               </fieldset>
@@ -132,6 +150,12 @@ class Form extends Component {
           </form>
           <button onClick={this.props.displayWines}>Pick</button>
         </div>
+      </div>
+   <div className="formQuote">
+          <div className="formQuoteScreen">
+          <h2 className="quote">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. </h2>
+          </div>
+      </div>
       </section>
     );
   }

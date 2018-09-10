@@ -22,8 +22,8 @@ h1 {
 }
 
 h2 {
-  @include headingFont(6rem);
-  @include lineHeight(1);
+  @include headingFont(5rem);
+  @include lineHeight(1.2);
 }
 
 h3 {
@@ -39,4 +39,8 @@ p {
 .btn {
   @include bodyFont(1.4rem);
   text-transform: uppercase;
+}
+
+.filters li {
+  @include bodyFont(1.6rem);
 }

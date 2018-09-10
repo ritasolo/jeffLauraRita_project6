@@ -13,8 +13,8 @@ class WineList extends Component {
     return(
         <div className="wrapper">
         {this.props.random.map((item, i) => {
-          console.log(this.props.random)
-          console.log(item);
+          // console.log(this.props.random)
+          // console.log(item);
           return (
             <Link to={`/products/${item.id}`}>
               <div key={item.id} className="card wineChoice clearfix">
