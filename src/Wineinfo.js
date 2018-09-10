@@ -104,7 +104,9 @@ class Wineinfo extends Component {
           return {
             storeName: storeInfo.store.name,
             storeId: storeInfo.store.id,
-            stockAmount: storeInfo.result[0].quantity
+            stockAmount: storeInfo.result[0].quantity,
+            storeAddress: storeInfo.store.address_line_1,
+            storePhoneNumber: storeInfo.store.telephone
           };
         });
         console.log(arrayOfStock);
