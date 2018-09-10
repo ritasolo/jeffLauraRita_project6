@@ -1,13 +1,28 @@
 
-header h1 {
+header {
+  float: left;
+  width:100%;
+  h1{
   float:left;
   color: $purple;
+  margin:0;
+  }
   nav {
-    float: right;
+    padding-top:10px;
     ul{
-      li{ 
-        display: inline;
+      padding:0;
+      margin:0;
+      .loggedIn, .loggedOut{
+        li{ 
+          float: right;
+          text-align: right;
+          display: inline;
+          padding:10px 10px 0 10px;
+          margin:10px 10px 0 10px;
+
+        }
       }
+
     }
   }
 }
@@ -31,12 +46,12 @@ header h1 {
 
 .heroContent {
   float:right;
-  width:50%;
+  width:45%;
   position: relative;
   margin-right: 0;
   top: 50%;
-  right: - 100px;
-  // right:100px;
+  // right: - 100px;
+  right:0px;
   transform: translateY(-50%);
 }
 
