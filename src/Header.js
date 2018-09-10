@@ -52,7 +52,8 @@ class Header extends Component {
             {/* authentication starts */}
             <nav>
               <ul>
-                {this.state.user ? <div>
+                {this.state.user ? 
+                <div className="loggedIn">
                     <li>
                       {" "}
                       <Link to="/">
@@ -64,10 +65,13 @@ class Header extends Component {
                         <button>Favourites</button>
                       </Link>{" "}
                     </li>
-                  </div> : <li>
+                  </div> : <div className="loggedOut">
+                  <li>
                     {" "}
                     <button onClick={this.login}>Login</button>{" "}
-                  </li>} {/* authentication ends */}
+                  </li> 
+                  {/* authentication ends */}
+                </div>}
               </ul>
             </nav>
           </header>

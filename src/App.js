@@ -107,7 +107,7 @@ class App extends Component {
       // console.log(item)
       return ({
         wineKey: item[0],
-        wineImage: item[1].Wines.image_thumb_url,
+        wineImage: item[1].Wines.image_url,
         wineName: item[1].Wines.name
       })
     });

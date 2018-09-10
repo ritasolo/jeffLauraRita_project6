@@ -201,6 +201,8 @@ header h1 {
   color: #dd9afc; }
   header h1 nav {
     float: right; }
+    header h1 nav ul li {
+      display: inline; }
 
 .hero {
   background-image: url(./assets/heroGirl.jpg);
