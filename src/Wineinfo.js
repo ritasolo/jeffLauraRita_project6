@@ -3,7 +3,7 @@ import Qs from "qs";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import firebase from "firebase";
-import swal from 'sweetalert';
+import swal from "sweetalert";
 
 const auth = firebase.auth();
 
@@ -15,8 +15,7 @@ class Wineinfo extends Component {
       locations: {},
       latitude: "",
       longitude: "",
-      inStockStoreInfo: [],
-      nearbyStoreInfo: [],
+      nearbyStoreInfo: []
     };
   }
   
@@ -36,7 +35,6 @@ class Wineinfo extends Component {
     this.props.favourites(this.state.wine)
   }
 
-
   stores = () =>
     axios({
       method: "GET",
@@ -48,7 +46,7 @@ class Wineinfo extends Component {
       params: {
         reqUrl: `http://www.lcboapi.com/stores`,
         params: {
-          per_page: 40,
+          per_page: 10,
           lat: `${this.state.latitude}`,
           lon: `${this.state.longitude}`
         },
@@ -65,6 +63,9 @@ class Wineinfo extends Component {
         };
       });
       this.setState({ nearbyStoreInfo });
+      const nearbyStoreArray = this.state.nearbyStoreInfo.map(
+        response => response.storeId
+      );
     });
 
   componentDidMount() {
