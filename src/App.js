@@ -9,7 +9,7 @@ import WineList from "./WineList";
 import Wineinfo from "./Wineinfo";
 import SavedList from "./SavedList";
 import _ from "lodash";
-import firebase from 'firebase'
+import firebase from "firebase";
 
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
@@ -80,22 +80,22 @@ class App extends Component {
     });
   };
 
-  appstate = (user) => {
+  appstate = user => {
     this.setState({
       user: user
-    })
-  }
+    });
+  };
 
-  favourites = (wine) => {
+  favourites = wine => {
     this.dbref.push({
       Wines: wine
-    })
-  }
+    });
+  };
 
   displayWines = () => {
     const userChoice = `${this.state.price}${this.state.colour}`;
     const random = _.sampleSize(this.state[`${userChoice}`], 6);
-    console.log(random);
+    // console.log(random);
     console.log("clicked");
     this.setState({
       random
@@ -103,21 +103,21 @@ class App extends Component {
   };
 
   componentDidMount() {
-    auth.onAuthStateChanged((user) => {
+    auth.onAuthStateChanged(user => {
       if (user) {
-        this.setState({
-          user
-        }, () => {
-          this.dbref = firebase.database().ref(this.state.user.uid)
-          this.dbref.on('value', (snapshot) => {
-        if (snapshot.val()) {
-          this.setState({
-            counter: snapshot.val().count
-          })
-        }
-        console.log(snapshot.val())
-      })
-        })
+        this.setState(
+          {
+            user
+          },
+          () => {
+            this.dbref = firebase.database().ref(this.state.user.uid);
+            this.dbref.on("value", snapshot => {
+              if (snapshot.val()) {
+              }
+              // console.log(snapshot.val())
+            });
+          }
+        );
       }
     });
     const wineRequests = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(
@@ -368,7 +368,11 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <Route exact path="/" render={(props) => <Header {...props} appstate={this.appstate} />} />
+          <Route
+            exact
+            path="/"
+            render={props => <Header {...props} appstate={this.appstate} />}
+          />
           <section>
             <Route
               exact
@@ -385,12 +389,31 @@ class App extends Component {
             />
           </section>
           <section className="results clearfix">
-            <Route exact path="/" render={(props) => <WineList {...props} random={this.state.random} />} />
-            <Route exact path="/products/:wine_id" render={(props) => <Wineinfo {...props} user={this.state.user} favourites={this.favourites} />} />
-            {this.state.user ?
-              <Route exact path={`/user/${this.state.user.uid}`} component={SavedList} />
-              : null
-            }
+            <Route
+              exact
+              path="/"
+              render={props => (
+                <WineList {...props} random={this.state.random} />
+              )}
+            />
+            <Route
+              exact
+              path="/products/:wine_id"
+              render={props => (
+                <Wineinfo
+                  {...props}
+                  user={this.state.user}
+                  favourites={this.favourites}
+                />
+              )}
+            />
+            {this.state.user ? (
+              <Route
+                exact
+                path={`/user/${this.state.user.uid}`}
+                component={SavedList}
+              />
+            ) : null}
           </section>
           <Footer />
         </div>
