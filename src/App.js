@@ -10,7 +10,6 @@ import Wineinfo from "./Wineinfo";
 import SavedList from "./SavedList";
 import _ from "lodash";
 import firebase from "firebase";
-
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 const apiUrl = "http://www.lcboapi.com/products";
@@ -25,6 +24,7 @@ class App extends Component {
     super();
     this.state = {
       wineArray: [],
+      wineInfo: [],
       colour: "all",
       price: "$",
       $all: [],
@@ -102,16 +102,39 @@ class App extends Component {
     });
   };
 
+  sortWine = (selectedWine) => {
+    const winesArray = Object.entries(selectedWine).map((item) => {
+      // console.log(item)
+      return ({
+        wineKey: item[0],
+        wineImage: item[1].Wines.image_thumb_url,
+        wineName: item[1].Wines.name
+      })
+    });
+    this.setState({
+      wineInfo: winesArray
+    })
+    // console.log(this.state.wineInfo)
+  }
+
+  deleteWine = (wineId) => {
+    // Delete from Firebase
+    console.log(wineId);
+    const wineiddbref = firebase.database().ref(`${this.state.user.uid}/${wineId}`);
+    wineiddbref.remove();
+  }
+
   componentDidMount() {
     auth.onAuthStateChanged(user => {
       if (user) {
         this.setState(
           {
-            user
+            user,
           },
           () => {
             this.dbref = firebase.database().ref(this.state.user.uid);
             this.dbref.on("value", snapshot => {
+              this.sortWine(snapshot.val());
               if (snapshot.val()) {
               }
               // console.log(snapshot.val())
@@ -397,21 +420,25 @@ class App extends Component {
               )}
             />
             <Route
-              exact
-              path="/products/:wine_id"
+              exact path="/products/:wine_id"
               render={props => (
                 <Wineinfo
                   {...props}
                   user={this.state.user}
                   favourites={this.favourites}
+                  />
+                )}
                 />
-              )}
-            />
             {this.state.user ? (
               <Route
-                exact
-                path={`/user/${this.state.user.uid}`}
-                component={SavedList}
+              exact path={`/user/${this.state.user.uid}`}
+              render={props => (
+                <SavedList 
+                  {...props}
+                  wineInfo={this.state.wineInfo}
+                  deleteWine={this.deleteWine}
+                  />
+              )}
               />
             ) : null}
           </section>
