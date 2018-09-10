@@ -199,6 +199,10 @@ p {
 header h1 {
   float: left;
   color: #dd9afc; }
+  header h1 nav {
+    float: right; }
+    header h1 nav ul li {
+      display: inline; }
 
 .hero {
   background-image: url(./assets/heroGirl.jpg);
@@ -230,9 +234,11 @@ p.heroCopy {
 
 .btn {
   margin-top: 10px;
-  padding: 15px 50px;
+  width: 180px;
+  padding: 15px 0px;
   background-color: #a1d1ce;
   border: 2px solid #a1d1ce;
+  border-radius: 2px;
   color: #ffffff;
   font-weight: 700; }
   .btn:hover {
@@ -247,23 +253,28 @@ p.heroCopy {
     float: left;
     background-color: #a1d1ce; }
     .formContainer .form .formWrapper {
-      height: 300px;
-      float: right; }
+      float: right;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%); }
       .formContainer .form .formWrapper form .filters {
-        width: 540px; }
+        width: 530px; }
         .formContainer .form .formWrapper form .filters fieldset {
           border: none;
-          padding: 0; }
+          padding: 0;
+          margin-bottom: 10px; }
           .formContainer .form .formWrapper form .filters fieldset h3 {
+            margin: 0 0 15px 0;
             color: #4a4a4a; }
           .formContainer .form .formWrapper form .filters fieldset ul {
             list-style-type: none;
-            padding: 0; }
+            padding: 0;
+            margin-bottom: 15px; }
             .formContainer .form .formWrapper form .filters fieldset ul li {
               display: inline;
-              margin: 20px; }
+              margin-right: 20px; }
               .formContainer .form .formWrapper form .filters fieldset ul li .radio {
-                color: rgba(74, 74, 74, 0.75);
+                color: #4a4a4a;
                 position: relative; }
                 .formContainer .form .formWrapper form .filters fieldset ul li .radio span {
                   position: relative;
@@ -284,6 +295,14 @@ p.heroCopy {
                   height: 100%;
                   z-index: 1;
                   opacity: 0; }
+      .formContainer .form .formWrapper .filterBtn {
+        margin-top: 10px;
+        background-color: #4a4a4a;
+        border: 2px solid #4a4a4a;
+        color: #ffffff; }
+        .formContainer .form .formWrapper .filterBtn:hover {
+          background-color: transparent;
+          color: #4a4a4a; }
   .formContainer .formQuote {
     width: 50%;
     float: right;
@@ -315,7 +334,7 @@ p.heroCopy {
   border-radius: 100%; }
 
 .results {
-  margin: 0px auto;
+  margin: 25px auto;
   clear: both; }
 
 .wrapper {
@@ -358,10 +377,10 @@ p.heroCopy {
   -webkit-box-orient: vertical;
   text-overflow: ellipsis;
   overflow: hidden;
-  color: #383838; }
+  color: #4a4a4a; }
 
 .winePrice {
-  color: #383838;
+  color: #4a4a4a;
   font-size: 1.8rem;
   margin: 0; }
   .winePrice span {
@@ -437,16 +456,19 @@ p.heroCopy {
 
 footer {
   background-color: #4a4a4a;
-  clear: both;
-  height: 10vh; }
-
-.socialIcons {
-  font-size: 3rem;
-  text-align: center;
-  margin: 0 auto; }
-  .socialIcons i {
-    padding: 10px 20px;
-    color: #dd9afc;
-    transition: transform 1s; }
-    .socialIcons i:hover {
-      transform: scale(1.2); }
+  clear: both; }
+  footer .socialIcons {
+    font-size: 3rem;
+    text-align: center;
+    margin: 0 auto; }
+    footer .socialIcons i {
+      padding: 10px 10px;
+      color: #dd9afc;
+      transition: transform 1s; }
+      footer .socialIcons i:hover {
+        transform: scale(1.2); }
+  footer .createdBy p {
+    text-align: center;
+    color: #ffffff;
+    padding-bottom: 10px;
+    margin: 0; }

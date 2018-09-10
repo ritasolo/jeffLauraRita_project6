@@ -45,34 +45,34 @@ class Header extends Component {
     });
   };
   render() {
-    return (
-      <div className="headerSection clearfix">
+    return <div className="headerSection clearfix">
         <div className="wrapper">
           <header>
             <h1>PLONK</h1>
             {/* authentication starts */}
             <nav>
-              {this.state.user ? (
-                <div>
+              <ul>
+                {this.state.user ? 
+                <div className="loggedIn">
+                    <li>
+                      {" "}
+                      <Link to="/">
+                        <button onClick={this.logout}>Logout</button>
+                      </Link>{" "}
+                    </li>
+                    <li>
+                      <Link to={`/user/${this.state.user.uid}`}>
+                        <button>Favourites</button>
+                      </Link>{" "}
+                    </li>
+                  </div> : <div className="loggedOut">
                   <li>
                     {" "}
-                    <Link to="/">
-                      <button onClick={this.logout}>Logout</button>
-                    </Link>{" "}
-                  </li>
-                  <li>
-                    <Link to={`/user/${this.state.user.uid}`}>
-                      <button>Favourites</button>
-                    </Link>{" "}
-                  </li>
-                </div>
-              ) : (
-                <li>
-                  {" "}
-                  <button onClick={this.login}>Login</button>{" "}
-                </li>
-              )}{" "}
-              {/* authentication ends */}
+                    <button onClick={this.login}>Login</button>{" "}
+                  </li> 
+                  {/* authentication ends */}
+                </div>}
+              </ul>
             </nav>
           </header>
         </div>
@@ -81,16 +81,18 @@ class Header extends Component {
             <div className="wrapper">
               <div className="heroContent">
                 <h2 className="heroHeading">
-                  Lorem ipsum dolor sit amet, lorem noluisse vel ex sed audire.{" "}
+                  Lorem ipsum dolor sit amet, lorem noluisse vel ex sed
+                  audire.{" "}
                 </h2>
-                <p className="heroCopy">Find your next bottle for under $22</p>
+                <p className="heroCopy">
+                  Find your next bottle for under $22
+                </p>
                 <button className="btn">Find Plonk</button>
               </div>
             </div>
           </div>
         </section>
-      </div>
-    );
+      </div>;
   }
 }
 

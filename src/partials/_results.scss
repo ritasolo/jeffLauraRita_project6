@@ -1,5 +1,5 @@
 .results{
-  margin:0px auto;
+  margin:25px auto;
   clear:both;
   // height: 70vh;
 }
@@ -53,11 +53,11 @@ width:100%;
       -webkit-box-orient: vertical;
       text-overflow: ellipsis;
       overflow: hidden;
-      color: #383838;
+      color: $grey;
 }
 
 .winePrice{
-  color: #383838;
+  color: $grey;
   font-size: 1.8rem;
   margin: 0;
   span{
