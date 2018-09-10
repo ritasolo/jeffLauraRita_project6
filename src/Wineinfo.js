@@ -4,6 +4,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import firebase from "firebase";
 import swal from "sweetalert";
+import DisplayStock from "./DisplayStock";
 
 const auth = firebase.auth();
 
@@ -15,7 +16,11 @@ class Wineinfo extends Component {
       locations: {},
       latitude: "",
       longitude: "",
-      nearbyStoreInfo: []
+      nearbyStoreInfo: [],
+      stockSearch: [],
+      stockInformation: [],
+      storeInfo: [],
+      stockResults: []
     };
   }
 
@@ -89,9 +94,39 @@ class Wineinfo extends Component {
         };
       });
       this.setState({ nearbyStoreInfo });
-      const nearbyStoreArray = this.state.nearbyStoreInfo.map(
-        response => response.storeId
-      );
+      const locationsWithStock = () =>
+        this.state.nearbyStoreInfo.map(obj => {
+          console.log(obj.storeId);
+          const store = obj.storeId;
+          return axios({
+            method: "GET",
+            url: "http://proxy.hackeryou.com",
+            dataResponse: "json",
+            paramsSerializer: function(params) {
+              return Qs.stringify(params, { arrayFormat: "brackets" });
+            },
+            params: {
+              reqUrl: `http://www.lcboapi.com/inventories`,
+              params: {
+                store_id: `${store}`,
+                product_id: `${this.props.match.params.wine_id}`
+              },
+              proxyHeaders: {
+                Authorization: `Token "MDoxM2NjMDdlNC1iMDgwLTExZTgtYTc1NS0wYjUyYWEyN2NiMzM6TGVSYzFIVmJaMVEySE5rem1RdURPTFdGYnFKYTdZeHpkTVRi"`
+              }
+            },
+            xmlToJSON: false
+          });
+        });
+      Promise.all(locationsWithStock()).then(res => {
+        console.log(res);
+        const filteredData = res
+          .filter(store => {
+            return store.data.result.length > 0;
+          })
+          .map(store => store.data);
+        console.log(filteredData);
+      });
     });
 
   componentDidMount() {
@@ -123,28 +158,15 @@ class Wineinfo extends Component {
       });
     });
 
-    axios({
-      method: "GET",
-      url: "http://proxy.hackeryou.com",
-      dataResponse: "json",
-      paramsSerializer: function(params) {
-        return Qs.stringify(params, { arrayFormat: "brackets" });
-      },
-      params: {
-        reqUrl: `http://www.lcboapi.com/inventories`,
-        params: {
-          store_id: 511,
-          product_id: `${this.props.match.params.wine_id}`
-        },
-        proxyHeaders: {
-          Authorization: `Token "MDoxM2NjMDdlNC1iMDgwLTExZTgtYTc1NS0wYjUyYWEyN2NiMzM6TGVSYzFIVmJaMVEySE5rem1RdURPTFdGYnFKYTdZeHpkTVRi"`
-        }
-      },
-      xmlToJSON: false
-    }).then(res => {
-      console.log(res);
-      console.log(res.data.result[0].quantity);
-    });
+    // var kvArray = [{ key: 1, value: 10 },
+    // { key: 2, value: 20 },
+    // { key: 3, value: 30 }];
+
+    // var reformattedArray = kvArray.map(obj => {
+    //   var rObj = {};
+    //   rObj[obj.key] = obj.value;
+    //   return rObj;
+    // });
   }
 
   render() {
@@ -198,6 +220,7 @@ class Wineinfo extends Component {
               <button onClick={this.addToFavs} className="btn btnAlt">
                 <i class="fas fa-plus" /> Add to Cellar
               </button>
+              <DisplayStock />
             </div>{" "}
             {/* closes content wrapper */}
           </div>{" "}

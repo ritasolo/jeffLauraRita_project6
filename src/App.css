@@ -173,9 +173,9 @@ h1 {
   font-family: "Oxygen", monospace; }
 
 h2 {
-  font-size: 6rem;
+  font-size: 5rem;
   font-family: "Lora", monospace;
-  line-height: 1; }
+  line-height: 1.2; }
 
 h3 {
   font-size: 2rem;
@@ -192,27 +192,29 @@ p {
   font-family: "Oxygen", monospace;
   text-transform: uppercase; }
 
+header h1 {
+  float: left;
+  color: #dd9afc; }
+
 .hero {
   background-image: url(./assets/heroGirl.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh; }
-
-.heroScreen {
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.3); }
-
-header h1 {
-  float: left;
-  color: #dd9afc; }
+  .hero .heroScreen {
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3); }
+    .hero .heroScreen .wrapper {
+      height: 100vh; }
 
 .heroContent {
   float: right;
-  width: 40%;
+  width: 50%;
   position: relative;
-  margin-right: 30px;
+  margin-right: 0;
   top: 50%;
+  right: -100px;
   transform: translateY(-50%); }
 
 h2.heroHeading {
@@ -233,40 +235,26 @@ p.heroCopy {
     background-color: transparent;
     color: #ffffff; }
 
-.formWrapper {
-  width: 50%; }
+.formContainer {
+  width: 100%; }
+
+.form {
+  width: 40%;
+  float: left;
+  background-color: purple; }
+
+.formContainer .imageWrapper {
+  width: 60%;
+  float: left;
+  border: yellow solid 3px;
+  background-color: yellow; }
+  .formContainer .imageWrapper img {
+    object-fit: cover; }
 
 .priceRangeSelect,
 .slidecontainer {
   width: 100%;
   /* Width of the outside container */ }
-
-.slider {
-  -webkit-appearance: none;
-  width: 100%;
-  height: 25px;
-  background: #d3d3d3;
-  outline: none;
-  opacity: 0.7;
-  -webkit-transition: .2s;
-  transition: opacity .2s; }
-
-.slider:hover {
-  opacity: 1; }
-
-.slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 25px;
-  height: 25px;
-  background: #4CAF50;
-  cursor: pointer; }
-
-.slider::-moz-range-thumb {
-  width: 25px;
-  height: 25px;
-  background: #4CAF50;
-  cursor: pointer; }
 
 .results {
   margin: 0px auto; }

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 // import Slider from "react-rangeslider";
 // import 'react-rangeslider/lib/index.css';
+import drinkingForest from "./assets/drinkingForest.jpg";
 
 class Form extends Component {
   constructor() {
@@ -14,6 +15,7 @@ class Form extends Component {
   render() {
     // const { value } = this.state
     return (
+      <div className="formContainer clearfix">
       <section className="form">
         <div className="formWrapper">
           <form onSubmit={this.props.displayWines}>
@@ -133,6 +135,10 @@ class Form extends Component {
           <button onClick={this.props.displayWines}>Pick</button>
         </div>
       </section>
+      <figure className="imageWrapper">
+          <img src={drinkingForest} alt=""/>
+      </figure>
+      </div>
     );
   }
 }
