@@ -48,21 +48,21 @@ render(){
     <div className="wrapper">
             <header>
               <h1>PLONK</h1>
-              {this.state.user
-                ?
-                <div>
-                  <Link to="/">
-                    <button onClick={this.logout}>Logout</button>
-                  </Link>
-                  <Link to={`/user/${this.state.user.uid}`}>
-                    <button>Favourites</button>
-                  </Link>
-                </div>
-                : 
-                <div>
-                  <button onClick={this.login}>Login</button>
-                </div>
-              }
+              {/* authentication starts */}
+              <nav>
+            {this.state.user
+              ?
+              <div>
+               <li> <Link to="/">
+                  <button onClick={this.logout}>Logout</button>
+                </Link> </li>
+                <li><Link to={`/user/${this.state.user.uid}`}>
+                  <button>Favourites</button>
+                </Link> </li>
+              </div>
+              : <li> <button onClick={this.login}>Login</button> </li>
+            } {/* authentication ends */}
+            </nav>
             </header>
         </div>
     <section className="hero">
