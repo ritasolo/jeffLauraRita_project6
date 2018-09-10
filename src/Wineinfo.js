@@ -44,7 +44,7 @@ class Wineinfo extends Component {
         this.setState({
           user
         }, () => {
-          this.dbref = firebase.database().ref(this.state.wine.uid)
+          this.dbref = firebase.database().ref(/Users/`${this.props.user.uid}`)
           this.dbref.on('value', (snapshot) => {
             if (snapshot.val()) {
             }
