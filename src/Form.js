@@ -16,10 +16,10 @@ class Form extends Component {
     // const { value } = this.state
     return (
       <section className="formContainer clearfix">
-      <div className="form">
+      <div className="form clearfix">
         <div className="formWrapper">
           <form onSubmit={this.props.displayWines}>
-            <div className="filters">
+            <div className="filters clearfix">
               {/* <input
                 type="range"
                 min="1"

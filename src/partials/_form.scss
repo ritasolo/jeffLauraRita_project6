@@ -1,20 +1,23 @@
 .formContainer {
     width:100%;
     .form {
-        width:50%;
+        width:40%;
         height: 300px;
         float: left;
-        background-color: $teal;
+        background-color: $white;
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);        
         .formWrapper{
             // height: 300px;
+            max-width: 360px;
             float:right;
             position: relative;
             top: 50%;
             transform: translateY(-50%);
             form {
                 .filters{ 
-                    width: 530px;
+                    width: 580px;
                     fieldset {
+                        // float: left;
                         border: none;
                         padding:0;
                         margin-bottom:10px;
@@ -77,9 +80,10 @@
         }
     }
     .formQuote{
-        width:50%;
+        width:60%;
         float:right;
         height:300px;
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
         background-color:$grey;
         // background-image: url(./assets/friendsWine.jpg);
         // background-position: 50% 25%;

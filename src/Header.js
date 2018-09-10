@@ -57,18 +57,18 @@ class Header extends Component {
                     <li>
                       {" "}
                       <Link to="/">
-                        <button onClick={this.logout}>Logout</button>
+                        <a onClick={this.logout}>Logout</a>
                       </Link>{" "}
                     </li>
                     <li>
                       <Link to={`/user/${this.state.user.uid}`}>
-                        <button>Favourites</button>
+                        <a>My Cellar</a>
                       </Link>{" "}
                     </li>
                   </div> : <div className="loggedOut">
                   <li>
                     {" "}
-                    <button onClick={this.login}>Login</button>{" "}
+                    <a onClick={this.login}>Login</a>{" "}
                   </li> 
                   {/* authentication ends */}
                 </div>}
@@ -81,8 +81,7 @@ class Header extends Component {
             <div className="wrapper">
               <div className="heroContent">
                 <h2 className="heroHeading">
-                  Lorem ipsum dolor sit amet, lorem noluisse vel ex sed
-                  audire.{" "}
+                  Lorem ipsum dolor sit amet, lorem noluisse.{" "}
                 </h2>
                 <p className="heroCopy">
                   Find your next bottle for under $22

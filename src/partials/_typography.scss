@@ -44,3 +44,11 @@ p {
 .filters li {
   @include bodyFont(1.6rem);
 }
+
+nav li a {
+    @include bodyFont(1.6rem);
+    text-transform:uppercase;
+    text-decoration: none;
+    font-weight: 700;
+    color:white;
+}
