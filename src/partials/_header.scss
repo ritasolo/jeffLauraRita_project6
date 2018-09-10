@@ -1,21 +1,15 @@
 
-// .hero {
-//   background-image: url(./assets/heroGirl.jpg);
-//   background-position: center;
-//   background-repeat: no-repeat;
-//   background-size: cover;
-//   height: 100vh;
-// }
-
-// .heroScreen{
-//   height: 100vh;
-//   background-color: rgba(0, 0, 0, 0.3);
-// }
-
 header h1 {
   float:left;
-  // margin: 10px 50px;
   color: $purple;
+  nav {
+    float: right;
+    ul{
+      li{
+
+      }
+    }
+  }
 }
 
 .hero{
@@ -57,9 +51,11 @@ header h1 {
 
   .btn{
     margin-top:10px;
-    padding: 15px 50px;
+    width: 180px;
+    padding: 15px 0px;
     background-color: $teal;
     border: 2px solid $teal;
+    border-radius: 2px;
     color: $white;
     font-weight: 700;
     &:hover {

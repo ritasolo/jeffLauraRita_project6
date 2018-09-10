@@ -148,7 +148,7 @@ class Form extends Component {
               </fieldset>
             </div>
           </form>
-          <button onClick={this.props.displayWines}>Pick</button>
+          <button className="btn filterBtn" onClick={this.props.displayWines}>Pick</button>
         </div>
       </div>
    <div className="formQuote">

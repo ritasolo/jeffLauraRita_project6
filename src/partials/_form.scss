@@ -6,26 +6,32 @@
         float: left;
         background-color: $teal;
         .formWrapper{
-            height: 300px;
+            // height: 300px;
             float:right;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
             form {
                 .filters{ 
-                    width: 540px;
+                    width: 530px;
                     fieldset {
                         border: none;
                         padding:0;
+                        margin-bottom:10px;
                         h3 {
+                            margin:0 0 15px 0;
                             color: $grey;
                         }
                         ul{
                             list-style-type: none;
                             padding: 0;
+                            margin-bottom:15px;
                             li{
                                 display: inline;
-                                margin: 20px;
+                                margin-right: 20px;
                                 //label
                                 .radio{
-                                    color: rgba(74, 74, 74, 0.75);
+                                    color: $grey;
                                     position:relative;
                                     //label
                                     span{
@@ -56,6 +62,16 @@
                             }
                         }
                     }
+                }
+            }
+            .filterBtn{
+                margin-top:10px;
+                background-color: $grey;
+                border: 2px solid $grey;
+                color: $white;
+                &:hover {
+                background-color: transparent;
+                color: $grey;
                 }
             }
         }
@@ -111,6 +127,7 @@
   top:8px;
   border-radius:100%;
 }
+
 
 
 
