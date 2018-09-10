@@ -4,6 +4,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import firebase from "firebase";
 import swal from "sweetalert";
+import DisplayStock from "./DisplayStock";
 
 const auth = firebase.auth();
 
@@ -15,10 +16,11 @@ class Wineinfo extends Component {
       locations: {},
       latitude: "",
       longitude: "",
-      nearbyStoreInfo: []
+      nearbyStoreInfo: [],
+      arrayOfStock: []
     };
   }
-  
+
   geolocation = () => {
     navigator.geolocation.getCurrentPosition(position => {
       this.setState({
@@ -29,11 +31,15 @@ class Wineinfo extends Component {
       this.stores();
     });
   };
-  
-  addToFavs = (wine) => {
-    swal("Added To Your Favourites!","Please check your favourites for your list." , "success");
-    this.props.favourites(this.state.wine)
-  }
+
+  addToFavs = wine => {
+    swal(
+      "Added To Your Favourites!",
+      "Please check your favourites for your list.",
+      "success"
+    );
+    this.props.favourites(this.state.wine);
+  };
 
   stores = () =>
     axios({
@@ -63,9 +69,50 @@ class Wineinfo extends Component {
         };
       });
       this.setState({ nearbyStoreInfo });
-      const nearbyStoreArray = this.state.nearbyStoreInfo.map(
-        response => response.storeId
-      );
+      const locationsWithStock = () =>
+        this.state.nearbyStoreInfo.map(obj => {
+          console.log(obj.storeId);
+          const store = obj.storeId;
+          return axios({
+            method: "GET",
+            url: "http://proxy.hackeryou.com",
+            dataResponse: "json",
+            paramsSerializer: function(params) {
+              return Qs.stringify(params, { arrayFormat: "brackets" });
+            },
+            params: {
+              reqUrl: `http://www.lcboapi.com/inventories`,
+              params: {
+                store_id: `${store}`,
+                product_id: `${this.props.match.params.wine_id}`
+              },
+              proxyHeaders: {
+                Authorization: `Token "MDoxM2NjMDdlNC1iMDgwLTExZTgtYTc1NS0wYjUyYWEyN2NiMzM6TGVSYzFIVmJaMVEySE5rem1RdURPTFdGYnFKYTdZeHpkTVRi"`
+              }
+            },
+            xmlToJSON: false
+          });
+        });
+      Promise.all(locationsWithStock()).then(res => {
+        console.log(res);
+        const filteredData = res
+          .filter(store => {
+            return store.data.result.length > 0;
+          })
+          .map(store => store.data);
+        const arrayOfStock = filteredData.map(storeInfo => {
+          return {
+            storeName: storeInfo.store.name,
+            storeId: storeInfo.store.id,
+            stockAmount: storeInfo.result[0].quantity
+          };
+        });
+        console.log(arrayOfStock);
+        this.setState({
+          arrayOfStock
+        });
+        console.log(arrayOfStock);
+      });
     });
 
   componentDidMount() {
@@ -96,27 +143,15 @@ class Wineinfo extends Component {
       });
     });
 
-    axios({
-      method: "GET",
-      url: "http://proxy.hackeryou.com",
-      dataResponse: "json",
-      paramsSerializer: function(params) {
-        return Qs.stringify(params, { arrayFormat: "brackets" });
-      },
-      params: {
-        reqUrl: `http://www.lcboapi.com/inventories`,
-        params: {
-          store_id: 511,
-          product_id: `${this.props.match.params.wine_id}`
-        },
-        proxyHeaders: {
-          Authorization: `Token "MDoxM2NjMDdlNC1iMDgwLTExZTgtYTc1NS0wYjUyYWEyN2NiMzM6TGVSYzFIVmJaMVEySE5rem1RdURPTFdGYnFKYTdZeHpkTVRi"`
-        }
-      },
-      xmlToJSON: false
-    }).then(res => {
-      console.log(res);
-    });
+    // var kvArray = [{ key: 1, value: 10 },
+    // { key: 2, value: 20 },
+    // { key: 3, value: 30 }];
+
+    // var reformattedArray = kvArray.map(obj => {
+    //   var rObj = {};
+    //   rObj[obj.key] = obj.value;
+    //   return rObj;
+    // });
   }
 
   render() {
@@ -170,6 +205,7 @@ class Wineinfo extends Component {
               <button onClick={this.addToFavs} className="btn btnAlt">
                 <i class="fas fa-plus" /> Add to Cellar
               </button>
+              <DisplayStock arrayOfStock={this.state.arrayOfStock} />
             </div>{" "}
             {/* closes content wrapper */}
           </div>{" "}
