@@ -11,7 +11,6 @@ class Wineinfo extends Component {
       locations: {},
       latitude: "",
       longitude: "",
-      inStockStoreInfo: [],
       nearbyStoreInfo: []
     };
   }
@@ -38,7 +37,7 @@ class Wineinfo extends Component {
       params: {
         reqUrl: `http://www.lcboapi.com/stores`,
         params: {
-          per_page: 40,
+          per_page: 10,
           lat: `${this.state.latitude}`,
           lon: `${this.state.longitude}`
         },
@@ -55,9 +54,13 @@ class Wineinfo extends Component {
         };
       });
       this.setState({ nearbyStoreInfo });
+      const nearbyStoreArray = this.state.nearbyStoreInfo.map(
+        response => response.storeId
+      );
     });
 
   componentDidMount() {
+    console.log(this.arrayOfLocations);
     axios({
       method: "GET",
       url: "http://proxy.hackeryou.com",
