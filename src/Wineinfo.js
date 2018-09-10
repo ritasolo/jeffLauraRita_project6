@@ -47,11 +47,13 @@ class Wineinfo extends Component {
             user
           },
           () => {
-            this.dbref = firebase.database().ref(this.state.wine.uid);
+            this.dbref = firebase
+              .database()
+              .ref(/Users/`${this.props.user.uid}`);
             this.dbref.on("value", snapshot => {
               if (snapshot.val()) {
               }
-              console.log(snapshot.val());
+              // console.log(snapshot.val());
             });
           }
         );
@@ -141,6 +143,7 @@ class Wineinfo extends Component {
       xmlToJSON: false
     }).then(res => {
       console.log(res);
+      console.log(res.data.result[0].quantity);
     });
   }
 
