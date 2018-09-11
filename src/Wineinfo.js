@@ -159,7 +159,7 @@ class Wineinfo extends Component {
               <h1>{this.state.wine.name}</h1>
               <div className="priceWrapper">
                 <p>
-                  {`$${this.state.wine.price_in_cents / 100}.toFixed(2)`}
+                  {`$${this.state.wine.price_in_cents / 100}`}
                   <span>/bottle</span>
                 </p>
               </div>

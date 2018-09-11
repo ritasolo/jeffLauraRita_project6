@@ -31,7 +31,11 @@ class WineList extends Component {
                 <div key={item.id} className="card wineChoice clearfix">
                   <div className="cardWrapper clearfix">
                     <figure className="imageWrapper">
-                      <img src={item.imgURL} alt={item.name} />
+                      <img
+                        src={item.imgURL}
+                        onerror="this.style.display = &quot;none&quot;"
+                        alt={item.name}
+                      />
                     </figure>
                     <div className="cardSide">
                       <div className="wineTitle">

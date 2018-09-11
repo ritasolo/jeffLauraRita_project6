@@ -1,4 +1,5 @@
-.results {
+.results,
+.savedList {
   margin: 0 auto;
   padding: 40px;
   clear: both;
@@ -65,47 +66,33 @@
 // RESULTS MEDIA QUERIES
 ///////////////////////////////////////////////
 
-<<<<<<< HEAD
-@media (max-width: 1079px) {
-  .card {
-    width: calc(50% - 2%);
-    margin: 1%;
-=======
-
 @media (max-width: 1080px) {
-
-  .results .wrapper .card{
+  .results .wrapper .card {
     width: calc(50% - 2%);
     margin: 1%;
   }
 
-  .results .wrapper .card .cardWrapper .cardSide .wineTitle h3{
+  .results .wrapper .card .cardWrapper .cardSide .wineTitle h3 {
     font-size: 2.5rem;
     height: calc((4 * 2.5rem) + 1.2rem);
     -webkit-line-clamp: 4;
->>>>>>> 6dd1d2627a153fab586deabbb5438aaaee74050a
   }
-
-
-
 }
 
 /* Portrait tablet and small desktops */
 @media (max-width: 940px) {
-
-  .results .wrapper .card .cardWrapper .cardSide .wineTitle h3{
+  .results .wrapper .card .cardWrapper .cardSide .wineTitle h3 {
     font-size: 2.3rem;
     height: calc((3 * 2.3rem) + 1.1rem);
     -webkit-line-clamp: 3;
   }
-
 }
 
 /* Landscape phone to portrait tablet */
 @media (max-width: 768px) {
-  .results .wrapper{
-    margin:0 auto;
-    .card{
+  .results .wrapper {
+    margin: 0 auto;
+    .card {
       float: none;
       width: 400px;
       max-width: 400px;
@@ -119,17 +106,15 @@
   .results {
     padding: 0;
   }
-  
-  
-  .results .wrapper .card{
-      width: 295px;
-      max-width: 400px;
-    }
 
-  .results .wrapper .card .cardWrapper .cardSide .wineTitle h3{
+  .results .wrapper .card {
+    width: 295px;
+    max-width: 400px;
+  }
+
+  .results .wrapper .card .cardWrapper .cardSide .wineTitle h3 {
     font-size: 2rem;
     height: calc((3 * 2rem) + 1.1rem);
     -webkit-line-clamp: 3;
   }
-
 }

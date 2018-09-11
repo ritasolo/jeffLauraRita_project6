@@ -9,9 +9,9 @@ html {
   font-size: 62.5%;
 }
 
-img{
-display:block;
-width:100%;
+img {
+  display: block;
+  width: 100%;
 }
 
 .wrapper {
@@ -19,8 +19,8 @@ width:100%;
   margin: 0 auto;
 }
 
-.btn{
-  margin-top:10px;
+.btn {
+  margin-top: 10px;
   width: 180px;
   padding: 15px 0px;
   background-color: $teal;
@@ -31,45 +31,44 @@ width:100%;
   &:hover {
     background-color: transparent;
     color: $teal;
-    }
   }
+}
 
 ///////////////////////////////////////////////
 //GLOBAL MEDIA QUERIES
 ///////////////////////////////////////////////
 
-
 @media (max-width: 1080px) {
   .wrapper {
     max-width: 930px;
     margin: 0 auto;
-}
+  }
 }
 
 @media (max-width: 940px) {
   .wrapper {
     max-width: 758px;
     margin: 0 auto;
-}
+  }
 }
 
 @media (max-width: 768px) {
   .wrapper {
     max-width: 470px;
     margin: 0 auto;
-}
+  }
 }
 
 @media (max-width: 480px) {
   .wrapper {
     max-width: 450px;
-    margin: 0 auto
-}
+    margin: 0 auto;
+  }
 }
 
 @media (max-width: 350px) {
   .wrapper {
     max-width: 300px;
-    margin: 0 auto
-}
+    margin: 0 auto;
+  }
 }

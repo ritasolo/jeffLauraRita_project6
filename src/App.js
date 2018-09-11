@@ -97,7 +97,7 @@ class App extends Component {
 
   displayWines = () => {
     const userChoice = `${this.state.price}${this.state.colour}`;
-    const totalChoice = (this.state[`${userChoice}`])
+    const totalChoice = this.state[`${userChoice}`];
     const random = _.sampleSize(this.state[`${userChoice}`], 6);
     // console.log(random);
     console.log("clicked");
@@ -113,7 +113,8 @@ class App extends Component {
       return {
         wineKey: item[0],
         wineImage: item[1].Wines.image_url,
-        wineName: item[1].Wines.name
+        wineName: item[1].Wines.name,
+        wineId: item[1].Wines.id
       };
     });
     this.setState({
@@ -162,7 +163,10 @@ class App extends Component {
           return [...acc, ...curr];
         })
         .filter(item => {
+          console.log(item);
           return (
+            item.name !==
+              "Castelli del Grevepesa Castelgreve Chianti Classico 2016" &&
             item.price_in_cents < 2200 &&
             item.package_unit_volume_in_milliliters === 750 &&
             item.package_unit_type === "bottle"
@@ -200,7 +204,7 @@ class App extends Component {
                 id: response.id,
                 colour: response.secondary_category,
                 name: response.name,
-                price: `$${response.price_in_cents / 100}`,
+                price: `$${(response.price_in_cents / 100).toFixed(2)}`,
                 imgURL: response.image_url,
                 thumb: response.image_thumb_url,
                 onSale: response.has_limited_time_offer
@@ -216,7 +220,7 @@ class App extends Component {
                 id: response.id,
                 colour: response.secondary_category,
                 name: response.name,
-                price: `$${response.price_in_cents / 100}`,
+                price: `$${(response.price_in_cents / 100).toFixed(2)}`,
                 imgURL: response.image_url,
                 thumb: response.image_thumb_url,
                 onSale: response.has_limited_time_offer
@@ -232,7 +236,7 @@ class App extends Component {
                 id: response.id,
                 colour: response.secondary_category,
                 name: response.name,
-                price: `$${response.price_in_cents / 100}`,
+                price: `$${(response.price_in_cents / 100).toFixed(2)}`,
                 imgURL: response.image_url,
                 thumb: response.image_thumb_url,
                 onSale: response.has_limited_time_offer
@@ -249,7 +253,7 @@ class App extends Component {
                 id: response.id,
                 colour: response.secondary_category,
                 name: response.name,
-                price: `$${response.price_in_cents / 100}`,
+                price: `$${(response.price_in_cents / 100).toFixed(2)}`,
                 imgURL: response.image_url,
                 thumb: response.image_thumb_url,
                 onSale: response.has_limited_time_offer
@@ -440,11 +444,15 @@ class App extends Component {
               exact
               path="/"
               render={props => (
-                <WineList {...props} random={this.state.random} displayWines={this.displayWines} userChoice={this.state.userChoice} />
+                <WineList
+                  {...props}
+                  random={this.state.random}
+                  displayWines={this.displayWines}
+                  userChoice={this.state.userChoice}
+                />
               )}
             />
             <Route
-              exact
               path="/products/:wine_id"
               render={props => (
                 <Wineinfo
@@ -456,7 +464,6 @@ class App extends Component {
             />
             {this.state.user ? (
               <Route
-                exact
                 path={`/user/${this.state.user.uid}`}
                 render={props => (
                   <SavedList
