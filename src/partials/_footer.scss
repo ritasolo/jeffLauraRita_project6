@@ -25,5 +25,16 @@ footer {
   }
 }
 
+///////////////////////////////////////////////
+// RESULTS MEDIA QUERIES
+///////////////////////////////////////////////
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+  footer p {
+    font-size: 1.2rem;
+  }
+  }
+
 
 

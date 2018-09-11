@@ -13,11 +13,11 @@ header {
     ul{
       padding:0;
       margin:0;
+      list-style-type: none;
       .loggedIn, .loggedOut{
         li{ 
-          float: right;
+          float:right;
           text-align: right;
-          display: inline;
           padding:10px 10px 0 10px;
           margin:10px 10px 0 10px;
           p{
@@ -33,53 +33,106 @@ header {
 
 .hero{
   // background-image: url(./assets/heroGirl.jpg);
-    background-image: url(./assets/heroGirl.jpg);
-
+  background-image: url(./assets/heroGirl.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  min-height: 100vh;
   height: 100vh;
-  min-height:550px;
   .heroScreen{
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.3);
     .wrapper{
       height:100vh;
+      .heroContent {
+        float:right;
+        width:45%;
+        position: relative;
+        margin-right: 0;
+        top: 50%;
+        // right: - 100px;
+        right:0px;
+        transform: translateY(-50%);
+        h2.heroHeading {
+          color: $white;
+          margin: 15px 0;
+          }
+        p.heroCopy {
+          color: $white;
+        }
+      }
     }
   }
 }
 
-.heroContent {
-  float:right;
-  width:45%;
-  position: relative;
-  margin-right: 0;
-  top: 50%;
-  // right: - 100px;
-  right:0px;
-  transform: translateY(-50%);
+
+
+
+
+///////////////////////////////////////////////
+// HEADER MEDIA QUERIES
+///////////////////////////////////////////////
+
+
+@media (max-width: 1080px) {
+
 }
 
-  h2.heroHeading {
-    color: $white;
-    margin: 15px 0;
-  }
+/* Portrait tablet and small desktops */
+@media (max-width: 940px) {
 
-  p.heroCopy {
-    color: $white;
-  }
+}
 
-  .btn{
-    margin-top:10px;
-    width: 180px;
-    padding: 15px 0px;
-    background-color: $teal;
-    border: 2px solid $teal;
-    border-radius: 2px;
-    color: $white;
-    font-weight: 700;
-    &:hover {
-      background-color: transparent;
-      color: $teal;
+/* Landscape phone to portrait tablet */
+@media (max-width: 768px) {
+
+  header {
+  padding-top: 0px;
+  nav {
+    padding-top: 0px;
     }
   }
+
+  .hero {
+  .heroScreen{
+    background-color: rgba(0, 0, 0, 0.5);
+    .wrapper{
+      .heroContent{
+        float:none;
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        h2.heroHeading {
+          text-align:center;
+        }
+        p.heroCopy{
+          text-align: center;
+        }
+        .btn {
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+}
+}
+/* Landscape phones and down */
+@media (max-width: 480px) {
+
+  .hero .heroScreen{
+    .wrapper{
+      width:300px;
+      .heroContent{
+        h2.heroHeading {
+          font-size: 3.5rem;
+        }
+        p.heroCopy{
+          text-align: center;
+        }
+        .btn {
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+}

@@ -54,6 +54,8 @@ class WineList extends Component {
               </Link>
             );
           })}
+        </div>
+        <div className="wrapper">
           {this.state.visible < this.props.userChoice.length && (
             <div>
               <button onClick={this.click}>Load More</button>
