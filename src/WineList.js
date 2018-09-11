@@ -9,13 +9,11 @@ class WineList extends Component {
       visible: 6,
     };
   }
-
   loadMore() {
     this.setState((prev) => {
       return { visible: prev.visible + 6 };
     })
   }
-
   click = () => {
     this.loadMore();
     this.props.displayWines();
@@ -56,8 +54,8 @@ class WineList extends Component {
           </div>
           }
       </div>
-    )
-  }
+        )
+    }
 }
 
 export default WineList;

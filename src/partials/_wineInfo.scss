@@ -2,14 +2,13 @@
   //  height: 95vh;
   float: left;
   width: 100%;
-  height: 90vh;
 
   .wrapper {
     clear: both;
 
     .imageWrapper {
       float: left;
-      width: 45%;
+      width: 40%;
 
       img {
         display: block;
@@ -19,7 +18,7 @@
 
     .content {
       float: left;
-      width: 55%;
+      width: 60%;
 
       .contentWrapper {
         margin-top: 50px;
@@ -90,14 +89,13 @@
           }
         }
         .btnAlt {
-        background-color:transparent;
-        padding: 15px 50px;
-        border: 2px solid $grey;
-        color: $grey;
-        font-weight: 700;
-        &:hover{
-          background-color: $grey;
-          color: $white;
+                margin-top:10px;
+                background-color: transparent;
+                border: 2px solid $grey;
+                color: $grey;
+                &:hover {
+                background-color: $grey;
+                color: $white;
 
         }
         }

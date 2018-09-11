@@ -431,7 +431,7 @@ class App extends Component {
               )}
             />
           </section>
-          <section className="results clearfix">
+          <section>
             <Route
               exact
               path="/"

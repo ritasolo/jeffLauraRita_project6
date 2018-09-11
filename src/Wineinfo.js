@@ -159,11 +159,6 @@ class Wineinfo extends Component {
   render() {
     return (
       <div className="wineInfo clearfix">
-        <header>
-          <div className="wrapper">
-            <h1>PLONK</h1>
-          </div>
-        </header>
         <div className="wrapper">
           <figure className="imageWrapper">
             <Link to="/">Back to Main Page</Link>
@@ -212,16 +207,6 @@ class Wineinfo extends Component {
             {/* closes content wrapper */}
           </div>{" "}
           {/* closes content */}
-          {/* <header>
-        
-                        <div className="info"></div>
-    
-                            <p>Description:{this.state.wine.tasting_note}</p>
-                            <p>Price Per Litre: ${this.state.wine.price_per_liter_in_cents / 100}</p>
-                            <p>Alcohol/Volume: {(this.state.wine.alcohol_content / 100)}%</p>
-                            <p>Size:{this.state.wine.package_unit_volume_in_milliliters}mL </p>
-                            <Link to="/">Back to Main Page</Link>
-                    </header> */}
         </div>
       </div>
     );
