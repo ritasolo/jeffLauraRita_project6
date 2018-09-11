@@ -19,6 +19,8 @@ const provider = new firebase.auth.GoogleAuthProvider();
 const auth = firebase.auth();
 // const dbRef = firebase.database().ref(/User/`${this.state.user.uid}`);
 
+// Comment //
+
 class App extends Component {
   constructor() {
     super();
