@@ -10,6 +10,7 @@ import Wineinfo from "./Wineinfo";
 import SavedList from "./SavedList";
 import _ from "lodash";
 import firebase from "firebase";
+import "animate.css/animate.min.css";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 const apiUrl = "http://www.lcboapi.com/products";
