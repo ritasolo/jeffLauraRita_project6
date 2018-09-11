@@ -421,11 +421,7 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <Route
-            exact
-            path="/"
-            render={props => <Header {...props} />}
-          />
+          <Route exact path="/" render={props => <Header {...props} />} />
           <section>
             <Route
               exact
