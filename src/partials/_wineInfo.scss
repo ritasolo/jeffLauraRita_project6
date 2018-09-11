@@ -117,21 +117,39 @@
 }
 
 @media (max-width: 1080px) {
-.wineInfo .wrapper .imageWrapper, .wineInfo .wrapper .content {
-      width: 50%;
+// .wineInfo .wrapper .imageWrapper, .wineInfo .wrapper .content {
+//       width: 50%;
+// }
+// .wineInfo .wrapper .imageWrapper {
+// width: 50%;
+// }
+
+.wineInfo {
+  margin-bottom: 50px;
 }
-.wineInfo .wrapper .content {
-width: 50%;
-  
-}
-
-
-
 
 }
 
 /* Portrait tablet and small desktops */
 @media (max-width: 940px) {
+.wineInfo .wrapper .imageWrapper, .wineInfo .wrapper .content {
+      width: 55%;
+}
+.wineInfo .wrapper .imageWrapper {
+width: 45%;
+}
+
+.wineInfo {
+  margin-bottom: 50px;
+}
+  .wineInfo .wrapper .content .contentWrapper .wineServingSuggestBox{
+    width: 350px;
+  }
+
+  .wineInfo .wrapper .content .contentWrapper .btn {
+          margin-right: 10px;
+        }
+
 
 }
 
@@ -199,4 +217,20 @@ width: 50%;
 /* Landscape phones and down */
 @media (max-width: 480px) {
 
+  .wineInfo {
+  .wrapper {
+    .content {
+      .contentWrapper {
+        margin:10px;
+        h1 {
+          font-size: 2.5rem;
+        }
+        .wineServingSuggestBox {
+          margin:0 auto;
+          width: 290px;
+        }
+      }
+    }
+  }
+}
 }

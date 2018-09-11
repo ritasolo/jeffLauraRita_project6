@@ -769,12 +769,22 @@ header {
     text-decoration: underline; }
 
 @media (max-width: 1080px) {
-  .wineInfo .wrapper .imageWrapper, .wineInfo .wrapper .content {
-    width: 50%; }
-  .wineInfo .wrapper .content {
-    width: 50%; } }
+  .wineInfo {
+    margin-bottom: 50px; } }
 
 /* Portrait tablet and small desktops */
+@media (max-width: 940px) {
+  .wineInfo .wrapper .imageWrapper, .wineInfo .wrapper .content {
+    width: 55%; }
+  .wineInfo .wrapper .imageWrapper {
+    width: 45%; }
+  .wineInfo {
+    margin-bottom: 50px; }
+  .wineInfo .wrapper .content .contentWrapper .wineServingSuggestBox {
+    width: 350px; }
+  .wineInfo .wrapper .content .contentWrapper .btn {
+    margin-right: 10px; } }
+
 /* Landscape phone to portrait tablet */
 @media (max-width: 768px) {
   .wineInfo {
@@ -805,6 +815,15 @@ header {
           width: 450px; } }
 
 /* Landscape phones and down */
+@media (max-width: 480px) {
+  .wineInfo .wrapper .content .contentWrapper {
+    margin: 10px; }
+    .wineInfo .wrapper .content .contentWrapper h1 {
+      font-size: 2.5rem; }
+    .wineInfo .wrapper .content .contentWrapper .wineServingSuggestBox {
+      margin: 0 auto;
+      width: 290px; } }
+
 footer {
   background-color: #4a4a4a;
   padding: 10px 0px;
