@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import firebase from "./firebase";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import SavedList from "./SavedList";
+import Nav from "./Nav";
 
 const provider = new firebase.auth.GoogleAuthProvider();
 const auth = firebase.auth();
@@ -46,39 +47,7 @@ class Header extends Component {
   };
   render() {
     return <div className="headerSection clearfix">
-        <div className="wrapper">
-          <header>
-            <h1>PLONK</h1>
-            {/* authentication starts */}
-            <nav>
-              <ul>
-                {this.state.user ? 
-                <div className="loggedIn">
-                    <li>
-                      {" "}
-                      <Link to="/">
-                        <i onClick={this.logout}class="fas fa-sign-out-alt"></i>
-                        <p onClick={this.logout}>Logout</p>
-                      </Link>{" "}
-                    </li>
-                    <li>
-                      <Link to={`/user/${this.state.user.uid}`}>
-                        <i class="fas fa-heart"></i>
-                        <p>My Cellar</p>
-                      </Link>{" "}
-                    </li>
-                  </div> : <div className="loggedOut">
-                  <li>
-                    {" "}
-                    <i onClick={this.login} class="fas fa-sign-in-alt"></i>
-                    <p onClick={this.login}>Login</p>{" "}
-                  </li> 
-                  {/* authentication ends */}
-                </div>}
-              </ul>
-            </nav>
-          </header>
-        </div>
+        <Nav user={this.state.user} login={this.login} logout={this.logout} />
         <section className="hero">
           <div className="heroScreen">
             <div className="wrapper">
