@@ -4,7 +4,7 @@
         width:40%;
         height: 300px;
         float: left;
-        background-color: $white;
+        background-color: lightgrey;
         box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);        
         .formWrapper{
             // height: 300px;
@@ -15,7 +15,7 @@
             transform: translateY(-50%);
             form {
                 .filters{ 
-                    width: 580px;
+                    width: 360px;
                     fieldset {
                         // float: left;
                         border: none;
@@ -93,6 +93,7 @@
             height:300px;
             // background-color: rgba(0, 0, 0, 0.2);
             .quote{
+                max-width: 720px;
                 margin: 0 auto;
                 text-align: center;
                 position: relative;
@@ -117,7 +118,8 @@
 
 // button circle and label
 .radio input[type="radio"]:checked + span{
-  color:$grey;  
+  color:$grey;
+  font-weight: 700;
 }
 
 // clicked circle in button
@@ -126,7 +128,7 @@
   width:12px;
   height:12px;
   position:absolute;
-  background: $grey;
+  background: $purple;
   left:7px;
   top:8px;
   border-radius:100%;

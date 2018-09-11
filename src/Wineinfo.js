@@ -144,26 +144,11 @@ class Wineinfo extends Component {
         wine: res.data.result
       });
     });
-
-    // var kvArray = [{ key: 1, value: 10 },
-    // { key: 2, value: 20 },
-    // { key: 3, value: 30 }];
-
-    // var reformattedArray = kvArray.map(obj => {
-    //   var rObj = {};
-    //   rObj[obj.key] = obj.value;
-    //   return rObj;
-    // });
   }
 
   render() {
     return (
       <div className="wineInfo clearfix">
-        <header>
-          <div className="wrapper">
-            <h1>PLONK</h1>
-          </div>
-        </header>
         <div className="wrapper">
           <figure className="imageWrapper">
             <Link to="/">Back to Main Page</Link>
@@ -174,7 +159,7 @@ class Wineinfo extends Component {
               <h1>{this.state.wine.name}</h1>
               <div className="priceWrapper">
                 <p>
-                  {`$${this.state.wine.price_in_cents / 100}`}
+                  {`$${this.state.wine.price_in_cents / 100}.toFixed(2)`}
                   <span>/bottle</span>
                 </p>
               </div>
@@ -212,16 +197,6 @@ class Wineinfo extends Component {
             {/* closes content wrapper */}
           </div>{" "}
           {/* closes content */}
-          {/* <header>
-        
-                        <div className="info"></div>
-    
-                            <p>Description:{this.state.wine.tasting_note}</p>
-                            <p>Price Per Litre: ${this.state.wine.price_per_liter_in_cents / 100}</p>
-                            <p>Alcohol/Volume: {(this.state.wine.alcohol_content / 100)}%</p>
-                            <p>Size:{this.state.wine.package_unit_volume_in_milliliters}mL </p>
-                            <Link to="/">Back to Main Page</Link>
-                    </header> */}
         </div>
       </div>
     );

@@ -102,34 +102,36 @@ class App extends Component {
     });
   };
 
-  sortWine = (selectedWine) => {
-    const winesArray = Object.entries(selectedWine).map((item) => {
+  sortWine = selectedWine => {
+    const winesArray = Object.entries(selectedWine).map(item => {
       // console.log(item)
-      return ({
+      return {
         wineKey: item[0],
         wineImage: item[1].Wines.image_url,
         wineName: item[1].Wines.name
-      })
+      };
     });
     this.setState({
       wineInfo: winesArray
-    })
+    });
     // console.log(this.state.wineInfo)
-  }
+  };
 
-  deleteWine = (wineId) => {
+  deleteWine = wineId => {
     // Delete from Firebase
     console.log(wineId);
-    const wineiddbref = firebase.database().ref(`${this.state.user.uid}/${wineId}`);
+    const wineiddbref = firebase
+      .database()
+      .ref(`${this.state.user.uid}/${wineId}`);
     wineiddbref.remove();
-  }
+  };
 
   componentDidMount() {
     auth.onAuthStateChanged(user => {
       if (user) {
         this.setState(
           {
-            user,
+            user
           },
           () => {
             this.dbref = firebase.database().ref(this.state.user.uid);
@@ -411,7 +413,7 @@ class App extends Component {
               )}
             />
           </section>
-          <section className="results clearfix">
+          <section>
             <Route
               exact
               path="/"
@@ -420,25 +422,27 @@ class App extends Component {
               )}
             />
             <Route
-              exact path="/products/:wine_id"
+              exact
+              path="/products/:wine_id"
               render={props => (
                 <Wineinfo
                   {...props}
                   user={this.state.user}
                   favourites={this.favourites}
-                  />
-                )}
                 />
+              )}
+            />
             {this.state.user ? (
               <Route
-              exact path={`/user/${this.state.user.uid}`}
-              render={props => (
-                <SavedList 
-                  {...props}
-                  wineInfo={this.state.wineInfo}
-                  deleteWine={this.deleteWine}
+                exact
+                path={`/user/${this.state.user.uid}`}
+                render={props => (
+                  <SavedList
+                    {...props}
+                    wineInfo={this.state.wineInfo}
+                    deleteWine={this.deleteWine}
                   />
-              )}
+                )}
               />
             ) : null}
           </section>
