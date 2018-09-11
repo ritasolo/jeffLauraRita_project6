@@ -20,7 +20,7 @@ class SavedList extends Component {
                       <p>{wine.wineName}</p>
                     </div>
                     <Link
-                      className="btn"
+                      className="btn__purple"
                       to={`/products/${wine.wineId}`}
                       target="_blank"
                     >
