@@ -209,6 +209,9 @@
   }
 
   .savedList {
+    header nav ul li i {
+    color: $green;
+    }
     .savedListBtns {
       bottom: 12px;
     }

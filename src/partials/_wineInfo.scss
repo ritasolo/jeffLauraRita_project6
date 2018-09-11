@@ -7,6 +7,16 @@
   }
   .wrapper {
     clear: both;
+    .locations {
+      width: 75%;
+      clear: both;
+      margin: 0 auto;
+      .storeInfo {
+        width: 33.3%;
+        float: left;
+        padding-bottom: 20px;
+      }
+    }
 
     .imageWrapper {
       float: left;
@@ -24,7 +34,6 @@
 
       .contentWrapper {
         margin-top: 50px;
-
         h1 {
           font-family: "Lora", monospace;
           color: $grey;
@@ -49,9 +58,6 @@
             }
           }
         }
-
-        // .wineDescription {
-        // }
 
         p::first-letter {
           text-transform: uppercase;
@@ -223,6 +229,12 @@
 /* Landscape phones and down */
 @media (max-width: 480px) {
   .wineInfo {
+
+    header nav ul li i {
+      color: $green;
+    }
+
+   
     .wrapper {
       .content {
         .contentWrapper {
