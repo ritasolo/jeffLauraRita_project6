@@ -1,5 +1,10 @@
 import React, { Component } from "react";
+<<<<<<< HEAD
 import { animateScroll as scroll } from 'react-scroll'
+=======
+// import Slider from "react-rangeslider";
+// import 'react-rangeslider/lib/index.css';
+>>>>>>> 0d4c87429ca79a06688aacfa70c5ad90ec46311b
 
 class Form extends Component {
   constructor() {
@@ -62,6 +67,7 @@ class Form extends Component {
                   <li>
                     <label className="radio inline" htmlFor="$">
                     <input
+                      checked
                       onClick={this.props.handleChangePrice}
                       name="price"
                       id="$"
@@ -80,7 +86,7 @@ class Form extends Component {
                       type="radio"
                       value={this.state.price}
                     />
-                    <span> $$</span>
+                    <span>&nbsp;$$</span>
                     </label>
                   </li>
                   <li>
@@ -92,7 +98,7 @@ class Form extends Component {
                       type="radio"
                       value={this.state.price}
                     />
-                    <span> $$$</span>
+                    <span>&nbsp;$$$</span>
                     </label>
                   </li>
                   <li>
@@ -104,7 +110,7 @@ class Form extends Component {
                       type="radio"
                       value={this.state.price}
                     />
-                    <span> $$$$</span>
+                    <span>&nbsp;$$$$</span>
                     </label>
                   </li>
                 </ul>
@@ -134,19 +140,20 @@ class Form extends Component {
                       type="radio"
                       value={this.state.colour}
                     />
-                    <span> White</span>
+                    <span>&nbsp;White</span>
                     </label>
                   </li>
                   <li>
                     <label className="radio inline" htmlFor="all">
                     <input
+                    checked
                       onChange={this.props.handleChangeColour}
                       name="colour"
                       id="all"
                       type="radio"
                       value={this.state.colour}
                     />
-                    <span> All</span>
+                    <span>&nbsp;All</span>
                     </label>
                   </li>
                 </ul>

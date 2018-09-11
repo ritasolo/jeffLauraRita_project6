@@ -388,13 +388,13 @@ header {
   header nav ul .loggedOut p {
     display: none;
     margin: 0; }
-  .hero .heroScreen .wrapper {
+  header .hero .heroScreen .wrapper {
     width: 300px; }
-    .hero .heroScreen .wrapper .heroContent h2.heroHeading {
+    header .hero .heroScreen .wrapper .heroContent h2.heroHeading {
       font-size: 3.5rem; }
-    .hero .heroScreen .wrapper .heroContent p.heroCopy {
+    header .hero .heroScreen .wrapper .heroContent p.heroCopy {
       text-align: center; }
-    .hero .heroScreen .wrapper .heroContent .btn {
+    header .hero .heroScreen .wrapper .heroContent .btn {
       margin: 0 auto; } }
 
 .formContainer {
@@ -402,6 +402,7 @@ header {
   .formContainer .form {
     width: 40%;
     height: 300px;
+    margin-bottom: 50px;
     float: left;
     background-color: lightgrey; }
     .formContainer .form .formWrapper {
@@ -472,7 +473,26 @@ header {
         transform: translateY(-50%);
         font-size: 2.8rem;
         padding: 100px;
-        color: #dd9afc; }
+        color: #dd9afc;
+        z-index: 1; }
+      .formContainer .formQuote .formQuoteScreen .quote:after {
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        content: "\f10e";
+        opacity: 0.25;
+        font-size: 3rem;
+        position: relative;
+        bottom: -5px;
+        right: -5px; }
+      .formContainer .formQuote .formQuoteScreen .quote:before {
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        content: "\f10d ";
+        opacity: 0.25;
+        font-size: 3rem;
+        position: relative;
+        bottom: 5px;
+        left: -5px; }
 
 .radio input[type="radio"]:checked + span {
   color: #4a4a4a; }
@@ -541,14 +561,14 @@ header {
               position: relative; }
               .formContainer .form .formWrapper form .filters fieldset ul li .radio span {
                 position: relative;
-                padding: 2px 0 0 18px; }
+                padding: 2px 5px 0 18px; }
               .formContainer .form .formWrapper form .filters fieldset ul li .radio span:after {
                 content: "";
                 width: 15px;
                 height: 15px;
                 border: 3px solid;
                 position: absolute;
-                left: 0;
+                left: -5px;
                 top: 1px;
                 border-radius: 100%; }
   .radio input[type="radio"]:checked + span:before {
@@ -557,20 +577,22 @@ header {
     height: 11px;
     position: absolute;
     background: #0b664c;
-    left: 5px;
+    left: 0;
     top: 6px;
     border-radius: 100%; } }
+
+.results {
+  padding-bottom: 0px; }
 
 .results,
 .savedList {
   margin: 0 auto;
-  padding: 40px;
+  padding-bottom: 40px;
   clear: both;
-  min-height: calc(100vh - 110px);
   text-align: center; }
   .results .btn,
   .savedList .btn {
-    margin: 50px 0; }
+    margin: 25px; }
   .results .wrapper .sale,
   .savedList .wrapper .sale {
     position: absolute;
@@ -631,12 +653,16 @@ header {
           .savedList .wrapper .card .cardWrapper .cardSide .winePriceWrapper .winePrice span {
             font-size: 70%; }
 
-.savedList .savedListBtns {
-  position: absolute;
-  bottom: 10px; }
-
-.savedList header nav ul li p {
-  color: #0b664c; }
+.savedList {
+  min-height: calc(100vh - 110px); }
+  .savedList h2 {
+    margin: 0; }
+  .savedList .savedListBtns {
+    position: absolute;
+    bottom: 10px; }
+  .savedList header nav ul li p {
+    color: #0b664c;
+    padding-bottom: 50px; }
 
 .cellarBtn {
   margin-top: 5px;
@@ -716,9 +742,8 @@ header {
 
 .wineInfo {
   float: left;
-  min-height: calc(100vh - 110px);
-  width: 100%;
-  padding: 50px 0; }
+  min-height: calc(100vh - 100px);
+  width: 100%; }
   .wineInfo header nav ul li p {
     color: #0b664c; }
   .wineInfo .wrapper {
@@ -805,7 +830,8 @@ header {
 
 /* Portrait tablet and small desktops */
 @media (max-width: 940px) {
-  .wineInfo .wrapper .imageWrapper, .wineInfo .wrapper .content {
+  .wineInfo .wrapper .imageWrapper,
+  .wineInfo .wrapper .content {
     width: 55%; }
   .wineInfo .wrapper .imageWrapper {
     width: 45%; }

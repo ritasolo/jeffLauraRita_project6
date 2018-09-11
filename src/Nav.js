@@ -58,10 +58,7 @@ class Nav extends Component {
                   <li>
                     {" "}
                     <Link to="/">
-                      <i
-                        onClick={this.logout}
-                        class="fas fa-sign-out-alt"
-                      />
+                      <i onClick={this.logout} class="fas fa-sign-out-alt" />
                       <p onClick={this.logout}>Logout</p>
                     </Link>{" "}
                   </li>
@@ -77,7 +74,9 @@ class Nav extends Component {
                   <li>
                     {" "}
                     <i onClick={this.login} class="fas fa-sign-in-alt" />
-                    <p onClick={this.login}>Login</p>{" "}
+                    <a href="#">
+                      <p onClick={this.login}>Login</p>
+                    </a>{" "}
                   </li>
                   {/* authentication ends */}
                 </div>

@@ -3,6 +3,7 @@
   .form {
     width: 40%;
     height: 300px;
+    margin-bottom: 50px;
     float: left;
     background-color: lightgrey;
     // box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
@@ -102,6 +103,27 @@
         font-size: 2.8rem;
         padding: 100px;
         color: $purple;
+        z-index: 1;
+      }
+      .quote:after {
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+          content: "\f10e";
+          opacity: 0.25;
+          font-size: 3rem;
+          position: relative;
+          bottom: -5px;
+          right: -5px;
+      }
+      .quote:before {
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+          content: "\f10d ";
+          opacity: 0.25;
+          font-size: 3rem;
+          position: relative;
+          bottom: 5px;
+          left: -5px;
       }
     }
   }
@@ -234,7 +256,7 @@
                 //label
                 span {
                   position: relative;
-                  padding: 2px 0 0 18px;
+                  padding: 2px 5px 0 18px;
                 }
                 //radio area
                 span:after {
@@ -243,7 +265,7 @@
                   height: 15px;
                   border: 3px solid;
                   position: absolute;
-                  left: 0;
+                  left: -5px;
                   top: 1px;
                   border-radius: 100%;
                 }
@@ -262,7 +284,7 @@
     height: 11px;
     position: absolute;
     background: $green;
-    left: 5px;
+    left: 0;
     top: 6px;
     border-radius: 100%;
   }
