@@ -171,6 +171,19 @@ img {
   max-width: 1080px;
   margin: 0 auto; }
 
+.btn {
+  margin-top: 10px;
+  width: 180px;
+  padding: 15px 0px;
+  background-color: #a1d1ce;
+  border: 2px solid #a1d1ce;
+  border-radius: 2px;
+  color: #ffffff;
+  font-weight: 700; }
+  .btn:hover {
+    background-color: transparent;
+    color: #a1d1ce; }
+
 @media (max-width: 1080px) {
   .wrapper {
     max-width: 930px;
@@ -244,11 +257,11 @@ header {
     padding-top: 10px; }
     header nav ul {
       padding: 0;
-      margin: 0; }
+      margin: 0;
+      list-style-type: none; }
       header nav ul .loggedIn li, header nav ul .loggedOut li {
         float: right;
         text-align: right;
-        display: inline;
         padding: 10px 10px 0 10px;
         margin: 10px 10px 0 10px; }
         header nav ul .loggedIn li p, header nav ul .loggedOut li p {
@@ -260,46 +273,59 @@ header {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
-  min-height: 550px; }
+  min-height: 100vh;
+  height: 100vh; }
   .hero .heroScreen {
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.3); }
     .hero .heroScreen .wrapper {
       height: 100vh; }
-
-.heroContent {
-  float: right;
-  width: 45%;
-  position: relative;
-  margin-right: 0;
-  top: 50%;
-  right: 0px;
-  transform: translateY(-50%); }
-
-h2.heroHeading {
-  color: #ffffff;
-  margin: 15px 0; }
-
-p.heroCopy {
-  color: #ffffff; }
-
-.btn {
-  margin-top: 10px;
-  width: 180px;
-  padding: 15px 0px;
-  background-color: #a1d1ce;
-  border: 2px solid #a1d1ce;
-  border-radius: 2px;
-  color: #ffffff;
-  font-weight: 700; }
-  .btn:hover {
-    background-color: transparent;
-    color: #a1d1ce; }
+      .hero .heroScreen .wrapper .heroContent {
+        float: right;
+        width: 45%;
+        position: relative;
+        margin-right: 0;
+        top: 50%;
+        right: 0px;
+        transform: translateY(-50%); }
+        .hero .heroScreen .wrapper .heroContent h2.heroHeading {
+          color: #ffffff;
+          margin: 15px 0; }
+        .hero .heroScreen .wrapper .heroContent p.heroCopy {
+          color: #ffffff; }
 
 /* Portrait tablet and small desktops */
 /* Landscape phone to portrait tablet */
+@media (max-width: 768px) {
+  header {
+    padding-top: 0px; }
+    header nav {
+      padding-top: 0px; }
+  .hero .heroScreen {
+    background-color: rgba(0, 0, 0, 0.5); }
+    .hero .heroScreen .wrapper .heroContent {
+      float: none;
+      width: 100%;
+      margin: 0 auto;
+      text-align: center; }
+      .hero .heroScreen .wrapper .heroContent h2.heroHeading {
+        text-align: center; }
+      .hero .heroScreen .wrapper .heroContent p.heroCopy {
+        text-align: center; }
+      .hero .heroScreen .wrapper .heroContent .btn {
+        margin: 0 auto; } }
+
 /* Landscape phones and down */
+@media (max-width: 480px) {
+  .hero .heroScreen .wrapper {
+    width: 300px; }
+    .hero .heroScreen .wrapper .heroContent h2.heroHeading {
+      font-size: 3.5rem; }
+    .hero .heroScreen .wrapper .heroContent p.heroCopy {
+      text-align: center; }
+    .hero .heroScreen .wrapper .heroContent .btn {
+      margin: 0 auto; } }
+
 .formContainer {
   width: 100%; }
   .formContainer .form {
@@ -418,7 +444,6 @@ p.heroCopy {
         .formContainer .form .formWrapper form .filters fieldset {
           text-align: center; } }
 
-/* Landscape phone to portrait tablet */
 /* Landscape phones and down */
 @media (max-width: 480px) {
   .formContainer .form .formWrapper {
@@ -438,28 +463,23 @@ p.heroCopy {
           .formContainer .form .formWrapper form .filters fieldset h3 {
             margin: 0 0 15px 0;
             color: #4a4a4a; }
-          .formContainer .form .formWrapper form .filters fieldset ul {
-            list-style-type: none;
-            padding: 0;
-            margin-bottom: 15px; }
-            .formContainer .form .formWrapper form .filters fieldset ul li {
-              display: inline;
-              margin-right: 10px; }
-              .formContainer .form .formWrapper form .filters fieldset ul li .radio {
-                color: #4a4a4a;
-                position: relative; }
-                .formContainer .form .formWrapper form .filters fieldset ul li .radio span {
-                  position: relative;
-                  padding: 2px 0 0 22px; }
-                .formContainer .form .formWrapper form .filters fieldset ul li .radio span:after {
-                  content: '';
-                  width: 15px;
-                  height: 15px;
-                  border: 3px solid;
-                  position: absolute;
-                  left: 0;
-                  top: 1px;
-                  border-radius: 100%; }
+          .formContainer .form .formWrapper form .filters fieldset ul li {
+            margin-right: 15px; }
+            .formContainer .form .formWrapper form .filters fieldset ul li .radio {
+              color: #4a4a4a;
+              position: relative; }
+              .formContainer .form .formWrapper form .filters fieldset ul li .radio span {
+                position: relative;
+                padding: 2px 0 0 18px; }
+              .formContainer .form .formWrapper form .filters fieldset ul li .radio span:after {
+                content: '';
+                width: 15px;
+                height: 15px;
+                border: 3px solid;
+                position: absolute;
+                left: 0;
+                top: 1px;
+                border-radius: 100%; }
   .radio input[type="radio"]:checked + span:before {
     content: '';
     width: 11px;
@@ -636,5 +656,5 @@ footer {
 
 /* Landscape phones and down */
 @media (max-width: 480px) {
-  p {
+  footer p {
     font-size: 1.2rem; } }

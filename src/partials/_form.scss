@@ -68,12 +68,13 @@
             }
             .filterBtn{
                 margin-top:10px;
+                
                 background-color: $grey;
                 border: 2px solid $grey;
                 color: $white;
                 &:hover {
-                background-color: transparent;
-                color: $grey;
+                    background-color: transparent;
+                    color: $grey;
                 }
             }
         }
@@ -207,15 +208,8 @@
     }
  }
 
-/* Landscape phone to portrait tablet */
-// @media (max-width: 768px) {
-//  }
-
-
-
 /* Landscape phones and down */
 @media (max-width: 480px) {
-
     .formContainer .form .formWrapper{
         width: 310px;
         float: none;
@@ -235,12 +229,8 @@
                             color: $grey;
                         }
                         ul{
-                            list-style-type: none;
-                            padding: 0;
-                            margin-bottom:15px;
                             li{
-                                display: inline;
-                                margin-right: 10px;
+                                margin-right: 15px;
                                 //label
                                 .radio{
                                     color: $grey;
@@ -248,7 +238,7 @@
                                     //label
                                     span{
                                         position:relative;
-                                        padding: 2px 0 0 22px;
+                                        padding: 2px 0 0 18px;
                                     }
                                     //radio area
                                     span:after{
