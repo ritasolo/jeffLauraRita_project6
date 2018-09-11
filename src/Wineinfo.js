@@ -52,7 +52,7 @@ class Wineinfo extends Component {
       params: {
         reqUrl: `http://www.lcboapi.com/stores`,
         params: {
-          per_page: 10,
+          per_page: 5,
           lat: `${this.state.latitude}`,
           lon: `${this.state.longitude}`
         },
