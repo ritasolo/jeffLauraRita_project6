@@ -6,9 +6,7 @@ class SavedList extends Component {
     return (
       <section className="savedList">
         <div className="wrapper clearfix">
-          <Link to="/">
-            <p>Back to Main Page</p>
-          </Link>
+          <Link to="/"><p>Back to Main Page</p></Link>
           <h2 className="myCellar">My Cellar</h2>
           {this.props.wineInfo.length == 0 ? (
             <p>
