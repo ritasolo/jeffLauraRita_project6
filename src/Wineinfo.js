@@ -42,12 +42,8 @@ class Wineinfo extends Component {
   };
 
   addToError = () => {
-    swal(
-      "Error, User Not Logged In",
-      "Please login to add to your Cellar",
-      "error"
-    );
-  }
+    swal("User Not Logged In", "Please login to add to your cellar", "error");
+  };
 
   stores = () =>
     axios({
@@ -197,15 +193,15 @@ class Wineinfo extends Component {
               <button onClick={this.geolocation} className="btn">
                 <i class="fas fa-map-marker-alt" /> Find near me
               </button>
-              {this.props.user ?
-              <button onClick={this.addToFavs} className="btn btnAlt">
-                <i class="fas fa-plus" /> Add to Cellar
-              </button>
-              :
-              <button onClick={this.addToError} className="btn btnAlt">
-              <i class="fas fa-plus" /> Add to Cellar
-              </button>
-              }
+              {this.props.user ? (
+                <button onClick={this.addToFavs} className="btn btnAlt">
+                  <i class="fas fa-plus" /> Add to Cellar
+                </button>
+              ) : (
+                <button onClick={this.addToError} className="btn btnAlt">
+                  <i class="fas fa-plus" /> Add to Cellar
+                </button>
+              )}
               <DisplayStock arrayOfStock={this.state.arrayOfStock} />
             </div>{" "}
             {/* closes content wrapper */}

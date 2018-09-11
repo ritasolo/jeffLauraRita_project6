@@ -299,25 +299,27 @@ header {
     float: left;
     color: #dd9afc;
     margin: 0; }
-  header nav {
-    padding-top: 10px; }
-    header nav ul {
-      padding: 0;
-      margin: 0;
-      list-style-type: none; }
-      header nav ul .loggedIn li, header nav ul .loggedOut li {
-        float: right;
-        text-align: right;
-        padding: 10px 10px 0 10px;
-        margin: 10px 10px 0 10px; }
-        header nav ul .loggedIn li i, header nav ul .loggedOut li i {
-          display: none; }
-        header nav ul .loggedIn li p, header nav ul .loggedOut li p {
-          color: #ffffff;
-          margin: 0;
-          transition: transform 0.5s; }
-          header nav ul .loggedIn li p:hover, header nav ul .loggedOut li p:hover {
-            transform: scale(1.2); }
+  header nav ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none; }
+    header nav ul .loggedIn li,
+    header nav ul .loggedOut li {
+      float: right;
+      text-align: right;
+      padding: 10px 10px 0 10px;
+      margin: 10px 10px 0 10px; }
+      header nav ul .loggedIn li i,
+      header nav ul .loggedOut li i {
+        display: none; }
+      header nav ul .loggedIn li p,
+      header nav ul .loggedOut li p {
+        color: #ffffff;
+        margin: 0;
+        transition: transform 0.5s; }
+        header nav ul .loggedIn li p:hover,
+        header nav ul .loggedOut li p:hover {
+          transform: scale(1.2); }
 
 .hero {
   background-image: url(./assets/heroGirl.jpg);
@@ -349,7 +351,7 @@ header {
 /* Landscape phone to portrait tablet */
 @media (max-width: 768px) {
   header {
-    padding-top: 0px; }
+    padding-top: 15px; }
     header nav {
       padding-top: 0px; }
   .hero .heroScreen {
@@ -371,15 +373,19 @@ header {
 @media (max-width: 480px) {
   header h1 {
     padding-left: 15px; }
-  header nav ul .loggedIn li, header nav ul .loggedOut li {
+  header nav ul .loggedIn li,
+  header nav ul .loggedOut li {
     transition: transform 0.5s; }
-    header nav ul .loggedIn li:hover, header nav ul .loggedOut li:hover {
+    header nav ul .loggedIn li:hover,
+    header nav ul .loggedOut li:hover {
       transform: scale(1.2); }
-    header nav ul .loggedIn li i, header nav ul .loggedOut li i {
+    header nav ul .loggedIn li i,
+    header nav ul .loggedOut li i {
       display: inline;
       color: #ffffff;
       font-size: 2.5rem; }
-  header nav ul .loggedIn p, header nav ul .loggedOut p {
+  header nav ul .loggedIn p,
+  header nav ul .loggedOut p {
     display: none;
     margin: 0; }
   .hero .heroScreen .wrapper {
@@ -560,10 +566,22 @@ header {
   margin: 0 auto;
   padding: 40px;
   clear: both;
+  min-height: calc(100vh - 110px);
   text-align: center; }
   .results .btn,
   .savedList .btn {
     margin: 50px 0; }
+  .results .wrapper .sale,
+  .savedList .wrapper .sale {
+    position: absolute;
+    background-color: #dd9afc;
+    color: white;
+    text-transform: uppercase;
+    border-radius: 50%;
+    font-size: 12px;
+    padding: 13px 7px;
+    top: -20px;
+    left: -10px; }
   .results .wrapper .card,
   .savedList .wrapper .card {
     float: left;
@@ -695,7 +713,9 @@ header {
 
 .wineInfo {
   float: left;
-  width: 100%; }
+  min-height: calc(100vh - 110px);
+  width: 100%;
+  padding: 50px 0; }
   .wineInfo .wrapper {
     clear: both; }
     .wineInfo .wrapper .imageWrapper {
@@ -771,7 +791,8 @@ header {
 footer {
   background-color: #4a4a4a;
   padding: 10px 0px;
-  clear: both; }
+  clear: both;
+  height: 110px; }
   footer .socialIcons {
     font-size: 3rem;
     text-align: center;

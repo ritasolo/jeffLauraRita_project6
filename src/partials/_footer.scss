@@ -1,28 +1,28 @@
 footer {
   background-color: #4a4a4a;
   padding: 10px 0px;
-  clear:both;
+  clear: both;
+  height: 110px;
   .socialIcons {
     font-size: 3rem;
     text-align: center;
     margin: 0 auto;
     padding-bottom: 10px;
-    i{
+    i {
       padding: 10px 10px;
       color: $purple;
       transition: transform 0.5s;
-      &:hover{
+      &:hover {
         transform: scale(1.2);
-      }  
+      }
     }
   }
   .createdBy {
-
-    p{
-      text-align:center;
+    p {
+      text-align: center;
       color: $white;
       padding-bottom: 10px;
-      margin:0;
+      margin: 0;
       text-transform: uppercase;
       font-size: 1rem;
     }
@@ -38,7 +38,4 @@ footer {
   footer p {
     font-size: 1.2rem;
   }
-  }
-
-
-
+}
