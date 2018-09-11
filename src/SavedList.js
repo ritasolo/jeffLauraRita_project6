@@ -6,8 +6,10 @@ class SavedList extends Component {
     return (
       <section className="savedList">
         <div className="wrapper clearfix">
-          <Link to="/">Back to Main Page</Link>
-          <h2>My Wines</h2>
+          <Link to="/">
+            <p>Back to Main Page</p>
+          </Link>
+          <h2 className="myCellar">My Cellar</h2>
           {this.props.wineInfo.map(wine => {
             return (
               <div className="card wineList clearfix" key={wine.wineKey}>
@@ -17,23 +19,20 @@ class SavedList extends Component {
                   </figure>
                   <div className="cardSide">
                     <div className="wineTitle">
-                      <p>{wine.wineName}</p>
+                      <h3>{wine.wineName}</h3>
                     </div>
-                    <Link
-                      className="btn"
-                      to={`/products/${wine.wineId}`}
-                      target="_blank"
-                    >
-                      More Info
-                    </Link>
-
-                    <button
-                      className="btn"
-                      onClick={() => this.props.deleteWine(wine.wineKey)}
-                      id={wine.wineKey}
-                    >
-                      Delete Wine
-                    </button>
+                    <div className="savedListBtns">
+                      <Link to={`/products/${wine.wineId}`} target="_blank">
+                        <button className="cellarBtn">See Details</button>
+                      </Link>
+                      <button
+                        className="deleteBtn"
+                        onClick={() => this.props.deleteWine(wine.wineKey)}
+                        id={wine.wineKey}
+                      >
+                        Delete Wine
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
