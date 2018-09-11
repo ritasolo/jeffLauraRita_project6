@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 // import Slider from "react-rangeslider";
 // import 'react-rangeslider/lib/index.css';
-import drinkingForest from "./assets/drinkingForest.jpg";
 
 class Form extends Component {
   constructor() {
@@ -75,7 +74,7 @@ class Form extends Component {
                       type="radio"
                       value={this.state.price}
                     />
-                    <span> $$</span>
+                    <span>&nbsp;$$</span>
                     </label>
                   </li>
                   <li>
@@ -87,7 +86,7 @@ class Form extends Component {
                       type="radio"
                       value={this.state.price}
                     />
-                    <span> $$$</span>
+                    <span>&nbsp;$$$</span>
                     </label>
                   </li>
                   <li>
@@ -99,7 +98,7 @@ class Form extends Component {
                       type="radio"
                       value={this.state.price}
                     />
-                    <span> $$$$</span>
+                    <span>&nbsp;$$$$</span>
                     </label>
                   </li>
                 </ul>
@@ -129,7 +128,7 @@ class Form extends Component {
                       type="radio"
                       value={this.state.colour}
                     />
-                    <span> White</span>
+                    <span>&nbsp;White</span>
                     </label>
                   </li>
                   <li>
@@ -141,7 +140,7 @@ class Form extends Component {
                       type="radio"
                       value={this.state.colour}
                     />
-                    <span> All</span>
+                    <span>&nbsp;All</span>
                     </label>
                   </li>
                 </ul>

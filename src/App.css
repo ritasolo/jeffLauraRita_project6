@@ -472,7 +472,26 @@ header {
         transform: translateY(-50%);
         font-size: 2.8rem;
         padding: 100px;
-        color: #dd9afc; }
+        color: #dd9afc;
+        z-index: 1; }
+      .formContainer .formQuote .formQuoteScreen .quote:after {
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        content: "\f10e";
+        opacity: 0.25;
+        font-size: 3rem;
+        position: relative;
+        bottom: -5px;
+        right: -5px; }
+      .formContainer .formQuote .formQuoteScreen .quote:before {
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        content: "\f10d ";
+        opacity: 0.25;
+        font-size: 3rem;
+        position: relative;
+        bottom: 5px;
+        left: -5px; }
 
 .radio input[type="radio"]:checked + span {
   color: #4a4a4a; }
@@ -541,14 +560,14 @@ header {
               position: relative; }
               .formContainer .form .formWrapper form .filters fieldset ul li .radio span {
                 position: relative;
-                padding: 2px 0 0 18px; }
+                padding: 2px 5px 0 18px; }
               .formContainer .form .formWrapper form .filters fieldset ul li .radio span:after {
                 content: "";
                 width: 15px;
                 height: 15px;
                 border: 3px solid;
                 position: absolute;
-                left: 0;
+                left: -5px;
                 top: 1px;
                 border-radius: 100%; }
   .radio input[type="radio"]:checked + span:before {
@@ -557,7 +576,7 @@ header {
     height: 11px;
     position: absolute;
     background: #0b664c;
-    left: 5px;
+    left: 0;
     top: 6px;
     border-radius: 100%; } }
 
@@ -570,7 +589,7 @@ header {
   text-align: center; }
   .results .btn,
   .savedList .btn {
-    margin: 50px 0; }
+    margin: 25px; }
   .results .wrapper .sale,
   .savedList .wrapper .sale {
     position: absolute;
