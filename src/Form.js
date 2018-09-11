@@ -56,6 +56,7 @@ class Form extends Component {
                   <li>
                     <label className="radio inline" htmlFor="$">
                     <input
+                      checked
                       onClick={this.props.handleChangePrice}
                       name="price"
                       id="$"
@@ -134,6 +135,7 @@ class Form extends Component {
                   <li>
                     <label className="radio inline" htmlFor="all">
                     <input
+                    checked
                       onChange={this.props.handleChangeColour}
                       name="colour"
                       id="all"

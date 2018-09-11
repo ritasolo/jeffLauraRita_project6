@@ -143,19 +143,20 @@ header {
         }
       }
     }
-  }
-  .hero .heroScreen {
-    .wrapper {
-      width: 300px;
-      .heroContent {
-        h2.heroHeading {
-          font-size: 3.5rem;
-        }
-        p.heroCopy {
-          text-align: center;
-        }
-        .btn {
-          margin: 0 auto;
+
+    .hero .heroScreen {
+      .wrapper {
+        width: 300px;
+        .heroContent {
+          h2.heroHeading {
+            font-size: 3.5rem;
+          }
+          p.heroCopy {
+            text-align: center;
+          }
+          .btn {
+            margin: 0 auto;
+          }
         }
       }
     }

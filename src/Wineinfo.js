@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import firebase from "firebase";
 import swal from "sweetalert";
 import DisplayStock from "./DisplayStock";
+import Nav from "./Nav";
 
 const auth = firebase.auth();
 
@@ -34,15 +35,15 @@ class Wineinfo extends Component {
 
   addToFavs = () => {
     swal(
-      "Added To Your Favourites!",
-      "Please check your favourites for your list.",
+      "Added To Your Cellar!",
+      "Visit your cellar to see all your wines.",
       "success"
     );
     this.props.favourites(this.state.wine);
   };
 
   addToError = () => {
-    swal("User Not Logged In", "Please login to add to your cellar", "error");
+    swal("Oops, you must log in!", "Please login to add to your cellar.", "error");
   };
 
   stores = () =>
@@ -153,9 +154,9 @@ class Wineinfo extends Component {
   render() {
     return (
       <div className="wineInfo clearfix">
+        <Nav />
         <div className="wrapper">
           <figure className="imageWrapper">
-            <Link to="/">Back to Main Page</Link>
             <img src={this.state.wine.image_url} alt={this.state.wine.name} />
           </figure>
           <div className="content">
