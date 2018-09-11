@@ -768,6 +768,43 @@ header {
     color: #0b664c;
     text-decoration: underline; }
 
+@media (max-width: 1080px) {
+  .wineInfo .wrapper .imageWrapper, .wineInfo .wrapper .content {
+    width: 50%; }
+  .wineInfo .wrapper .content {
+    width: 50%; } }
+
+/* Portrait tablet and small desktops */
+/* Landscape phone to portrait tablet */
+@media (max-width: 768px) {
+  .wineInfo {
+    float: none;
+    margin-bottom: 50px; }
+    .wineInfo .wrapper .imageWrapper {
+      float: none;
+      width: 50%;
+      margin: 0 auto; }
+    .wineInfo .wrapper .content {
+      float: none;
+      width: 100%;
+      margin: 0 auto; }
+      .wineInfo .wrapper .content .contentWrapper {
+        margin-top: 10px;
+        text-align: center; }
+        .wineInfo .wrapper .content .contentWrapper h1 {
+          font-family: "Lora", monospace;
+          color: #4a4a4a;
+          margin: 15px 0;
+          text-align: center; }
+        .wineInfo .wrapper .content .contentWrapper .priceWrapper p {
+          text-align: center; }
+        .wineInfo .wrapper .content .contentWrapper .wineDescription {
+          text-align: center; }
+        .wineInfo .wrapper .content .contentWrapper .wineServingSuggestBox {
+          margin: 0 auto;
+          width: 450px; } }
+
+/* Landscape phones and down */
 footer {
   background-color: #4a4a4a;
   padding: 10px 0px;
