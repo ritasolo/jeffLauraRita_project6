@@ -41,6 +41,11 @@ p {
   text-transform: uppercase;
 }
 
+.smallBtn{
+  @include bodyFont(1.2rem);
+  text-transform: uppercase;
+}
+
 .filters li {
   @include bodyFont(1.6rem);
 }
