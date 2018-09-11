@@ -21,7 +21,8 @@ class WineList extends Component {
       render() {
         console.log(this.props.random)
         return(
-        <div className="wrapper">
+        <div className="results">
+        <div className="wrapper clearfix">
         {this.props.userChoice.slice(0, this.state.visible).map((item, i) => {
           // console.log(this.props.random)
           // console.log(item);
@@ -54,8 +55,12 @@ class WineList extends Component {
           </div>
           }
       </div>
+      </div>
         )
     }
 }
 
 export default WineList;
+
+
+
