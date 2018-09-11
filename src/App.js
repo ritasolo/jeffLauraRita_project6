@@ -188,7 +188,7 @@ class App extends Component {
                 id: response.id,
                 colour: response.secondary_category,
                 name: response.name,
-                price: `$${response.price_in_cents / 100}`,
+                price: `$${(response.price_in_cents / 100).toFixed(2)}`,
                 imgURL: response.image_url,
                 thumb: response.image_thumb_url,
                 onSale: response.has_limited_time_offer

@@ -57,17 +57,20 @@ class Header extends Component {
                     <li>
                       {" "}
                       <Link to="/">
+                        <i onClick={this.logout}class="fas fa-sign-out-alt"></i>
                         <p onClick={this.logout}>Logout</p>
                       </Link>{" "}
                     </li>
                     <li>
                       <Link to={`/user/${this.state.user.uid}`}>
+                        <i class="fas fa-heart"></i>
                         <p>My Cellar</p>
                       </Link>{" "}
                     </li>
                   </div> : <div className="loggedOut">
                   <li>
                     {" "}
+                    <i onClick={this.login} class="fas fa-sign-in-alt"></i>
                     <p onClick={this.login}>Login</p>{" "}
                   </li> 
                   {/* authentication ends */}

@@ -32,7 +32,7 @@ class Wineinfo extends Component {
     });
   };
 
-  addToFavs = wine => {
+  addToFavs = () => {
     swal(
       "Added To Your Favourites!",
       "Please check your favourites for your list.",
@@ -40,6 +40,14 @@ class Wineinfo extends Component {
     );
     this.props.favourites(this.state.wine);
   };
+
+  addToError = () => {
+    swal(
+      "Error, User Not Logged In",
+      "Please login to add to your Cellar",
+      "error"
+    );
+  }
 
   stores = () =>
     axios({
@@ -189,9 +197,15 @@ class Wineinfo extends Component {
               <button onClick={this.geolocation} className="btn">
                 <i class="fas fa-map-marker-alt" /> Find near me
               </button>
+              {this.props.user ?
               <button onClick={this.addToFavs} className="btn btnAlt">
                 <i class="fas fa-plus" /> Add to Cellar
               </button>
+              :
+              <button onClick={this.addToError} className="btn btnAlt">
+              <i class="fas fa-plus" /> Add to Cellar
+              </button>
+              }
               <DisplayStock arrayOfStock={this.state.arrayOfStock} />
             </div>{" "}
             {/* closes content wrapper */}
