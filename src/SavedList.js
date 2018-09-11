@@ -19,9 +19,16 @@ class SavedList extends Component {
                     <div className="wineTitle">
                       <p>{wine.wineName}</p>
                     </div>
-                    <Link to={`./products/${wine.wineId}`}>More Info</Link>
-                    //{" "}
+                    <Link
+                      className="btn"
+                      to={`/products/${wine.wineId}`}
+                      target="_blank"
+                    >
+                      More Info
+                    </Link>
+
                     <button
+                      className="btn"
                       onClick={() => this.props.deleteWine(wine.wineKey)}
                       id={wine.wineKey}
                     >
