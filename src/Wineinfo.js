@@ -198,9 +198,6 @@ class Wineinfo extends Component {
                   {`${this.state.wine.alcohol_content / 100}%`}
                 </li>
               </ul>
-              <button onClick={this.geolocation} className="btn">
-                <i class="fas fa-map-marker-alt" /> Find near me
-              </button>
               {this.props.user ?
               <button onClick={this.addToFavs} className="btn btnAlt">
                 <i class="fas fa-plus" /> Add to Cellar
@@ -210,6 +207,9 @@ class Wineinfo extends Component {
               <i class="fas fa-plus" /> Add to Cellar
               </button>
               }
+              <button onClick={this.geolocation} className="btn">
+                <i class="fas fa-map-marker-alt" /> Find near me
+              </button>
               <DisplayStock arrayOfStock={this.state.arrayOfStock} />
             </div>{" "}
             {/* closes content wrapper */}

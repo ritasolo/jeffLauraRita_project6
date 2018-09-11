@@ -115,3 +115,122 @@
     }
   }
 }
+
+@media (max-width: 1080px) {
+// .wineInfo .wrapper .imageWrapper, .wineInfo .wrapper .content {
+//       width: 50%;
+// }
+// .wineInfo .wrapper .imageWrapper {
+// width: 50%;
+// }
+
+.wineInfo {
+  margin-bottom: 50px;
+}
+
+}
+
+/* Portrait tablet and small desktops */
+@media (max-width: 940px) {
+.wineInfo .wrapper .imageWrapper, .wineInfo .wrapper .content {
+      width: 55%;
+}
+.wineInfo .wrapper .imageWrapper {
+width: 45%;
+}
+
+.wineInfo {
+  margin-bottom: 50px;
+}
+  .wineInfo .wrapper .content .contentWrapper .wineServingSuggestBox{
+    width: 350px;
+  }
+
+  .wineInfo .wrapper .content .contentWrapper .btn {
+          margin-right: 10px;
+        }
+
+
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 768px) {
+
+.wineInfo {
+  float: none;
+  margin-bottom: 50px;
+  .wrapper {
+    .imageWrapper {
+      float: none;
+      width: 50%;
+      margin: 0 auto;
+    }
+    .content {
+      float: none;
+      width: 100%;
+      margin: 0 auto;
+      .contentWrapper {
+        margin-top: 10px;
+        text-align:center;
+        h1 {
+          font-family: "Lora", monospace;
+          color: $grey;
+          margin: 15px 0;
+          text-align:center;
+        }
+        .priceWrapper {
+          p {
+            text-align:center;
+          }
+        }
+        .wineDescription {
+          text-align:center;
+        }
+        .wineServingSuggestBox {
+          margin:0 auto;
+          width: 450px;
+        }
+
+        // .btn {
+        //   margin-right: 20px;
+        //   &:hover {
+        //     color: $teal;
+        //   }
+        // }
+        // .btnAlt {
+        //   margin-top: 10px;
+        //   background-color: transparent;
+        //   border: 2px solid $grey;
+        //   color: $grey;
+        //   &:hover {
+        //     background-color: $grey;
+        //     color: $white;
+        //   }
+        // }
+      }
+    }
+  }
+}
+
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+
+  .wineInfo {
+  .wrapper {
+    .content {
+      .contentWrapper {
+        margin:10px;
+        h1 {
+          font-size: 2.5rem;
+        }
+        .wineServingSuggestBox {
+          margin:0 auto;
+          width: 290px;
+        }
+      }
+    }
+  }
+}
+}
