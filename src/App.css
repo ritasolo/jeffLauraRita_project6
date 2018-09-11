@@ -262,7 +262,7 @@ p.heroCopy {
   font-weight: 700; }
   .btn:hover {
     background-color: transparent;
-    color: #ffffff; }
+    color: #a1d1ce; }
 
 .formContainer {
   width: 100%; }
@@ -270,7 +270,7 @@ p.heroCopy {
     width: 40%;
     height: 300px;
     float: left;
-    background-color: #ffffff;
+    background-color: lightgrey;
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
     .formContainer .form .formWrapper {
       max-width: 360px;
@@ -279,7 +279,7 @@ p.heroCopy {
       top: 50%;
       transform: translateY(-50%); }
       .formContainer .form .formWrapper form .filters {
-        width: 580px; }
+        width: 360px; }
         .formContainer .form .formWrapper form .filters fieldset {
           border: none;
           padding: 0;
@@ -333,6 +333,7 @@ p.heroCopy {
     .formContainer .formQuote .formQuoteScreen {
       height: 300px; }
       .formContainer .formQuote .formQuoteScreen .quote {
+        max-width: 720px;
         margin: 0 auto;
         text-align: center;
         position: relative;
@@ -343,31 +344,30 @@ p.heroCopy {
         color: #dd9afc; }
 
 .radio input[type="radio"]:checked + span {
-  color: #4a4a4a; }
+  color: #4a4a4a;
+  font-weight: 700; }
 
 .radio input[type="radio"]:checked + span:before {
   content: '';
   width: 12px;
   height: 12px;
   position: absolute;
-  background: #4a4a4a;
+  background: #dd9afc;
   left: 7px;
   top: 8px;
   border-radius: 100%; }
 
 .results {
-  margin: 50px auto;
+  margin: 0 auto;
+  padding: 60px;
   clear: both; }
-
-.wrapper {
-  width: 90%;
-  max-width: 1080px;
-  margin: 0 auto; }
+  .results .wrapper {
+    width: 1080px; }
 
 .card {
   float: left;
   width: calc(33% - 1%);
-  margin: 0.5%;
+  margin: 1.5% 0.5%;
   border: #4a4a4a solid 1px;
   border-radius: 2px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
@@ -377,7 +377,7 @@ p.heroCopy {
 
 .cardWrapper .imageWrapper {
   float: left;
-  width: 40%; }
+  width: 42%; }
 
 .card .imageWrapper img {
   display: block;
@@ -385,9 +385,10 @@ p.heroCopy {
 
 .cardSide {
   float: left;
-  width: calc(60% - 4%);
+  width: calc(58% - 4%);
   margin: 2% 2%;
-  height: 100%; }
+  height: 100%;
+  padding: 0 8px; }
 
 .wineTitle h3 {
   display: block;
@@ -411,19 +412,18 @@ p.heroCopy {
 
 .wineInfo {
   float: left;
-  width: 100%;
-  height: 90vh; }
+  width: 100%; }
   .wineInfo .wrapper {
     clear: both; }
     .wineInfo .wrapper .imageWrapper {
       float: left;
-      width: 45%; }
+      width: 40%; }
       .wineInfo .wrapper .imageWrapper img {
         display: block;
         width: 98%; }
     .wineInfo .wrapper .content {
       float: left;
-      width: 55%; }
+      width: 60%; }
       .wineInfo .wrapper .content .contentWrapper {
         margin-top: 50px; }
         .wineInfo .wrapper .content .contentWrapper h1 {
@@ -468,11 +468,10 @@ p.heroCopy {
           .wineInfo .wrapper .content .contentWrapper .btn:hover {
             color: #a1d1ce; }
         .wineInfo .wrapper .content .contentWrapper .btnAlt {
+          margin-top: 10px;
           background-color: transparent;
-          padding: 15px 50px;
           border: 2px solid #4a4a4a;
-          color: #4a4a4a;
-          font-weight: 700; }
+          color: #4a4a4a; }
           .wineInfo .wrapper .content .contentWrapper .btnAlt:hover {
             background-color: #4a4a4a;
             color: #ffffff; }

@@ -10,35 +10,34 @@ class WineList extends Component {
   }
 
   render() {
-    return(
+    return <div className="results clearfix">
         <div className="wrapper">
-        {this.props.random.map((item, i) => {
-          // console.log(this.props.random)
-          // console.log(item);
-          return (
-            <Link to={`/products/${item.id}`}>
-              <div key={item.id} className="card wineChoice clearfix">
-              <div className="cardWrapper clearfix">
-    
-                <figure className="imageWrapper">
-                  <img src={item.imgURL} alt={item.name}/>
-                </figure>
-                <div className="cardSide">
+          {this.props.random.map((item, i) => {
+            // console.log(this.props.random)
+            // console.log(item);
+            return <Link to={`/products/${item.id}`}>
+                <div key={item.id} className="card wineChoice clearfix">
+                  <div className="cardWrapper clearfix">
+                    <figure className="imageWrapper">
+                      <img src={item.imgURL} alt={item.name} />
+                    </figure>
+                    <div className="cardSide">
                       <div className="wineTitle">
                         <h3>{item.name}</h3>
                       </div> {/* closes wine title */}
-                    <div className="winePriceWrapper">
-                      <p className="winePrice">{`${item.price}`}<span>/bottle</span></p>
-                    </div> {/* closes wine price wrapper */}
-                </div> {/* closes card side */}
-              </div> {/* closes card wrapper */}
-            </div> {/* closes card */}
-          </Link>
-          )
-        })
-        }
+                      <div className="winePriceWrapper">
+                        <p className="winePrice">
+                          {`${item.price}`}
+                          <span>/bottle</span>
+                        </p>
+                      </div> {/* closes wine price wrapper */}
+                    </div> {/* closes card side */}
+                  </div> {/* closes card wrapper */}
+                </div> {/* closes card */}
+              </Link>;
+          })}
+        </div>
       </div>
-    )
   }
 }
 
