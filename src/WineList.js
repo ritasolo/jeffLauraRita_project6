@@ -47,7 +47,9 @@ class WineList extends Component {
                           {`${item.price}`}
                           <span>/bottle</span>
                         </p>
-                      </div>{" "}
+                      </div>
+                      <button className="btn smallBtn">See Details</button>
+                      {" "}
                       {/* closes wine price wrapper */}
                     </div>{" "}
                     {/* closes card side */}
