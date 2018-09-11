@@ -34,6 +34,7 @@ class WineList extends Component {
                   className="card wineChoice clearfix animated fadeInUp"
                 >
                   <div className="cardWrapper clearfix">
+                    {item.onSale ? <p class="sale">Sale</p> : null}
                     <figure className="imageWrapper">
                       <img
                         src={item.imgURL}

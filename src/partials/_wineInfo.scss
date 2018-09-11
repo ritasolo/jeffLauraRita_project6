@@ -1,8 +1,8 @@
 .wineInfo {
-  //  height: 95vh;
   float: left;
+  min-height: calc(100vh - 110px);
   width: 100%;
-
+  padding: 50px 0;
   .wrapper {
     clear: both;
 
@@ -112,8 +112,8 @@
 }
 
 .storeInfo {
-  p{
-    margin:0;
+  p {
+    margin: 0;
     font-size: 1.4rem;
     span {
       font-weight: bold;
