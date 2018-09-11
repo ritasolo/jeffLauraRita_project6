@@ -103,3 +103,17 @@
     }
   }
 }
+
+.storeInfo {
+  p{
+    margin:0;
+    font-size: 1.4rem;
+    span {
+      font-weight: bold;
+    }
+    a {
+      color: $green;
+      text-decoration: underline;
+    }
+  }
+}
