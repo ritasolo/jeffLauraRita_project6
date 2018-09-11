@@ -6,11 +6,19 @@ class SavedList extends Component {
     return (
       <section className="savedList">
         <div className="wrapper clearfix">
-          <Link to="/"><p>Back to Main Page</p></Link>
+          <Link to="/">
+            <p>Back to Main Page</p>
+          </Link>
           <h2 className="myCellar">My Cellar</h2>
+<<<<<<< HEAD
           {this.props.wineInfo.length == 0 ? <p className="italics">You don't have any wines in your cellar :( </p> :
           this.props.wineInfo.map(wine => {
             return <div className="card wineList clearfix" key={wine.wineKey}>
+=======
+          {this.props.wineInfo.map(wine => {
+            return (
+              <div className="card wineList clearfix" key={wine.wineKey}>
+>>>>>>> cbe99d641eab8e877429c4f393d67398fedf2cf2
                 <div className="cardWrapper clearfix">
                   <figure className="imageWrapper">
                     <img src={wine.wineImage} />
@@ -19,19 +27,22 @@ class SavedList extends Component {
                     <div className="wineTitle">
                       <h3>{wine.wineName}</h3>
                     </div>
-                  <div className="savedListBtns">
-                    <Link to={`/products/${wine.wineId}`} target="_blank">
-                      <button className="cellarBtn">
-                        See Details
+                    <div className="savedListBtns">
+                      <Link to={`/products/${wine.wineId}`} target="_blank">
+                        <button className="cellarBtn">See Details</button>
+                      </Link>
+                      <button
+                        className="deleteBtn"
+                        onClick={() => this.props.deleteWine(wine.wineKey)}
+                        id={wine.wineKey}
+                      >
+                        Delete Wine
                       </button>
-                    </Link>
-                    <button className="deleteBtn" onClick={() => this.props.deleteWine(wine.wineKey)} id={wine.wineKey}>
-                      Delete Wine
-                    </button>
-                  </div>
+                    </div>
                   </div>
                 </div>
-              </div>;
+              </div>
+            );
           })}
         </div>
       </section>

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import "animate.css/animate.min.css";
 
 class WineList extends Component {
   constructor() {
@@ -28,7 +29,10 @@ class WineList extends Component {
             // console.log(item);
             return (
               <Link to={`/products/${item.id}`}>
-                <div key={item.id} className="card wineChoice clearfix">
+                <div
+                  key={item.id}
+                  className="card wineChoice clearfix animated fadeInUp"
+                >
                   <div className="cardWrapper clearfix">
                     <figure className="imageWrapper">
                       <img
