@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "animate.css/animate.min.css";
+import { animateScroll as scroll } from 'react-scroll'
 
 class WineList extends Component {
   constructor() {
@@ -18,7 +19,13 @@ class WineList extends Component {
   click = () => {
     this.loadMore();
     this.props.displayWines();
+    this.scrollMore();
   };
+
+  scrollMore = () => {
+  scroll.scrollMore(450);
+}
+
   render() {
     return (
       <div className="results">

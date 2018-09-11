@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-// import Slider from "react-rangeslider";
-// import 'react-rangeslider/lib/index.css';
+import { animateScroll as scroll } from 'react-scroll'
 
 class Form extends Component {
   constructor() {
@@ -10,7 +9,14 @@ class Form extends Component {
       price: ""
     };
   }
+  clicking = () => {
+    this.props.displayWines();
+    this.scrollTo();
+  }
 
+  scrollTo = () => {
+    scroll.scrollTo(1030);
+  }
   render() {
     // const { value } = this.state
     return (
