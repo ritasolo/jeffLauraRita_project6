@@ -179,7 +179,8 @@ img {
   border: 2px solid #a1d1ce;
   border-radius: 2px;
   color: #ffffff;
-  font-weight: 700; }
+  font-weight: 700;
+  transition: transform 0.5s; }
   .btn:hover {
     background-color: transparent;
     color: #a1d1ce; }
@@ -237,7 +238,10 @@ p {
   font-size: 1.6rem;
   font-family: "Oxygen", monospace; }
 
-nav li a {
+a {
+  text-decoration: none; }
+
+nav li p {
   font-size: 1.6rem;
   font-family: "Oxygen", monospace;
   text-transform: uppercase;
@@ -264,9 +268,14 @@ header {
         text-align: right;
         padding: 10px 10px 0 10px;
         margin: 10px 10px 0 10px; }
+        header nav ul .loggedIn li i, header nav ul .loggedOut li i {
+          display: none; }
         header nav ul .loggedIn li p, header nav ul .loggedOut li p {
           color: #ffffff;
-          margin: 0; }
+          margin: 0;
+          transition: transform 0.5s; }
+          header nav ul .loggedIn li p:hover, header nav ul .loggedOut li p:hover {
+            transform: scale(1.2); }
 
 .hero {
   background-image: url(./assets/heroGirl.jpg);
@@ -304,6 +313,7 @@ header {
   .hero .heroScreen {
     background-color: rgba(0, 0, 0, 0.5); }
     .hero .heroScreen .wrapper .heroContent {
+      clear: both;
       float: none;
       width: 100%;
       margin: 0 auto;
@@ -317,6 +327,19 @@ header {
 
 /* Landscape phones and down */
 @media (max-width: 480px) {
+  header h1 {
+    padding-left: 15px; }
+  header nav ul .loggedIn li, header nav ul .loggedOut li {
+    transition: transform 0.5s; }
+    header nav ul .loggedIn li:hover, header nav ul .loggedOut li:hover {
+      transform: scale(1.2); }
+    header nav ul .loggedIn li i, header nav ul .loggedOut li i {
+      display: inline;
+      color: #ffffff;
+      font-size: 2.5rem; }
+  header nav ul .loggedIn p, header nav ul .loggedOut p {
+    display: none;
+    margin: 0; }
   .hero .heroScreen .wrapper {
     width: 300px; }
     .hero .heroScreen .wrapper .heroContent h2.heroHeading {
@@ -637,22 +660,26 @@ header {
 
 footer {
   background-color: #4a4a4a;
+  padding: 10px 0px;
   clear: both; }
   footer .socialIcons {
     font-size: 3rem;
     text-align: center;
-    margin: 0 auto; }
+    margin: 0 auto;
+    padding-bottom: 10px; }
     footer .socialIcons i {
       padding: 10px 10px;
       color: #dd9afc;
-      transition: transform 1s; }
+      transition: transform 0.5s; }
       footer .socialIcons i:hover {
         transform: scale(1.2); }
   footer .createdBy p {
     text-align: center;
     color: #ffffff;
     padding-bottom: 10px;
-    margin: 0; }
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 1rem; }
 
 /* Landscape phones and down */
 @media (max-width: 480px) {
