@@ -11,7 +11,8 @@ class Header extends Component {
     };
   }
   render() {
-    return <div className="headerSection clearfix">
+    return (
+      <div className="headerSection clearfix">
         <Nav user={this.state.user} />
         <section className="hero">
           <div className="heroScreen">
@@ -20,15 +21,14 @@ class Header extends Component {
                 <h2 className="heroHeading">
                   Lorem ipsum dolor sit amet, lorem noluisse.{" "}
                 </h2>
-                <p className="heroCopy">
-                  Find your next bottle for under $22
-                </p>
+                <p className="heroCopy">Find your next bottle for under $22</p>
                 <button className="btn">Find Plonk</button>
               </div>
             </div>
           </div>
         </section>
-      </div>;
+      </div>
+    );
   }
 }
 
