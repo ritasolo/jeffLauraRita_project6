@@ -28,6 +28,7 @@ width:100%;
   border-radius: 2px;
   color: $white;
   font-weight: 700;
+  transition: transform 0.5s;
   &:hover {
     background-color: transparent;
     color: $teal;

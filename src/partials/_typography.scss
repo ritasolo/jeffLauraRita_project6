@@ -45,7 +45,11 @@ p {
   @include bodyFont(1.6rem);
 }
 
-nav li a {
+a {
+  text-decoration: none;
+}
+
+nav li p {
     @include bodyFont(1.6rem);
     text-transform:uppercase;
     text-decoration: none;

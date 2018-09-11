@@ -20,9 +20,16 @@ header {
           text-align: right;
           padding:10px 10px 0 10px;
           margin:10px 10px 0 10px;
+          i{
+            display:none;
+          }
           p{
             color: $white;
             margin:0;
+            transition: transform 0.5s;
+            &:hover{
+              transform: scale(1.2);
+            }
           }
         }
       }
@@ -119,8 +126,33 @@ header {
 }
 /* Landscape phones and down */
 @media (max-width: 480px) {
-
-  .hero .heroScreen{
+    header {
+      h1 {
+padding-left: 15px;
+      }
+      nav {
+      ul{
+        .loggedIn, .loggedOut{
+          li{ 
+            transition: transform 0.5s;
+              &:hover{
+                transform: scale(1.2);
+              }
+            i{
+              display:inline;
+              color: $white;
+              font-size: 2.5rem;
+            }
+          }
+          p{
+            display: none;
+            margin:0;
+            }
+          }
+        }
+      }
+    }
+    .hero .heroScreen{
     .wrapper{
       width:300px;
       .heroContent{
@@ -136,4 +168,4 @@ header {
       }
     }
   }
-}
+  }
