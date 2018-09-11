@@ -41,7 +41,7 @@ p {
   text-transform: uppercase;
 }
 
-.smallBtn{
+.smallBtn, .smallBtn, .deleteBtn, .cellarBtn {
   @include bodyFont(1.2rem);
   text-transform: uppercase;
 }

@@ -4,6 +4,10 @@
   padding: 40px;
   clear: both;
   // height: 70vh;
+  text-align: center;
+  .btn {
+    margin: 50px 0;
+  }
   .wrapper {
     // margin: 0px auto;
     .card {
@@ -19,10 +23,14 @@
           0 10px 10px rgba(0, 0, 0, 0.22);
       }
       .cardWrapper {
+        text-align: left;
         position: relative;
         .imageWrapper {
           float: left;
           width: 45%;
+        }
+        .btn {
+          margin: 20px 0;
         }
         .cardSide {
           float: left;
@@ -72,14 +80,8 @@
   padding: 8px;
 }
 
-.deleteBtn {
-  background-color: transparent;
-  border: 2px solid $grey;
+.myCellar {
   color: $grey;
-  &:hover {
-    background-color: $grey;
-    color: $white;
-  }
 }
 
 ///////////////////////////////////////////////

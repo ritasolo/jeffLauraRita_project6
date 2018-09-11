@@ -186,9 +186,41 @@ img {
     color: #a1d1ce; }
 
 .smallBtn {
+  transition: transform 0.5s;
+  font-weight: 700;
+  border-radius: 2px;
   margin-top: 20px;
   padding: 10px;
   width: 125px; }
+
+.deleteBtn {
+  margin: 0;
+  background-color: transparent;
+  border: 2px solid #4a4a4a;
+  color: #4a4a4a;
+  transition: transform 0.5s;
+  font-weight: 700;
+  border-radius: 2px;
+  margin-top: 10px;
+  padding: 10px;
+  width: 125px; }
+  .deleteBtn:hover {
+    background-color: #4a4a4a;
+    color: #ffffff; }
+
+.cellarBtn {
+  margin: 0;
+  background-color: #a1d1ce;
+  border: 2px solid #a1d1ce;
+  color: #ffffff;
+  transition: transform 0.5s;
+  font-weight: 700;
+  border-radius: 2px;
+  padding: 10px;
+  width: 125px; }
+  .cellarBtn:hover {
+    background-color: transparent;
+    color: #a1d1ce; }
 
 @media (max-width: 1080px) {
   .wrapper {
@@ -239,7 +271,7 @@ p {
   font-family: "Oxygen", monospace;
   text-transform: uppercase; }
 
-.smallBtn {
+.smallBtn, .smallBtn, .deleteBtn, .cellarBtn {
   font-size: 1.2rem;
   font-family: "Oxygen", monospace;
   text-transform: uppercase; }
@@ -444,7 +476,7 @@ header {
   width: 12px;
   height: 12px;
   position: absolute;
-  background: #dd9afc;
+  background: #0b664c;
   left: 7px;
   top: 8px;
   border-radius: 100%; }
@@ -518,7 +550,7 @@ header {
     width: 11px;
     height: 11px;
     position: absolute;
-    background: #dd9afc;
+    background: #0b664c;
     left: 5px;
     top: 6px;
     border-radius: 100%; } }
@@ -527,7 +559,11 @@ header {
 .savedList {
   margin: 0 auto;
   padding: 40px;
-  clear: both; }
+  clear: both;
+  text-align: center; }
+  .results .btn,
+  .savedList .btn {
+    margin: 50px 0; }
   .results .wrapper .card,
   .savedList .wrapper .card {
     float: left;
@@ -542,11 +578,15 @@ header {
       box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
     .results .wrapper .card .cardWrapper,
     .savedList .wrapper .card .cardWrapper {
+      text-align: left;
       position: relative; }
       .results .wrapper .card .cardWrapper .imageWrapper,
       .savedList .wrapper .card .cardWrapper .imageWrapper {
         float: left;
         width: 45%; }
+      .results .wrapper .card .cardWrapper .btn,
+      .savedList .wrapper .card .cardWrapper .btn {
+        margin: 20px 0; }
       .results .wrapper .card .cardWrapper .cardSide,
       .savedList .wrapper .card .cardWrapper .cardSide {
         float: left;
@@ -581,13 +621,8 @@ header {
   margin-top: 5px;
   padding: 8px; }
 
-.deleteBtn {
-  background-color: transparent;
-  border: 2px solid #4a4a4a;
+.myCellar {
   color: #4a4a4a; }
-  .deleteBtn:hover {
-    background-color: #4a4a4a;
-    color: #ffffff; }
 
 @media (max-width: 1080px) {
   .results .wrapper .card {

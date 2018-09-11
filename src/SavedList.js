@@ -20,12 +20,11 @@ class SavedList extends Component {
                     </div>
                   <div className="savedListBtns">
                     <Link to={`/products/${wine.wineId}`} target="_blank">
-                      <button className="btn smallBtn cellarBtn">
+                      <button className="cellarBtn">
                         See Details
                       </button>
                     </Link>
-
-                    <button className="btn smallBtn cellarBtn deleteBtn" onClick={() => this.props.deleteWine(wine.wineKey)} id={wine.wineKey}>
+                    <button className="deleteBtn" onClick={() => this.props.deleteWine(wine.wineKey)} id={wine.wineKey}>
                       Delete Wine
                     </button>
                   </div>

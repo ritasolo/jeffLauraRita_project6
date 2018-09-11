@@ -48,8 +48,7 @@ class WineList extends Component {
                           <span>/bottle</span>
                         </p>
                       </div>
-                      <button className="btn smallBtn">See Details</button>
-                      {" "}
+                      <button className="btn smallBtn">See Details</button>{" "}
                       {/* closes wine price wrapper */}
                     </div>{" "}
                     {/* closes card side */}
@@ -64,7 +63,9 @@ class WineList extends Component {
         <div className="wrapper">
           {this.state.visible < this.props.userChoice.length && (
             <div>
-              <button onClick={this.click}>Load More</button>
+              <button className="btn" onClick={this.click}>
+                Load More
+              </button>
             </div>
           )}
         </div>
