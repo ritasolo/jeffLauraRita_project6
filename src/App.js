@@ -40,7 +40,8 @@ class App extends Component {
       $$$$white: [],
       $$$$red: [],
       random: [],
-      user: null
+      user: null,
+      userChoice: []
     };
   }
 
@@ -94,11 +95,13 @@ class App extends Component {
 
   displayWines = () => {
     const userChoice = `${this.state.price}${this.state.colour}`;
+    const totalChoice = (this.state[`${userChoice}`])
     const random = _.sampleSize(this.state[`${userChoice}`], 6);
     // console.log(random);
     console.log("clicked");
     this.setState({
-      random
+      random,
+      userChoice: totalChoice
     });
   };
 
@@ -184,6 +187,22 @@ class App extends Component {
                 // sale: `$${response.regular_price_in_cents / 100}`
               };
             });
+          const userChoice = fullArray
+            .filter(item => {
+              return item.price_in_cents > 600 && item.price_in_cents < 1000;
+            })
+            .map(response => {
+              return {
+                id: response.id,
+                colour: response.secondary_category,
+                name: response.name,
+                price: `$${response.price_in_cents / 100}`,
+                imgURL: response.image_url,
+                thumb: response.image_thumb_url,
+                onSale: response.has_limited_time_offer
+                // sale: `$${response.regular_price_in_cents / 100}`
+              };
+            });
           const $$all = fullArray
             .filter(item => {
               return item.price_in_cents > 1000 && item.price_in_cents < 1400;
@@ -238,7 +257,8 @@ class App extends Component {
               $all,
               $$all,
               $$$all,
-              $$$$all
+              $$$$all,
+              userChoice
             },
             () => {
               const $ = this.state.$all;
@@ -416,7 +436,7 @@ class App extends Component {
               exact
               path="/"
               render={props => (
-                <WineList {...props} random={this.state.random} />
+                <WineList {...props} random={this.state.random} displayWines={this.displayWines} userChoice={this.state.userChoice} />
               )}
             />
             <Route
