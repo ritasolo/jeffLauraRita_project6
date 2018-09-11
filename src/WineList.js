@@ -49,12 +49,14 @@ class WineList extends Component {
           )
         })
         }
+        </div>
+        <div className="wrapper">
           {this.state.visible < this.props.userChoice.length &&
           <div>
             <button onClick={this.click}>Load More</button>
           </div>
           }
-      </div>
+            </div>
       </div>
         )
     }

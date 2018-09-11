@@ -171,9 +171,29 @@ img {
   max-width: 1080px;
   margin: 0 auto; }
 
-@media (max-width: 1079px) {
+@media (max-width: 1080px) {
   .wrapper {
     max-width: 930px;
+    margin: 0 auto; } }
+
+@media (max-width: 940px) {
+  .wrapper {
+    max-width: 758px;
+    margin: 0 auto; } }
+
+@media (max-width: 768px) {
+  .wrapper {
+    max-width: 470px;
+    margin: 0 auto; } }
+
+@media (max-width: 480px) {
+  .wrapper {
+    max-width: 450px;
+    margin: 0 auto; } }
+
+@media (max-width: 350px) {
+  .wrapper {
+    max-width: 300px;
     margin: 0 auto; } }
 
 h1 {
@@ -277,6 +297,9 @@ p.heroCopy {
     background-color: transparent;
     color: #a1d1ce; }
 
+/* Portrait tablet and small desktops */
+/* Landscape phone to portrait tablet */
+/* Landscape phones and down */
 .formContainer {
   width: 100%; }
   .formContainer .form {
@@ -285,7 +308,7 @@ p.heroCopy {
     float: left;
     background-color: lightgrey; }
     .formContainer .form .formWrapper {
-      max-width: 360px;
+      width: 360px;
       float: right;
       position: relative;
       top: 50%;
@@ -367,6 +390,86 @@ p.heroCopy {
   top: 8px;
   border-radius: 100%; }
 
+@media (max-width: 1080px) {
+  .formContainer .form,
+  .formContainer .formQuote {
+    width: 50%; }
+  .formContainer .form .formWrapper {
+    max-width: 540px; } }
+
+/* Portrait tablet and small desktops */
+@media (max-width: 940px) {
+  .formContainer .formQuote {
+    display: none; }
+  .formContainer .form {
+    width: 100%; }
+  .formContainer .form .formWrapper {
+    max-width: 80%;
+    width: 80%;
+    float: none;
+    margin: 0 auto;
+    text-align: center; }
+    .formContainer .form .formWrapper form {
+      text-align: center;
+      margin: 0 auto; }
+      .formContainer .form .formWrapper form .filters {
+        text-align: center;
+        margin: 0 auto; }
+        .formContainer .form .formWrapper form .filters fieldset {
+          text-align: center; } }
+
+/* Landscape phone to portrait tablet */
+/* Landscape phones and down */
+@media (max-width: 480px) {
+  .formContainer .form .formWrapper {
+    width: 310px;
+    float: none;
+    margin: 0 auto;
+    text-align: center; }
+    .formContainer .form .formWrapper form {
+      text-align: center;
+      margin: 0 auto; }
+      .formContainer .form .formWrapper form .filters {
+        width: 250px;
+        text-align: center;
+        margin: 0 auto; }
+        .formContainer .form .formWrapper form .filters fieldset {
+          text-align: center; }
+          .formContainer .form .formWrapper form .filters fieldset h3 {
+            margin: 0 0 15px 0;
+            color: #4a4a4a; }
+          .formContainer .form .formWrapper form .filters fieldset ul {
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 15px; }
+            .formContainer .form .formWrapper form .filters fieldset ul li {
+              display: inline;
+              margin-right: 10px; }
+              .formContainer .form .formWrapper form .filters fieldset ul li .radio {
+                color: #4a4a4a;
+                position: relative; }
+                .formContainer .form .formWrapper form .filters fieldset ul li .radio span {
+                  position: relative;
+                  padding: 2px 0 0 22px; }
+                .formContainer .form .formWrapper form .filters fieldset ul li .radio span:after {
+                  content: '';
+                  width: 15px;
+                  height: 15px;
+                  border: 3px solid;
+                  position: absolute;
+                  left: 0;
+                  top: 1px;
+                  border-radius: 100%; }
+  .radio input[type="radio"]:checked + span:before {
+    content: '';
+    width: 11px;
+    height: 11px;
+    position: absolute;
+    background: #dd9afc;
+    left: 5px;
+    top: 6px;
+    border-radius: 100%; } }
+
 .results {
   margin: 0 auto;
   padding: 40px;
@@ -408,14 +511,44 @@ p.heroCopy {
           .results .wrapper .card .cardWrapper .cardSide .winePriceWrapper .winePrice span {
             font-size: 70%; }
 
-@media (max-width: 1079px) {
-  .card {
+@media (max-width: 1080px) {
+  .results .wrapper .card {
     width: calc(50% - 2%);
-    margin: 1%; } }
+    margin: 1%; }
+  .results .wrapper .card .cardWrapper .cardSide .wineTitle h3 {
+    font-size: 2.5rem;
+    height: calc((4 * 2.5rem) + 1.2rem);
+    -webkit-line-clamp: 4; } }
 
 /* Portrait tablet and small desktops */
+@media (max-width: 940px) {
+  .results .wrapper .card .cardWrapper .cardSide .wineTitle h3 {
+    font-size: 2.3rem;
+    height: calc((3 * 2.3rem) + 1.1rem);
+    -webkit-line-clamp: 3; } }
+
 /* Landscape phone to portrait tablet */
+@media (max-width: 768px) {
+  .results .wrapper {
+    margin: 0 auto; }
+    .results .wrapper .card {
+      float: none;
+      width: 400px;
+      max-width: 400px;
+      margin: 20px auto; } }
+
 /* Landscape phones and down */
+@media (max-width: 480px) {
+  .results {
+    padding: 0; }
+  .results .wrapper .card {
+    width: 295px;
+    max-width: 400px; }
+  .results .wrapper .card .cardWrapper .cardSide .wineTitle h3 {
+    font-size: 2rem;
+    height: calc((3 * 2rem) + 1.1rem);
+    -webkit-line-clamp: 3; } }
+
 .wineInfo {
   float: left;
   width: 100%; }
@@ -500,3 +633,8 @@ footer {
     color: #ffffff;
     padding-bottom: 10px;
     margin: 0; }
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+  p {
+    font-size: 1.2rem; } }

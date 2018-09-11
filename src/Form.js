@@ -63,7 +63,7 @@ class Form extends Component {
                       type="radio"
                       value={this.state.price}
                     />
-                     <span> $</span>
+                     <span>&nbsp;$</span>
                      </label>
                   </li>
                   <li>
@@ -117,7 +117,7 @@ class Form extends Component {
                       type="radio"
                       value={this.state.colour}
                     />
-                    <span> Red</span>
+                    <span>&nbsp;Red</span>
                     </label>
                   </li>
                   <li>
