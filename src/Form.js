@@ -49,7 +49,6 @@ class Form extends Component {
         />
         <div className='value'>{value}</div>
       </div> */}
-
                 <fieldset className="priceSelect">
                   <h3>Set your budget:</h3>
                   <ul>
