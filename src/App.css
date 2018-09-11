@@ -185,6 +185,11 @@ img {
     background-color: transparent;
     color: #a1d1ce; }
 
+.smallBtn {
+  margin-top: 20px;
+  padding: 10px;
+  width: 125px; }
+
 @media (max-width: 1080px) {
   .wrapper {
     max-width: 930px;
@@ -231,6 +236,11 @@ p {
 
 .btn {
   font-size: 1.4rem;
+  font-family: "Oxygen", monospace;
+  text-transform: uppercase; }
+
+.smallBtn {
+  font-size: 1.2rem;
   font-family: "Oxygen", monospace;
   text-transform: uppercase; }
 
