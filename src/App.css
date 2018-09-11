@@ -716,7 +716,13 @@ header {
         .wineInfo .wrapper .content .contentWrapper .priceWrapper p {
           font-size: 3rem;
           margin: 0; }
-          .wineInfo .wrapper .content .contentWrapper .priceWrapper p span {
+          .wineInfo .wrapper .content .contentWrapper .priceWrapper p .regular {
+            margin-right: 25px;
+            text-decoration: line-through;
+            color: #dd9afc; }
+          .wineInfo .wrapper .content .contentWrapper .priceWrapper p .sale {
+            color: #4a4a4a; }
+          .wineInfo .wrapper .content .contentWrapper .priceWrapper p .bottle {
             font-size: 1.8rem; }
         .wineInfo .wrapper .content .contentWrapper p::first-letter {
           text-transform: uppercase; }
