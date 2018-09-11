@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import Nav from './Nav'
 
 class SavedList extends Component {
   render() {
     return (
       <section className="savedList">
+        <Nav />
         <div className="wrapper clearfix">
-          <Link to="/"><p>Back to Main Page</p></Link>
           <h2 className="myCellar">My Cellar</h2>
           {this.props.wineInfo.length == 0 ? (
             <p>

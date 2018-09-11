@@ -20,7 +20,6 @@ class WineList extends Component {
     this.props.displayWines();
   };
   render() {
-    console.log(this.props.random);
     return (
       <div className="results">
         <div className="wrapper clearfix">

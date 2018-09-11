@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import firebase from "firebase";
 import swal from "sweetalert";
 import DisplayStock from "./DisplayStock";
+import Nav from "./Nav";
 
 const auth = firebase.auth();
 
@@ -153,9 +154,9 @@ class Wineinfo extends Component {
   render() {
     return (
       <div className="wineInfo clearfix">
+        <Nav />
         <div className="wrapper">
           <figure className="imageWrapper">
-            <Link to="/">Back to Main Page</Link>
             <img src={this.state.wine.image_url} alt={this.state.wine.name} />
           </figure>
           <div className="content">
