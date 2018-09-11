@@ -12,7 +12,7 @@
 
       img {
         display: block;
-        width: 98%
+        width: 98%;
       }
     }
 
@@ -41,32 +41,31 @@
         }
 
         .wineDescription {
-
         }
 
         p::first-letter {
           text-transform: uppercase;
         }
 
-        .wineServingSuggestBox{
+        .wineServingSuggestBox {
           border: $teal 2px solid;
           border-radius: 2px;
-          position:relative;
+          position: relative;
           width: 450px;
           .wineServingSuggestTitle {
-            font-size:1rem;
+            font-size: 1rem;
             text-transform: uppercase;
             background-color: #fff;
             color: $teal;
             position: absolute;
-            top:-22px;
+            top: -22px;
             left: 10px;
-            padding:5px;
+            padding: 5px;
           }
-          .wineServingSuggest{
-            padding:16px;
+          .wineServingSuggest {
+            padding: 16px;
             // font-size: 1.8rem;
-            margin:0;
+            margin: 0;
           }
         }
 
@@ -77,27 +76,26 @@
           margin: 15px 0;
           li {
             font-size: 1.4rem;
-            span{
+            span {
               font-weight: bold;
             }
           }
         }
         .btn {
           margin-right: 20px;
-          &:hover{
+          &:hover {
             color: $teal;
           }
         }
         .btnAlt {
-                margin-top:10px;
-                background-color: transparent;
-                border: 2px solid $grey;
-                color: $grey;
-                &:hover {
-                background-color: $grey;
-                color: $white;
-
-        }
+          margin-top: 10px;
+          background-color: transparent;
+          border: 2px solid $grey;
+          color: $grey;
+          &:hover {
+            background-color: $grey;
+            color: $white;
+          }
         }
       }
     }

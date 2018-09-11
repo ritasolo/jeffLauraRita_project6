@@ -97,7 +97,7 @@ class App extends Component {
 
   displayWines = () => {
     const userChoice = `${this.state.price}${this.state.colour}`;
-    const totalChoice = (this.state[`${userChoice}`])
+    const totalChoice = this.state[`${userChoice}`];
     const random = _.sampleSize(this.state[`${userChoice}`], 6);
     // console.log(random);
     console.log("clicked");
@@ -107,34 +107,37 @@ class App extends Component {
     });
   };
 
-  sortWine = (selectedWine) => {
-    const winesArray = Object.entries(selectedWine).map((item) => {
+  sortWine = selectedWine => {
+    const winesArray = Object.entries(selectedWine).map(item => {
       // console.log(item)
-      return ({
+      return {
         wineKey: item[0],
         wineImage: item[1].Wines.image_url,
-        wineName: item[1].Wines.name
-      })
+        wineName: item[1].Wines.name,
+        wineId: item[1].Wines.id
+      };
     });
     this.setState({
       wineInfo: winesArray
-    })
+    });
     // console.log(this.state.wineInfo)
-  }
+  };
 
-  deleteWine = (wineId) => {
+  deleteWine = wineId => {
     // Delete from Firebase
     console.log(wineId);
-    const wineiddbref = firebase.database().ref(`${this.state.user.uid}/${wineId}`);
+    const wineiddbref = firebase
+      .database()
+      .ref(`${this.state.user.uid}/${wineId}`);
     wineiddbref.remove();
-  }
+  };
 
   componentDidMount() {
     auth.onAuthStateChanged(user => {
       if (user) {
         this.setState(
           {
-            user,
+            user
           },
           () => {
             this.dbref = firebase.database().ref(this.state.user.uid);
@@ -160,7 +163,10 @@ class App extends Component {
           return [...acc, ...curr];
         })
         .filter(item => {
+          console.log(item);
           return (
+            item.name !==
+              "Castelli del Grevepesa Castelgreve Chianti Classico 2016" &&
             item.price_in_cents < 2200 &&
             item.package_unit_volume_in_milliliters === 750 &&
             item.package_unit_type === "bottle"
@@ -438,29 +444,34 @@ class App extends Component {
               exact
               path="/"
               render={props => (
-                <WineList {...props} random={this.state.random} displayWines={this.displayWines} userChoice={this.state.userChoice} />
+                <WineList
+                  {...props}
+                  random={this.state.random}
+                  displayWines={this.displayWines}
+                  userChoice={this.state.userChoice}
+                />
               )}
             />
             <Route
-              exact path="/products/:wine_id"
+              path="/products/:wine_id"
               render={props => (
                 <Wineinfo
                   {...props}
                   user={this.state.user}
                   favourites={this.favourites}
-                  />
-                )}
                 />
+              )}
+            />
             {this.state.user ? (
               <Route
-              exact path={`/user/${this.state.user.uid}`}
-              render={props => (
-                <SavedList 
-                  {...props}
-                  wineInfo={this.state.wineInfo}
-                  deleteWine={this.deleteWine}
+                path={`/user/${this.state.user.uid}`}
+                render={props => (
+                  <SavedList
+                    {...props}
+                    wineInfo={this.state.wineInfo}
+                    deleteWine={this.deleteWine}
                   />
-              )}
+                )}
               />
             ) : null}
           </section>
