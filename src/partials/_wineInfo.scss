@@ -9,7 +9,6 @@
     clear: both;
     .locations {
       width: 75%;
-      height: 40vh;
       clear: both;
       margin: 0 auto;
       .storeInfo {
@@ -230,6 +229,9 @@
 /* Landscape phones and down */
 @media (max-width: 480px) {
   .wineInfo {
+    header nav ul li i {
+      color: $green;
+    }
     .wrapper {
       .content {
         .contentWrapper {
