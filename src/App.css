@@ -385,7 +385,7 @@ header {
                   position: relative;
                   padding: 5px 0 0 30px; }
                 .formContainer .form .formWrapper form .filters fieldset ul li .radio span:after {
-                  content: '';
+                  content: "";
                   width: 20px;
                   height: 20px;
                   border: 3px solid;
@@ -430,7 +430,7 @@ header {
   color: #4a4a4a; }
 
 .radio input[type="radio"]:checked + span:before {
-  content: '';
+  content: "";
   width: 12px;
   height: 12px;
   position: absolute;
@@ -495,7 +495,7 @@ header {
                 position: relative;
                 padding: 2px 0 0 18px; }
               .formContainer .form .formWrapper form .filters fieldset ul li .radio span:after {
-                content: '';
+                content: "";
                 width: 15px;
                 height: 15px;
                 border: 3px solid;
@@ -504,7 +504,7 @@ header {
                 top: 1px;
                 border-radius: 100%; }
   .radio input[type="radio"]:checked + span:before {
-    content: '';
+    content: "";
     width: 11px;
     height: 11px;
     position: absolute;
@@ -513,11 +513,13 @@ header {
     top: 6px;
     border-radius: 100%; } }
 
-.results {
+.results,
+.savedList {
   margin: 0 auto;
   padding: 40px;
   clear: both; }
-  .results .wrapper .card {
+  .results .wrapper .card,
+  .savedList .wrapper .card {
     float: left;
     width: calc(33% - 2%);
     margin: 1%;
@@ -525,19 +527,24 @@ header {
     border-radius: 2px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
-    .results .wrapper .card:hover {
+    .results .wrapper .card:hover,
+    .savedList .wrapper .card:hover {
       box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
-    .results .wrapper .card .cardWrapper {
+    .results .wrapper .card .cardWrapper,
+    .savedList .wrapper .card .cardWrapper {
       position: relative; }
-      .results .wrapper .card .cardWrapper .imageWrapper {
+      .results .wrapper .card .cardWrapper .imageWrapper,
+      .savedList .wrapper .card .cardWrapper .imageWrapper {
         float: left;
         width: 45%; }
-      .results .wrapper .card .cardWrapper .cardSide {
+      .results .wrapper .card .cardWrapper .cardSide,
+      .savedList .wrapper .card .cardWrapper .cardSide {
         float: left;
         width: calc(55% - 4%);
         height: 100%;
         padding: 0 0 0 8px; }
-        .results .wrapper .card .cardWrapper .cardSide .wineTitle h3 {
+        .results .wrapper .card .cardWrapper .cardSide .wineTitle h3,
+        .savedList .wrapper .card .cardWrapper .cardSide .wineTitle h3 {
           display: block;
           max-width: 100%;
           height: calc((3 * 2rem) + 0.8rem);
@@ -547,11 +554,13 @@ header {
           text-overflow: ellipsis;
           overflow: hidden;
           color: #4a4a4a; }
-        .results .wrapper .card .cardWrapper .cardSide .winePriceWrapper .winePrice {
+        .results .wrapper .card .cardWrapper .cardSide .winePriceWrapper .winePrice,
+        .savedList .wrapper .card .cardWrapper .cardSide .winePriceWrapper .winePrice {
           color: #4a4a4a;
           font-size: 1.8rem;
           margin: 0; }
-          .results .wrapper .card .cardWrapper .cardSide .winePriceWrapper .winePrice span {
+          .results .wrapper .card .cardWrapper .cardSide .winePriceWrapper .winePrice span,
+          .savedList .wrapper .card .cardWrapper .cardSide .winePriceWrapper .winePrice span {
             font-size: 70%; }
 
 @media (max-width: 1080px) {
