@@ -5,14 +5,26 @@ class WineList extends Component {
   constructor() {
     super();
     this.state = {
-      wine: ""
+      wine: "",
+      visible: 6,
     };
   }
 
-  render() {
-    return(
+  loadMore() {
+    this.setState((prev) => {
+      return { visible: prev.visible + 6 };
+    })
+  }
+
+  click = () => {
+    this.loadMore();
+    this.props.displayWines();
+  }
+      render() {
+        console.log(this.props.random)
+        return(
         <div className="wrapper">
-        {this.props.random.map((item, i) => {
+        {this.props.userChoice.slice(0, this.state.visible).map((item, i) => {
           // console.log(this.props.random)
           // console.log(item);
           return (
@@ -33,10 +45,16 @@ class WineList extends Component {
                 </div> {/* closes card side */}
               </div> {/* closes card wrapper */}
             </div> {/* closes card */}
+            
           </Link>
           )
         })
         }
+          {this.state.visible < this.props.userChoice.length &&
+          <div>
+            <button onClick={this.click}>Load More</button>
+          </div>
+          }
       </div>
     )
   }
