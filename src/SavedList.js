@@ -8,6 +8,7 @@ class SavedList extends Component {
         <div className="wrapper clearfix">
           <Link to="/">Back to Main Page</Link>
           <h2>My Wines</h2>
+          {this.props.wineInfo ? <div>test2</div> : null}
           {this.props.wineInfo.map(wine => {
             return (
               <div className="card wineList clearfix" key={wine.wineKey}>
@@ -20,7 +21,7 @@ class SavedList extends Component {
                       <p>{wine.wineName}</p>
                     </div>
                     <Link
-                      className="btn__purple"
+                      className="btn"
                       to={`/products/${wine.wineId}`}
                       target="_blank"
                     >

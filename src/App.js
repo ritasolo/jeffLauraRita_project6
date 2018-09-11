@@ -108,7 +108,7 @@ class App extends Component {
   };
 
   sortWine = selectedWine => {
-    const winesArray = Object.entries(selectedWine).map(item => {
+    const winesArray = Object.entries(selectedWine || {}).map(item => {
       // console.log(item)
       return {
         wineKey: item[0],
@@ -126,7 +126,9 @@ class App extends Component {
   deleteWine = wineId => {
     // Delete from Firebase
     console.log(wineId);
-    const wineiddbref = firebase.database().ref(`${this.state.user.uid}/${wineId}`);
+    const wineiddbref = firebase
+      .database()
+      .ref(`${this.state.user.uid}/${wineId}`);
     wineiddbref.remove();
   };
 
