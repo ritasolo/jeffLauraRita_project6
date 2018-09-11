@@ -161,20 +161,34 @@ class Wineinfo extends Component {
           <div className="content">
             <div className="contentWrapper">
               <h1>{this.state.wine.name}</h1>
-              <div className="priceWrapper">
-                <p>
-                  {`$${this.state.wine.price_in_cents / 100}`}
-                  <span>/bottle</span>
-                </p>
-              </div>
+              {this.state.wine.price_in_cents == this.state.wine.regular_price_in_cents ?
+                <div className="priceWrapper">
+                  <p>
+                    {`$${this.state.wine.price_in_cents / 100}`}
+                    <span>/bottle</span>
+                  </p>
+                </div>
+                :
+                <div className="priceWrapper">
+                  <p>
+                    <span className="regular">{`$${this.state.wine.regular_price_in_cents / 100}`}</span>
+                    <span className="sale">{`$${this.state.wine.price_in_cents / 100}`}</span>
+                    <span className="bottle">/bottle</span>
+                  </p>
+                </div>
+              }
               <p className="wineDescription">{`${
                 this.state.wine.tasting_note
               }`}</p>
               <div className="wineServingSuggestBox">
                 <p className="wineServingSuggestTitle">Serving Suggestion</p>
+                {this.state.wine.serving_suggestion !== null ?
                 <p className="wineServingSuggest">{`${
                   this.state.wine.serving_suggestion
                 }`}</p>
+                : 
+                null
+                }
               </div>
               <ul>
                 <li>
