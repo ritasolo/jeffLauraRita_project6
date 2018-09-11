@@ -1,13 +1,15 @@
+.results{
+  padding-bottom: 0px;
+}
+
 .results,
 .savedList {
   margin: 0 auto;
   padding-bottom: 40px;
   clear: both;
-  min-height: calc(100vh - 110px);
-  // height: 70vh;
   text-align: center;
   .btn {
-    margin: 50px 0;
+    margin:25px;
   }
   .wrapper {
     // margin: 0px auto;
@@ -82,6 +84,7 @@
   }
 }
 .savedList {
+  min-height: calc(100vh - 110px);
   h2 {
     margin: 0;
   }

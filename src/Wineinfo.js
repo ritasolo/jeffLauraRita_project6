@@ -35,15 +35,15 @@ class Wineinfo extends Component {
 
   addToFavs = () => {
     swal(
-      "Added To Your Favourites!",
-      "Please check your favourites for your list.",
+      "Added To Your Cellar!",
+      "Visit your cellar to see all your wines.",
       "success"
     );
     this.props.favourites(this.state.wine);
   };
 
   addToError = () => {
-    swal("User Not Logged In", "Please login to add to your cellar", "error");
+    swal("Oops, you must log in!", "Please login to add to your cellar.", "error");
   };
 
   stores = () =>
