@@ -126,9 +126,7 @@ class App extends Component {
   deleteWine = wineId => {
     // Delete from Firebase
     console.log(wineId);
-    const wineiddbref = firebase
-      .database()
-      .ref(`${this.state.user.uid}/${wineId}`);
+    const wineiddbref = firebase.database().ref(`${this.state.user.uid}/${wineId}`);
     wineiddbref.remove();
   };
 
@@ -142,9 +140,11 @@ class App extends Component {
           () => {
             this.dbref = firebase.database().ref(this.state.user.uid);
             this.dbref.on("value", snapshot => {
+              // if (this.dbref.child !== null) {
               this.sortWine(snapshot.val());
-              if (snapshot.val()) {
-              }
+              // }
+              // if (snapshot.val()) {
+              // }
               // console.log(snapshot.val())
             });
           }
