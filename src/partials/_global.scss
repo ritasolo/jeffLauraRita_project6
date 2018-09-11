@@ -19,6 +19,21 @@ width:100%;
   margin: 0 auto;
 }
 
+.btn{
+  margin-top:10px;
+  width: 180px;
+  padding: 15px 0px;
+  background-color: $teal;
+  border: 2px solid $teal;
+  border-radius: 2px;
+  color: $white;
+  font-weight: 700;
+  &:hover {
+    background-color: transparent;
+    color: $teal;
+    }
+  }
+
 ///////////////////////////////////////////////
 //GLOBAL MEDIA QUERIES
 ///////////////////////////////////////////////
