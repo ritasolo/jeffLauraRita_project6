@@ -223,6 +223,9 @@
 /* Landscape phones and down */
 @media (max-width: 480px) {
   .wineInfo {
+     header nav ul li i {
+    color: $green;
+  }
     .wrapper {
       .content {
         .contentWrapper {

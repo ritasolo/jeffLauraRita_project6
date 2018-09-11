@@ -737,6 +737,8 @@ header {
     font-size: 1.8rem;
     height: calc((3 * 1.8rem) + 0.5rem);
     -webkit-line-clamp: 3; }
+  .savedList header nav ul li i {
+    color: #0b664c; }
   .savedList .savedListBtns {
     bottom: 12px; } }
 
@@ -873,6 +875,8 @@ header {
 
 /* Landscape phones and down */
 @media (max-width: 480px) {
+  .wineInfo header nav ul li i {
+    color: #0b664c; }
   .wineInfo .wrapper .content .contentWrapper {
     margin: 10px; }
     .wineInfo .wrapper .content .contentWrapper h1 {
