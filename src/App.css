@@ -163,10 +163,18 @@ input::-moz-focus-inner {
 html {
   font-size: 62.5%; }
 
+img {
+  display: block;
+  width: 100%; }
+
 .wrapper {
-  width: 90%;
   max-width: 1080px;
   margin: 0 auto; }
+
+@media (max-width: 1079px) {
+  .wrapper {
+    max-width: 930px;
+    margin: 0 auto; } }
 
 h1 {
   font-size: 4rem;
@@ -180,7 +188,7 @@ h2 {
 h3 {
   font-size: 2rem;
   font-family: "Lora", monospace;
-  line-height: 1.2; }
+  line-height: 1.1; }
 
 p {
   font-size: 1.6rem;
@@ -206,7 +214,8 @@ nav li a {
 
 header {
   float: left;
-  width: 100%; }
+  width: 100%;
+  padding-top: 15px; }
   header h1 {
     float: left;
     color: #dd9afc;
@@ -222,13 +231,17 @@ header {
         display: inline;
         padding: 10px 10px 0 10px;
         margin: 10px 10px 0 10px; }
+        header nav ul .loggedIn li p, header nav ul .loggedOut li p {
+          color: #ffffff;
+          margin: 0; }
 
 .hero {
   background-image: url(./assets/heroGirl.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh; }
+  height: 100vh;
+  min-height: 550px; }
   .hero .heroScreen {
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.3); }
@@ -270,8 +283,7 @@ p.heroCopy {
     width: 40%;
     height: 300px;
     float: left;
-    background-color: lightgrey;
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
+    background-color: lightgrey; }
     .formContainer .form .formWrapper {
       max-width: 360px;
       float: right;
@@ -328,7 +340,6 @@ p.heroCopy {
     width: 60%;
     float: right;
     height: 300px;
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
     background-color: #4a4a4a; }
     .formContainer .formQuote .formQuoteScreen {
       height: 300px; }
@@ -344,8 +355,7 @@ p.heroCopy {
         color: #dd9afc; }
 
 .radio input[type="radio"]:checked + span {
-  color: #4a4a4a;
-  font-weight: 700; }
+  color: #4a4a4a; }
 
 .radio input[type="radio"]:checked + span:before {
   content: '';
@@ -359,57 +369,53 @@ p.heroCopy {
 
 .results {
   margin: 0 auto;
-  padding: 60px;
+  padding: 40px;
   clear: both; }
-  .results .wrapper {
-    width: 1080px; }
+  .results .wrapper .card {
+    float: left;
+    width: calc(33% - 2%);
+    margin: 1%;
+    border: #4a4a4a solid 1px;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
+    .results .wrapper .card:hover {
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
+    .results .wrapper .card .cardWrapper {
+      position: relative; }
+      .results .wrapper .card .cardWrapper .imageWrapper {
+        float: left;
+        width: 45%; }
+      .results .wrapper .card .cardWrapper .cardSide {
+        float: left;
+        width: calc(55% - 4%);
+        height: 100%;
+        padding: 0 0 0 8px; }
+        .results .wrapper .card .cardWrapper .cardSide .wineTitle h3 {
+          display: block;
+          max-width: 100%;
+          height: calc((3 * 2rem) + 0.8rem);
+          margin: 10px auto;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          color: #4a4a4a; }
+        .results .wrapper .card .cardWrapper .cardSide .winePriceWrapper .winePrice {
+          color: #4a4a4a;
+          font-size: 1.8rem;
+          margin: 0; }
+          .results .wrapper .card .cardWrapper .cardSide .winePriceWrapper .winePrice span {
+            font-size: 70%; }
 
-.card {
-  float: left;
-  width: calc(33% - 1%);
-  margin: 1.5% 0.5%;
-  border: #4a4a4a solid 1px;
-  border-radius: 2px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
-  .card:hover {
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
+@media (max-width: 1079px) {
+  .card {
+    width: calc(50% - 2%);
+    margin: 1%; } }
 
-.cardWrapper .imageWrapper {
-  float: left;
-  width: 42%; }
-
-.card .imageWrapper img {
-  display: block;
-  width: 100%; }
-
-.cardSide {
-  float: left;
-  width: calc(58% - 4%);
-  margin: 2% 2%;
-  height: 100%;
-  padding: 0 8px; }
-
-.wineTitle h3 {
-  display: block;
-  display: -webkit-box;
-  max-width: 100%;
-  height: calc((3 * 2rem) + 0.3rem);
-  margin: 10px auto;
-  line-height: 1;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  color: #4a4a4a; }
-
-.winePrice {
-  color: #4a4a4a;
-  font-size: 1.8rem;
-  margin: 0; }
-  .winePrice span {
-    font-size: 75%; }
-
+/* Portrait tablet and small desktops */
+/* Landscape phone to portrait tablet */
+/* Landscape phones and down */
 .wineInfo {
   float: left;
   width: 100%; }

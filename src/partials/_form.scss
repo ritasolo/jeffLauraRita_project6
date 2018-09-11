@@ -5,7 +5,7 @@
         height: 300px;
         float: left;
         background-color: lightgrey;
-        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);        
+        // box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);        
         .formWrapper{
             // height: 300px;
             max-width: 360px;
@@ -83,7 +83,7 @@
         width:60%;
         float:right;
         height:300px;
-        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+        // box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
         background-color:$grey;
         // background-image: url(./assets/friendsWine.jpg);
         // background-position: 50% 25%;
@@ -119,7 +119,6 @@
 // button circle and label
 .radio input[type="radio"]:checked + span{
   color:$grey;
-  font-weight: 700;
 }
 
 // clicked circle in button
