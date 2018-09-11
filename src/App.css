@@ -444,7 +444,7 @@ header {
   width: 12px;
   height: 12px;
   position: absolute;
-  background: #dd9afc;
+  background: #0b664c;
   left: 7px;
   top: 8px;
   border-radius: 100%; }
@@ -518,7 +518,7 @@ header {
     width: 11px;
     height: 11px;
     position: absolute;
-    background: #dd9afc;
+    background: #0b664c;
     left: 5px;
     top: 6px;
     border-radius: 100%; } }
@@ -527,7 +527,11 @@ header {
 .savedList {
   margin: 0 auto;
   padding: 40px;
-  clear: both; }
+  clear: both;
+  text-align: center; }
+  .results .btn,
+  .savedList .btn {
+    margin: 50px 0; }
   .results .wrapper .card,
   .savedList .wrapper .card {
     float: left;
@@ -542,11 +546,15 @@ header {
       box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
     .results .wrapper .card .cardWrapper,
     .savedList .wrapper .card .cardWrapper {
+      text-align: left;
       position: relative; }
       .results .wrapper .card .cardWrapper .imageWrapper,
       .savedList .wrapper .card .cardWrapper .imageWrapper {
         float: left;
         width: 45%; }
+      .results .wrapper .card .cardWrapper .btn,
+      .savedList .wrapper .card .cardWrapper .btn {
+        margin: 20px 0; }
       .results .wrapper .card .cardWrapper .cardSide,
       .savedList .wrapper .card .cardWrapper .cardSide {
         float: left;
