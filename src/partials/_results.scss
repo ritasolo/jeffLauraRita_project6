@@ -1,19 +1,19 @@
 .results{
-  margin:50px auto;
+  margin:0 auto;
+  padding: 60px;
   clear:both;
   // height: 70vh;
-}
-
-.wrapper {
-  width: 90%;
-  max-width: 1080px;
-  margin: 0 auto;
+  .wrapper {
+    width: 1080px;
+    // margin: 0px auto;
+  }
 }
 
 .card{
   float:left;
   width: calc(33% - 1%);
-  margin:0.5%;
+  margin:1.5% 0.5%;
+  // padding: 25px 0px;
   border: $grey solid 1px;
   border-radius: 2px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
@@ -28,7 +28,7 @@
 .cardWrapper .imageWrapper{
 // margin:0 auto;
 float: left;
-width:40%;
+width:42%;
 }
 
 .card .imageWrapper img{
@@ -38,9 +38,10 @@ width:100%;
 
 .cardSide{
   float:left;
-  width:calc(60% - 4%);
+  width:calc(58% - 4%);
   margin:2% 2%;
   height:100%;
+  padding: 0 8px;
 }
 
 .wineTitle h3{
