@@ -176,9 +176,13 @@ class Wineinfo extends Component {
               }`}</p>
               <div className="wineServingSuggestBox">
                 <p className="wineServingSuggestTitle">Serving Suggestion</p>
+                {this.state.wine.serving_suggestion !== null ?
                 <p className="wineServingSuggest">{`${
                   this.state.wine.serving_suggestion
                 }`}</p>
+                : 
+                null
+                }
               </div>
               <ul>
                 <li>

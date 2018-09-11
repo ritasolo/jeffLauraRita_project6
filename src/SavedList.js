@@ -8,7 +8,8 @@ class SavedList extends Component {
         <div className="wrapper clearfix">
           <Link to="/"><p>Back to Main Page</p></Link>
           <h2 className="myCellar">My Cellar</h2>
-          {this.props.wineInfo.map(wine => {
+          {this.props.wineInfo.length == 0 ? <p className="italics">You don't have any wines in your cellar :( </p> :
+          this.props.wineInfo.map(wine => {
             return <div className="card wineList clearfix" key={wine.wineKey}>
                 <div className="cardWrapper clearfix">
                   <figure className="imageWrapper">
