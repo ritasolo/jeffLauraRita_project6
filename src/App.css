@@ -750,6 +750,15 @@ header {
     color: #0b664c; }
   .wineInfo .wrapper {
     clear: both; }
+    .wineInfo .wrapper .locations {
+      width: 75%;
+      height: 40vh;
+      clear: both;
+      margin: 0 auto; }
+      .wineInfo .wrapper .locations .storeInfo {
+        width: 33.3%;
+        float: left;
+        padding-bottom: 20px; }
     .wineInfo .wrapper .imageWrapper {
       float: left;
       width: 40%; }
