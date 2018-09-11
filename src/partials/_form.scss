@@ -1,114 +1,114 @@
 .formContainer {
-    width:100%;
-    .form {
-        width:40%;
-        height: 300px;
-        float: left;
-        background-color: lightgrey;
-        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);        
-        .formWrapper{
-            // height: 300px;
-            max-width: 360px;
-            float:right;
-            position: relative;
-            top: 50%;
-            transform: translateY(-50%);
-            form {
-                .filters{ 
-                    width: 360px;
-                    fieldset {
-                        // float: left;
-                        border: none;
-                        padding:0;
-                        margin-bottom:10px;
-                        h3 {
-                            margin:0 0 15px 0;
-                            color: $grey;
-                        }
-                        ul{
-                            list-style-type: none;
-                            padding: 0;
-                            margin-bottom:15px;
-                            li{
-                                display: inline;
-                                margin-right: 20px;
-                                //label
-                                .radio{
-                                    color: $grey;
-                                    position:relative;
-                                    //label
-                                    span{
-                                        position:relative;
-                                        padding: 5px 0 0 30px;
-                                    }
-                                    //radio area
-                                    span:after{
-                                        content:'';
-                                        width:20px;
-                                        height:20px;
-                                        border: 3px solid;
-                                        position:absolute;
-                                        left:0;
-                                        top:1px;
-                                        border-radius:100%;
-                                    }
-                                    //make original radio buttons transparent
-                                    input[type="radio"]{
-                                        cursor: pointer; 
-                                        position:absolute;
-                                        width:100%;
-                                        height:100%;
-                                        z-index: 1;
-                                        opacity: 0;
-                                    }
-                                }
-                            }
-                        }
-                    }
+  width: 100%;
+  .form {
+    width: 40%;
+    height: 300px;
+    float: left;
+    background-color: lightgrey;
+    // box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    .formWrapper {
+      // height: 300px;
+      max-width: 360px;
+      float: right;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+      form {
+        .filters {
+          width: 360px;
+          fieldset {
+            // float: left;
+            border: none;
+            padding: 0;
+            margin-bottom: 10px;
+            h3 {
+              margin: 0 0 15px 0;
+              color: $grey;
+            }
+            ul {
+              list-style-type: none;
+              padding: 0;
+              margin-bottom: 15px;
+              li {
+                display: inline;
+                margin-right: 20px;
+                //label
+                .radio {
+                  color: $grey;
+                  position: relative;
+                  //label
+                  span {
+                    position: relative;
+                    padding: 5px 0 0 30px;
+                  }
+                  //radio area
+                  span:after {
+                    content: "";
+                    width: 20px;
+                    height: 20px;
+                    border: 3px solid;
+                    position: absolute;
+                    left: 0;
+                    top: 1px;
+                    border-radius: 100%;
+                  }
+                  //make original radio buttons transparent
+                  input[type="radio"] {
+                    cursor: pointer;
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    z-index: 1;
+                    opacity: 0;
+                  }
                 }
+              }
             }
-            .filterBtn{
-                margin-top:10px;
-                background-color: $grey;
-                border: 2px solid $grey;
-                color: $white;
-                &:hover {
-                background-color: transparent;
-                color: $grey;
-                }
-            }
+          }
         }
-    }
-    .formQuote{
-        width:60%;
-        float:right;
-        height:300px;
-        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-        background-color:$grey;
-        // background-image: url(./assets/friendsWine.jpg);
-        // background-position: 50% 25%;
-        // background-repeat: no-repeat;
-        // background-size: cover;
-        .formQuoteScreen{
-            height:300px;
-            // background-color: rgba(0, 0, 0, 0.2);
-            .quote{
-                max-width: 720px;
-                margin: 0 auto;
-                text-align: center;
-                position: relative;
-                top: 50%;
-                transform: translateY(-50%);
-                font-size: 2.8rem;
-                padding: 100px;
-                color: $purple;
-            }
+      }
+      .filterBtn {
+        margin-top: 10px;
+        background-color: $grey;
+        border: 2px solid $grey;
+        color: $white;
+        &:hover {
+          background-color: transparent;
+          color: $grey;
         }
+      }
     }
+  }
+  .formQuote {
+    width: 60%;
+    float: right;
+    height: 300px;
+    // box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    background-color: $grey;
+    // background-image: url(./assets/friendsWine.jpg);
+    // background-position: 50% 25%;
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    .formQuoteScreen {
+      height: 300px;
+      // background-color: rgba(0, 0, 0, 0.2);
+      .quote {
+        max-width: 720px;
+        margin: 0 auto;
+        text-align: center;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 2.8rem;
+        padding: 100px;
+        color: $purple;
+      }
+    }
+  }
 }
 
 // .radio input[type="radio"]{
-//    cursor: pointer; 
+//    cursor: pointer;
 //   position:absolute;
 //   width:100%;
 //   height:100%;
@@ -117,28 +117,21 @@
 //  }
 
 // button circle and label
-.radio input[type="radio"]:checked + span{
-  color:$grey;
-  font-weight: 700;
+.radio input[type="radio"]:checked + span {
+  color: $grey;
 }
 
 // clicked circle in button
-.radio input[type="radio"]:checked + span:before{
-    content:'';
-  width:12px;
-  height:12px;
-  position:absolute;
+.radio input[type="radio"]:checked + span:before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  position: absolute;
   background: $purple;
-  left:7px;
-  top:8px;
-  border-radius:100%;
+  left: 7px;
+  top: 8px;
+  border-radius: 100%;
 }
-
-
-
-
-
-
 
 // .slider {
 //     -webkit-appearance: none;

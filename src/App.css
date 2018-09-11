@@ -10,89 +10,111 @@ hgroup,
 nav,
 section,
 summary {
-  display: block; }
+  display: block;
+}
 
 audio,
 canvas,
 video {
-  display: inline-block; }
+  display: inline-block;
+}
 
 audio:not([controls]) {
   display: none;
-  height: 0; }
+  height: 0;
+}
 
 [hidden] {
-  display: none; }
+  display: none;
+}
 
 html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%; }
+  -ms-text-size-adjust: 100%;
+}
 
 a:focus {
-  outline: thin dotted; }
+  outline: thin dotted;
+}
 
 a:active,
 a:hover {
-  outline: 0; }
+  outline: 0;
+}
 
 h1 {
-  font-size: 2em; }
+  font-size: 2em;
+}
 
 abbr[title] {
-  border-bottom: 1px dotted; }
+  border-bottom: 1px dotted;
+}
 
 b,
 strong {
-  font-weight: 700; }
+  font-weight: 700;
+}
 
 dfn {
-  font-style: italic; }
+  font-style: italic;
+}
 
 mark {
   background: #ff0;
-  color: #000; }
+  color: #000;
+}
 
 code,
 kbd,
 pre,
 samp {
   font-family: monospace, serif;
-  font-size: 1em; }
+  font-size: 1em;
+}
 
 pre {
   white-space: pre-wrap;
-  word-wrap: break-word; }
+  word-wrap: break-word;
+}
 
 q {
-  quotes: \201c \201d \2018 \2019; }
+  quotes: \201c \201d \2018 \2019;
+}
 
 small {
-  font-size: 80%; }
+  font-size: 80%;
+}
 
 sub,
 sup {
   font-size: 75%;
   line-height: 0;
   position: relative;
-  vertical-align: baseline; }
+  vertical-align: baseline;
+}
 
 sup {
-  top: -0.5em; }
+  top: -0.5em;
+}
 
 sub {
-  bottom: -0.25em; }
+  bottom: -0.25em;
+}
 
 img {
-  border: 0; }
+  border: 0;
+}
 
 svg:not(:root) {
-  overflow: hidden; }
+  overflow: hidden;
+}
 
 fieldset {
   border: 1px solid silver;
   margin: 0 2px;
-  padding: 0.35em 0.625em 0.75em; }
+  padding: 0.35em 0.625em 0.75em;
+}
 
 button,
 input,
@@ -100,52 +122,66 @@ select,
 textarea {
   font-family: inherit;
   font-size: 100%;
-  margin: 0; }
+  margin: 0;
+}
 
 button,
 input {
-  line-height: normal; }
+  line-height: normal;
+}
 
-button, html input[type=button], input[type=reset], input[type=submit] {
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
   -webkit-appearance: button;
-  cursor: pointer; }
+  cursor: pointer;
+}
 
 button[disabled],
 input[disabled] {
-  cursor: default; }
+  cursor: default;
+}
 
 input[type="checkbox"],
 input[type="radio"] {
   box-sizing: border-box;
-  padding: 0; }
+  padding: 0;
+}
 
 input[type="search"] {
   -webkit-appearance: textfield;
   -moz-box-sizing: content-box;
   -webkit-box-sizing: content-box;
-  box-sizing: content-box; }
+  box-sizing: content-box;
+}
 
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none; }
+  -webkit-appearance: none;
+}
 
 textarea {
   overflow: auto;
-  vertical-align: top; }
+  vertical-align: top;
+}
 
 table {
   border-collapse: collapse;
-  border-spacing: 0; }
+  border-spacing: 0;
+}
 
 body,
 figure {
-  margin: 0; }
+  margin: 0;
+}
 
 legend,
 button::-moz-focus-inner,
 input::-moz-focus-inner {
   border: 0;
-  padding: 0; }
+  padding: 0;
+}
 
 .clearfix:after {
   visibility: hidden;
@@ -153,48 +189,69 @@ input::-moz-focus-inner {
   font-size: 0;
   content: "";
   clear: both;
-  height: 0; }
+  height: 0;
+}
 
 * {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 html {
-  font-size: 62.5%; }
+  font-size: 62.5%;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
 
 .wrapper {
-  width: 90%;
   max-width: 1080px;
-  margin: 0 auto; }
+  margin: 0 auto;
+}
+
+@media (max-width: 1079px) {
+  .wrapper {
+    max-width: 930px;
+    margin: 0 auto;
+  }
+}
 
 h1 {
   font-size: 4rem;
-  font-family: "Oxygen", monospace; }
+  font-family: "Oxygen", monospace;
+}
 
 h2 {
   font-size: 5rem;
   font-family: "Lora", monospace;
-  line-height: 1.2; }
+  line-height: 1.2;
+}
 
 h3 {
   font-size: 2rem;
   font-family: "Lora", monospace;
-  line-height: 1.2; }
+  line-height: 1.1;
+}
 
 p {
   font-size: 1.6rem;
   font-family: "Oxygen", monospace;
-  color: #4a4a4a; }
+  color: #4a4a4a;
+}
 
 .btn {
   font-size: 1.4rem;
   font-family: "Oxygen", monospace;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+}
 
 .filters li {
   font-size: 1.6rem;
-  font-family: "Oxygen", monospace; }
+  font-family: "Oxygen", monospace;
+}
 
 nav li a {
   font-size: 1.6rem;
@@ -202,38 +259,55 @@ nav li a {
   text-transform: uppercase;
   text-decoration: none;
   font-weight: 700;
-  color: white; }
+  color: white;
+}
 
 header {
   float: left;
-  width: 100%; }
-  header h1 {
-    float: left;
-    color: #dd9afc;
-    margin: 0; }
-  header nav {
-    padding-top: 10px; }
-    header nav ul {
-      padding: 0;
-      margin: 0; }
-      header nav ul .loggedIn li, header nav ul .loggedOut li {
-        float: right;
-        text-align: right;
-        display: inline;
-        padding: 10px 10px 0 10px;
-        margin: 10px 10px 0 10px; }
+  width: 100%;
+  padding-top: 15px;
+}
+header h1 {
+  float: left;
+  color: #dd9afc;
+  margin: 0;
+}
+header nav {
+  padding-top: 10px;
+}
+header nav ul {
+  padding: 0;
+  margin: 0;
+}
+header nav ul .loggedIn li,
+header nav ul .loggedOut li {
+  float: right;
+  text-align: right;
+  display: inline;
+  padding: 10px 10px 0 10px;
+  margin: 10px 10px 0 10px;
+}
+header nav ul .loggedIn li p,
+header nav ul .loggedOut li p {
+  color: #ffffff;
+  margin: 0;
+}
 
 .hero {
   background-image: url(./assets/heroGirl.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh; }
-  .hero .heroScreen {
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.3); }
-    .hero .heroScreen .wrapper {
-      height: 100vh; }
+  height: 100vh;
+  min-height: 550px;
+}
+.hero .heroScreen {
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.hero .heroScreen .wrapper {
+  height: 100vh;
+}
 
 .heroContent {
   float: right;
@@ -242,14 +316,17 @@ header {
   margin-right: 0;
   top: 50%;
   right: 0px;
-  transform: translateY(-50%); }
+  transform: translateY(-50%);
+}
 
 h2.heroHeading {
   color: #ffffff;
-  margin: 15px 0; }
+  margin: 15px 0;
+}
 
 p.heroCopy {
-  color: #ffffff; }
+  color: #ffffff;
+}
 
 .btn {
   margin-top: 10px;
@@ -259,238 +336,324 @@ p.heroCopy {
   border: 2px solid #a1d1ce;
   border-radius: 2px;
   color: #ffffff;
-  font-weight: 700; }
-  .btn:hover {
-    background-color: transparent;
-    color: #a1d1ce; }
+  font-weight: 700;
+}
+.btn:hover {
+  background-color: transparent;
+  color: #a1d1ce;
+}
 
 .formContainer {
-  width: 100%; }
-  .formContainer .form {
-    width: 40%;
-    height: 300px;
-    float: left;
-    background-color: lightgrey;
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
-    .formContainer .form .formWrapper {
-      max-width: 360px;
-      float: right;
-      position: relative;
-      top: 50%;
-      transform: translateY(-50%); }
-      .formContainer .form .formWrapper form .filters {
-        width: 360px; }
-        .formContainer .form .formWrapper form .filters fieldset {
-          border: none;
-          padding: 0;
-          margin-bottom: 10px; }
-          .formContainer .form .formWrapper form .filters fieldset h3 {
-            margin: 0 0 15px 0;
-            color: #4a4a4a; }
-          .formContainer .form .formWrapper form .filters fieldset ul {
-            list-style-type: none;
-            padding: 0;
-            margin-bottom: 15px; }
-            .formContainer .form .formWrapper form .filters fieldset ul li {
-              display: inline;
-              margin-right: 20px; }
-              .formContainer .form .formWrapper form .filters fieldset ul li .radio {
-                color: #4a4a4a;
-                position: relative; }
-                .formContainer .form .formWrapper form .filters fieldset ul li .radio span {
-                  position: relative;
-                  padding: 5px 0 0 30px; }
-                .formContainer .form .formWrapper form .filters fieldset ul li .radio span:after {
-                  content: '';
-                  width: 20px;
-                  height: 20px;
-                  border: 3px solid;
-                  position: absolute;
-                  left: 0;
-                  top: 1px;
-                  border-radius: 100%; }
-                .formContainer .form .formWrapper form .filters fieldset ul li .radio input[type="radio"] {
-                  cursor: pointer;
-                  position: absolute;
-                  width: 100%;
-                  height: 100%;
-                  z-index: 1;
-                  opacity: 0; }
-      .formContainer .form .formWrapper .filterBtn {
-        margin-top: 10px;
-        background-color: #4a4a4a;
-        border: 2px solid #4a4a4a;
-        color: #ffffff; }
-        .formContainer .form .formWrapper .filterBtn:hover {
-          background-color: transparent;
-          color: #4a4a4a; }
-  .formContainer .formQuote {
-    width: 60%;
-    float: right;
-    height: 300px;
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-    background-color: #4a4a4a; }
-    .formContainer .formQuote .formQuoteScreen {
-      height: 300px; }
-      .formContainer .formQuote .formQuoteScreen .quote {
-        max-width: 720px;
-        margin: 0 auto;
-        text-align: center;
-        position: relative;
-        top: 50%;
-        transform: translateY(-50%);
-        font-size: 2.8rem;
-        padding: 100px;
-        color: #dd9afc; }
+  width: 100%;
+}
+.formContainer .form {
+  width: 40%;
+  height: 300px;
+  float: left;
+  background-color: lightgrey;
+}
+.formContainer .form .formWrapper {
+  max-width: 360px;
+  float: right;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.formContainer .form .formWrapper form .filters {
+  width: 360px;
+}
+.formContainer .form .formWrapper form .filters fieldset {
+  border: none;
+  padding: 0;
+  margin-bottom: 10px;
+}
+.formContainer .form .formWrapper form .filters fieldset h3 {
+  margin: 0 0 15px 0;
+  color: #4a4a4a;
+}
+.formContainer .form .formWrapper form .filters fieldset ul {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 15px;
+}
+.formContainer .form .formWrapper form .filters fieldset ul li {
+  display: inline;
+  margin-right: 20px;
+}
+.formContainer .form .formWrapper form .filters fieldset ul li .radio {
+  color: #4a4a4a;
+  position: relative;
+}
+.formContainer .form .formWrapper form .filters fieldset ul li .radio span {
+  position: relative;
+  padding: 5px 0 0 30px;
+}
+.formContainer
+  .form
+  .formWrapper
+  form
+  .filters
+  fieldset
+  ul
+  li
+  .radio
+  span:after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  border: 3px solid;
+  position: absolute;
+  left: 0;
+  top: 1px;
+  border-radius: 100%;
+}
+.formContainer
+  .form
+  .formWrapper
+  form
+  .filters
+  fieldset
+  ul
+  li
+  .radio
+  input[type="radio"] {
+  cursor: pointer;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+}
+.formContainer .form .formWrapper .filterBtn {
+  margin-top: 10px;
+  background-color: #4a4a4a;
+  border: 2px solid #4a4a4a;
+  color: #ffffff;
+}
+.formContainer .form .formWrapper .filterBtn:hover {
+  background-color: transparent;
+  color: #4a4a4a;
+}
+.formContainer .formQuote {
+  width: 60%;
+  float: right;
+  height: 300px;
+  background-color: #4a4a4a;
+}
+.formContainer .formQuote .formQuoteScreen {
+  height: 300px;
+}
+.formContainer .formQuote .formQuoteScreen .quote {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2.8rem;
+  padding: 100px;
+  color: #dd9afc;
+}
 
 .radio input[type="radio"]:checked + span {
   color: #4a4a4a;
-  font-weight: 700; }
+  font-weight: 700;
+}
 
 .radio input[type="radio"]:checked + span:before {
-  content: '';
+  content: "";
   width: 12px;
   height: 12px;
   position: absolute;
   background: #dd9afc;
   left: 7px;
   top: 8px;
-  border-radius: 100%; }
+  border-radius: 100%;
+}
 
 .results {
   margin: 0 auto;
-  padding: 60px;
-  clear: both; }
-  .results .wrapper {
-    width: 1080px; }
-
-.card {
+  padding: 40px;
+  clear: both;
+}
+.results .wrapper .card {
   float: left;
-  width: calc(33% - 1%);
-  margin: 1.5% 0.5%;
+  width: calc(33% - 2%);
+  margin: 1%;
   border: #4a4a4a solid 1px;
   border-radius: 2px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
-  .card:hover {
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
-
-.cardWrapper .imageWrapper {
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.results .wrapper .card:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+.results .wrapper .card .cardWrapper {
+  position: relative;
+}
+.results .wrapper .card .cardWrapper .imageWrapper {
   float: left;
-  width: 42%; }
-
-.card .imageWrapper img {
-  display: block;
-  width: 100%; }
-
-.cardSide {
+  width: 45%;
+}
+.results .wrapper .card .cardWrapper .cardSide {
   float: left;
-  width: calc(58% - 4%);
-  margin: 2% 2%;
+  width: calc(55% - 4%);
   height: 100%;
-  padding: 0 8px; }
-
-.wineTitle h3 {
+  padding: 0 0 0 8px;
+}
+.results .wrapper .card .cardWrapper .cardSide .wineTitle h3 {
   display: block;
-  display: -webkit-box;
   max-width: 100%;
-  height: calc((3 * 2rem) + 0.3rem);
+  height: calc((3 * 2rem) + 0.8rem);
   margin: 10px auto;
-  line-height: 1;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   text-overflow: ellipsis;
   overflow: hidden;
-  color: #4a4a4a; }
-
-.winePrice {
+  color: #4a4a4a;
+}
+.results .wrapper .card .cardWrapper .cardSide .winePriceWrapper .winePrice {
   color: #4a4a4a;
   font-size: 1.8rem;
-  margin: 0; }
-  .winePrice span {
-    font-size: 75%; }
+  margin: 0;
+}
+.results
+  .wrapper
+  .card
+  .cardWrapper
+  .cardSide
+  .winePriceWrapper
+  .winePrice
+  span {
+  font-size: 70%;
+}
 
+@media (max-width: 1079px) {
+  .card {
+    width: calc(50% - 2%);
+    margin: 1%;
+  }
+}
+
+/* Portrait tablet and small desktops */
+/* Landscape phone to portrait tablet */
+/* Landscape phones and down */
 .wineInfo {
   float: left;
-  width: 100%; }
-  .wineInfo .wrapper {
-    clear: both; }
-    .wineInfo .wrapper .imageWrapper {
-      float: left;
-      width: 40%; }
-      .wineInfo .wrapper .imageWrapper img {
-        display: block;
-        width: 98%; }
-    .wineInfo .wrapper .content {
-      float: left;
-      width: 60%; }
-      .wineInfo .wrapper .content .contentWrapper {
-        margin-top: 50px; }
-        .wineInfo .wrapper .content .contentWrapper h1 {
-          font-family: "Lora", monospace;
-          color: #4a4a4a;
-          margin: 15px 0; }
-        .wineInfo .wrapper .content .contentWrapper .priceWrapper p {
-          font-size: 3rem;
-          margin: 0; }
-          .wineInfo .wrapper .content .contentWrapper .priceWrapper p span {
-            font-size: 1.8rem; }
-        .wineInfo .wrapper .content .contentWrapper p::first-letter {
-          text-transform: uppercase; }
-        .wineInfo .wrapper .content .contentWrapper .wineServingSuggestBox {
-          border: #a1d1ce 2px solid;
-          border-radius: 2px;
-          position: relative;
-          width: 450px; }
-          .wineInfo .wrapper .content .contentWrapper .wineServingSuggestBox .wineServingSuggestTitle {
-            font-size: 1rem;
-            text-transform: uppercase;
-            background-color: #fff;
-            color: #a1d1ce;
-            position: absolute;
-            top: -22px;
-            left: 10px;
-            padding: 5px; }
-          .wineInfo .wrapper .content .contentWrapper .wineServingSuggestBox .wineServingSuggest {
-            padding: 16px;
-            margin: 0; }
-        .wineInfo .wrapper .content .contentWrapper ul {
-          padding: 0;
-          list-style-type: none;
-          color: #4a4a4a;
-          margin: 15px 0; }
-          .wineInfo .wrapper .content .contentWrapper ul li {
-            font-size: 1.4rem; }
-            .wineInfo .wrapper .content .contentWrapper ul li span {
-              font-weight: bold; }
-        .wineInfo .wrapper .content .contentWrapper .btn {
-          margin-right: 20px; }
-          .wineInfo .wrapper .content .contentWrapper .btn:hover {
-            color: #a1d1ce; }
-        .wineInfo .wrapper .content .contentWrapper .btnAlt {
-          margin-top: 10px;
-          background-color: transparent;
-          border: 2px solid #4a4a4a;
-          color: #4a4a4a; }
-          .wineInfo .wrapper .content .contentWrapper .btnAlt:hover {
-            background-color: #4a4a4a;
-            color: #ffffff; }
+  width: 100%;
+}
+.wineInfo .wrapper {
+  clear: both;
+}
+.wineInfo .wrapper .imageWrapper {
+  float: left;
+  width: 40%;
+}
+.wineInfo .wrapper .imageWrapper img {
+  display: block;
+  width: 98%;
+}
+.wineInfo .wrapper .content {
+  float: left;
+  width: 60%;
+}
+.wineInfo .wrapper .content .contentWrapper {
+  margin-top: 50px;
+}
+.wineInfo .wrapper .content .contentWrapper h1 {
+  font-family: "Lora", monospace;
+  color: #4a4a4a;
+  margin: 15px 0;
+}
+.wineInfo .wrapper .content .contentWrapper .priceWrapper p {
+  font-size: 3rem;
+  margin: 0;
+}
+.wineInfo .wrapper .content .contentWrapper .priceWrapper p span {
+  font-size: 1.8rem;
+}
+.wineInfo .wrapper .content .contentWrapper p::first-letter {
+  text-transform: uppercase;
+}
+.wineInfo .wrapper .content .contentWrapper .wineServingSuggestBox {
+  border: #a1d1ce 2px solid;
+  border-radius: 2px;
+  position: relative;
+  width: 450px;
+}
+.wineInfo
+  .wrapper
+  .content
+  .contentWrapper
+  .wineServingSuggestBox
+  .wineServingSuggestTitle {
+  font-size: 1rem;
+  text-transform: uppercase;
+  background-color: #fff;
+  color: #a1d1ce;
+  position: absolute;
+  top: -22px;
+  left: 10px;
+  padding: 5px;
+}
+.wineInfo
+  .wrapper
+  .content
+  .contentWrapper
+  .wineServingSuggestBox
+  .wineServingSuggest {
+  padding: 16px;
+  margin: 0;
+}
+.wineInfo .wrapper .content .contentWrapper ul {
+  padding: 0;
+  list-style-type: none;
+  color: #4a4a4a;
+  margin: 15px 0;
+}
+.wineInfo .wrapper .content .contentWrapper ul li {
+  font-size: 1.4rem;
+}
+.wineInfo .wrapper .content .contentWrapper ul li span {
+  font-weight: bold;
+}
+.wineInfo .wrapper .content .contentWrapper .btn {
+  margin-right: 20px;
+}
+.wineInfo .wrapper .content .contentWrapper .btn:hover {
+  color: #a1d1ce;
+}
+.wineInfo .wrapper .content .contentWrapper .btnAlt {
+  margin-top: 10px;
+  background-color: transparent;
+  border: 2px solid #4a4a4a;
+  color: #4a4a4a;
+}
+.wineInfo .wrapper .content .contentWrapper .btnAlt:hover {
+  background-color: #4a4a4a;
+  color: #ffffff;
+}
 
 footer {
   background-color: #4a4a4a;
-  clear: both; }
-  footer .socialIcons {
-    font-size: 3rem;
-    text-align: center;
-    margin: 0 auto; }
-    footer .socialIcons i {
-      padding: 10px 10px;
-      color: #dd9afc;
-      transition: transform 1s; }
-      footer .socialIcons i:hover {
-        transform: scale(1.2); }
-  footer .createdBy p {
-    text-align: center;
-    color: #ffffff;
-    padding-bottom: 10px;
-    margin: 0; }
+  clear: both;
+}
+footer .socialIcons {
+  font-size: 3rem;
+  text-align: center;
+  margin: 0 auto;
+}
+footer .socialIcons i {
+  padding: 10px 10px;
+  color: #dd9afc;
+  transition: transform 1s;
+}
+footer .socialIcons i:hover {
+  transform: scale(1.2);
+}
+footer .createdBy p {
+  text-align: center;
+  color: #ffffff;
+  padding-bottom: 10px;
+  margin: 0;
+}

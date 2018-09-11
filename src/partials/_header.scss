@@ -2,6 +2,7 @@
 header {
   float: left;
   width:100%;
+  padding-top:15px;
   h1{
   float:left;
   color: $purple;
@@ -19,7 +20,10 @@ header {
           display: inline;
           padding:10px 10px 0 10px;
           margin:10px 10px 0 10px;
-
+          p{
+            color: $white;
+            margin:0;
+          }
         }
       }
 
@@ -35,6 +39,7 @@ header {
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
+  min-height:550px;
   .heroScreen{
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.3);

@@ -9,8 +9,24 @@ html {
   font-size: 62.5%;
 }
 
+img{
+display:block;
+width:100%;
+}
+
 .wrapper {
-  width: 90%;
   max-width: 1080px;
   margin: 0 auto;
+}
+
+///////////////////////////////////////////////
+//MEDIA QUERIES
+///////////////////////////////////////////////
+
+
+@media (max-width: 1079px) {
+  .wrapper {
+  max-width: 930px;
+  margin: 0 auto;
+}
 }
