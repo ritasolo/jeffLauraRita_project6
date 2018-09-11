@@ -83,11 +83,11 @@ class App extends Component {
     });
   };
 
-  appstate = user => {
-    this.setState({
-      user: user
-    });
-  };
+  // appstate = user => {
+  //   this.setState({
+  //     user: user
+  //   });
+  // };
 
   favourites = wine => {
     this.dbref.push({
@@ -424,7 +424,7 @@ class App extends Component {
           <Route
             exact
             path="/"
-            render={props => <Header {...props} appstate={this.appstate} />}
+            render={props => <Header {...props} />}
           />
           <section>
             <Route
