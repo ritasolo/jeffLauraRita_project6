@@ -32,7 +32,6 @@ class Nav extends Component {
       this.setState({
         user: res.user
       });
-      // this.props.appstate(this.state.user);
     });
   };
   logout = () => {
@@ -40,7 +39,6 @@ class Nav extends Component {
       this.setState({
         user: null
       });
-      // this.props.appstate(this.state.user);
     });
   };
   render() {
