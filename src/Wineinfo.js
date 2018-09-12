@@ -43,7 +43,11 @@ class Wineinfo extends Component {
   };
 
   addToError = () => {
-    swal("Oops, you must log in!", "Please login to add to your cellar.", "error");
+    swal(
+      "Oops, you must log in!",
+      "Please login to add to your cellar.",
+      "error"
+    );
   };
 
   stores = () =>
@@ -220,11 +224,9 @@ class Wineinfo extends Component {
               </button>
             </div>{" "}
             {/* closes content wrapper */}
+            <DisplayStock arrayOfStock={this.state.arrayOfStock} />
           </div>{" "}
           {/* closes content */}
-          <div className="locations">
-            <DisplayStock arrayOfStock={this.state.arrayOfStock} />
-          </div>
         </div>
       </div>
     );
