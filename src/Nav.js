@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { browserHistory } from 'react-router-dom'
+import { withRouter } from "react-router-dom"
 import firebase from "./firebase";
 
 const provider = new firebase.auth.GoogleAuthProvider();
@@ -32,6 +34,7 @@ class Nav extends Component {
       this.setState({
         user: res.user
       });
+      this.props.appstate(this.state.user);
     });
   };
   logout = () => {
@@ -40,6 +43,12 @@ class Nav extends Component {
         user: null
       });
     });
+      this.props.appstate(this.state.user);
+    }), () => {
+      // Link goes in here?!?! //
+    }
+    // browserHistory.push('/');
+    this.props.history.push(`/`);
   };
   render() {
     return (
@@ -53,29 +62,27 @@ class Nav extends Component {
             <ul>
               {this.state.user ? (
                 <div className="loggedIn">
-                  <li>
-                    {" "}
-                    <Link to="/">
-                      <i onClick={this.logout} class="fas fa-sign-out-alt" />
-                      <p onClick={this.logout}>Logout</p>
-                    </Link>{" "}
-                  </li>
+                  <Link to='/' onClick={this.logout}>
+                      <li>
+                        <i onClick={this.logout} class="fas fa-sign-out-alt" />
+                        <p>Logout</p>
+                      </li>
+                    </Link>
                   <li>
                     <Link to={`/user/${this.state.user.uid}`}>
                       <i class="fas fa-heart" />
                       <p>My Cellar</p>
-                    </Link>{" "}
+                    </Link>
                   </li>
                 </div>
               ) : (
                 <div className="loggedOut">
-                  <li>
-                    {" "}
-                    <i onClick={this.login} class="fas fa-sign-in-alt" />
-                    <a href="#">
+                  <Link to="/">
+                    <li>
+                      <i onClick={this.login} class="fas fa-sign-in-alt" />
                       <p onClick={this.login}>Login</p>
-                    </a>{" "}
-                  </li>
+                    </li>
+                  </Link>
                   {/* authentication ends */}
                 </div>
               )}
